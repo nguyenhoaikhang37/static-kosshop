@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng.
+    </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
+      rel="stylesheet"
+    />
+    
+
+    <!-- Scripts -->
+    <script>
+      const getEl = document.querySelector.bind(document);
+      const getEls = document.querySelectorAll.bind(document);
+
+      function load(selector, path) {
+        const cached = localStorage.getItem(path);
+        if (cached) {
+          getEl(selector).innerHTML = cached;
+        }
+
+        fetch(path)
+          .then((res) => res.text())
+          .then((html) => {
+            if (html !== cached) {
+              getEl(selector).innerHTML = html;
+              localStorage.setItem(path, html);
+            }
+          })
+          .finally(() => {
+            window.dispatchEvent(new Event("template-loaded"));
+          });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-4896377b.js"></script>
+    <link rel="stylesheet" href="/assets/main-cc55ac36.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 bg-gradient h-[56px] lg:h-[76px] z-[999]"
+    ></header>
+    <script>
+      load("#header", "/_components/header.html");
+    </script>
+
+    <main class="pt-[56px] lg:pt-[76px] xl:pt-[116px]">
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
+      ></div>
+      <script>
+        load("#sidebar", "/_components/sidebar.html");
+      </script>
+
+      <!-- BREADCRUMBS -->
+      <section>
+        <div class="myContainer">
+          <ul class="flex flex-wrap items-center gap-2">
+            <li class="text-sm text-primary">
+              <a href="/" class="block py-5">Trang chủ</a>
+            </li>
+            <li>
+              <i class="text-sm fa fa-chevron-right text-primary"></i>
+            </li>
+            <li class="text-sm text-primary">
+              <strong>Hệ thống cửa hàng</strong>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SYSTEMS -->
+      <section>
+        <div class="myContainer">
+          <h1 class="heading mb-4 uppercase text-center">HỆ THỐNG CỬA HÀNG</h1>
+          <div class="flex justify-center items-center gap-2">
+            <button
+              data-filter="all"
+              class="js-filter-system text-filter-active"
+            >
+              Tất cả (3)
+            </button>
+            <button data-filter="hcm" class="js-filter-system text-filter">
+              Tp. HCM
+            </button>
+            <button data-filter="hanoi" class="js-filter-system text-filter">
+              Hà Nội
+            </button>
+          </div>
+        </div>
+        <div
+          class="mt-4 pb-20 relative bg-[url('https://www.kosshop.vn/images/contact-bg.svg')] bg-no-repeat bg-auto bg-bottom"
+        >
+          <div class="myContainer">
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-8">
+              <div data-place="hanoi" class="js-showroom shadow flex flex-col">
+                <div class="Showrooms_img__cGslY">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-lang-dong-da-ha-noi-1620891421.jpg"
+                    alt="kosshop.vn"
+                    class="aspect-square"
+                  />
+                </div>
+                <div class="p-2 bg-white flex-1">
+                  <h2 class="text-[#1f95f3] font-bold text-sm lg:text-base">
+                    <a
+                      href="https://www.google.com/maps/place/Vali+k%C3%A9o+H%C3%A0+N%E1%BB%99i+-+KOS+L%C3%A1ng/@21.0046614,105.8157928,17z/data=!3m1!4b1!4m5!3m4!1s0x3135ac84a636d9bd:0xe3aae3d325c6fa26!8m2!3d21.004657!4d105.8179821?hl=vi-VN"
+                      target="_blank"
+                    >
+                      140 Láng Đống Đa Hà Nội (gần ngã tư sở)
+                    </a>
+                  </h2>
+                  <a
+                    href="tel:+842435641414"
+                    class="text-[#1f95f3] flex items-center gap-2 mt-2 font-bold text-sm lg:text-base"
+                  >
+                    <img
+                      alt=""
+                      src="https://admin.kosshop.vn/upload/images/2022/imagespost/images/icons8-phone-48%281%29.png"
+                      class="w-10 h-10 lg:w-12 lg:h-12"
+                    />
+                    024 35 641 414
+                  </a>
+                </div>
+              </div>
+              <div data-place="hanoi" class="js-showroom shadow flex flex-col">
+                <div class="Showrooms_img__cGslY">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-tran-hung-dao-hoan-kiem-ha-noi-1620891434.jpg"
+                    alt="kosshop.vn"
+                    class="aspect-square"
+                  />
+                </div>
+                <div class="p-2 bg-white flex-1">
+                  <h2 class="text-[#1f95f3] font-bold text-sm lg:text-base">
+                    <a
+                      href="https://www.google.com/maps/place/KOS+Shop+Tran+Hung+Dao+Hanoi/@21.019072,105.8567173,17z/data=!3m1!4b1!4m5!3m4!1s0x3135abee0f0ce63d:0x753f5c74c4514dcd!8m2!3d21.019067!4d105.858906"
+                      target="_blank"
+                    >
+                      6B Trần Hưng Đạo, Hoàn Kiếm, Hà Nội (ngay góc ngã 6 Trần
+                      Hưng Đạo)
+                    </a>
+                  </h2>
+                  <a
+                    href="tel:+842866548563"
+                    class="text-[#1f95f3] flex items-center gap-2 mt-2 font-bold text-sm lg:text-base"
+                  >
+                    <img
+                      alt=""
+                      src="https://admin.kosshop.vn/upload/images/2022/imagespost/images/icons8-phone-48%281%29.png"
+                      class="w-10 h-10 lg:w-12 lg:h-12"
+                    />
+                    024 39 978 001
+                  </a>
+                </div>
+              </div>
+              <div data-place="hcm" class="js-showroom shadow flex flex-col">
+                <div class="Showrooms_img__cGslY">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/images/2021/11/17/showroom-truong-chinh-tan-binh-1637141022.jpg"
+                    alt="kosshop.vn"
+                    class="aspect-square"
+                  />
+                </div>
+                <div class="p-2 bg-white flex-1">
+                  <h2 class="text-[#1f95f3] font-bold text-sm lg:text-base">
+                    <a
+                      href="https://www.google.com/maps/place/Vali+k%C3%A9o+TPHCM+-+KOS+Tr%C6%B0%E1%BB%9Dng+Chinh/@10.7987903,106.6407563,17z/data=!3m1!4b1!4m5!3m4!1s0x3175294e692a0b4d:0x723ead3011c77f71!8m2!3d10.7988218!4d106.6429621?hl=vi-VN"
+                      target="_blank"
+                    >
+                      387 Trường Chinh P.14 Tân Bình (khúc giữa Trương Công Định
+                      và Nguyễn Hồng Đào)
+                    </a>
+                  </h2>
+                  <a
+                    href="tel:+842866807092"
+                    class="text-[#1f95f3] flex items-center gap-2 mt-2 font-bold text-sm lg:text-base"
+                  >
+                    <img
+                      alt=""
+                      src="https://admin.kosshop.vn/upload/images/2022/imagespost/images/icons8-phone-48%281%29.png"
+                      class="w-10 h-10 lg:w-12 lg:h-12"
+                    />
+                    028 66 807 092
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERNATIONAL CUSTOMERS -->
+      <section id="international-customer" class="mt-10"></section>
+      <script>
+        load(
+          "#international-customer",
+          "/_components/international-customer.html"
+        );
+      </script>
+
+      <!-- NEWS -->
+      <section id="news" class="mt-10"></section>
+      <script>
+        load("#news", "/_components/news.html");
+      </script>
+
+      <!-- DOMESTIC CUSTOMERS -->
+      <section id="domestic-customer" class="mt-10"></section>
+      <script>
+        load("#domestic-customer", "/_components/domestic-customer.html");
+      </script>
+
+      <!-- SERVICES -->
+      <section
+        id="services"
+        class="relative bg-gradient mt-[25px] lg:mt-[50px] py-[30px] lg:pt-10 lg:pb-[60px]"
+      ></section>
+      <script>
+        load("#services", "/_components/services.html");
+      </script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <script>
+      load("#footer", "/_components/footer.html");
+    </script>
+
+    <!-- External Scripts -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Internal Scripts -->
+    
+  </body>
+</html>

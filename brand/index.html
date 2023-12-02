@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng.
+    </title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon.ico"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
+      rel="stylesheet"
+    />
+    
+
+    <!-- Scripts -->
+    <script>
+      const getEl = document.querySelector.bind(document);
+      const getEls = document.querySelectorAll.bind(document);
+
+      function load(selector, path) {
+        const cached = localStorage.getItem(path);
+        if (cached) {
+          getEl(selector).innerHTML = cached;
+        }
+
+        fetch(path)
+          .then((res) => res.text())
+          .then((html) => {
+            if (html !== cached) {
+              getEl(selector).innerHTML = html;
+              localStorage.setItem(path, html);
+            }
+          })
+          .finally(() => {
+            window.dispatchEvent(new Event("template-loaded"));
+          });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-4896377b.js"></script>
+    <link rel="stylesheet" href="/assets/main-cc55ac36.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 bg-gradient h-[56px] lg:h-[76px] z-[999]"
+    ></header>
+    <script>
+      load("#header", "/_components/header.html");
+    </script>
+
+    <main class="pt-[56px] lg:pt-[76px] xl:pt-[116px]">
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
+      ></div>
+      <script>
+        load("#sidebar", "/_components/sidebar.html");
+      </script>
+
+      <!-- BREADCRUMBS -->
+      <section>
+        <div class="myContainer">
+          <ul class="flex flex-wrap items-center gap-2">
+            <li class="text-sm text-primary">
+              <a href="/" class="block py-5">Trang chủ</a>
+            </li>
+            <li>
+              <i class="text-sm fa fa-chevron-right text-primary"></i>
+            </li>
+            <li class="text-sm text-primary">
+              <a href="/product-portfolio-page" class="block py-5">Vali kéo</a>
+            </li>
+            <li>
+              <i class="text-sm fa fa-chevron-right text-primary"></i>
+            </li>
+            <li class="text-sm text-primary">
+              <strong
+                >Vali thương hiệu hàng đầu quốc tế cho người du lịch chuyên
+                nghiệp Việt Nam</strong
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="myContainer">
+          <h1 class="my-4 heading">
+            VALI THƯƠNG HIỆU HÀNG ĐẦU QUỐC TẾ CHO NGƯỜI DU LỊCH CHUYÊN NGHIỆP
+            VIỆT NAM
+          </h1>
+        </div>
+        <div class="border-y border-greyLight h-0 xl:h-[50px]"></div>
+      </section>
+
+      <!-- PRODUCT -->
+      <section class="mt-4">
+        <div class="myContainer flex flex-col gap-y-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="col-span-2">
+              <a href="https://www.kosshop.vn/3030;3029;3028;3027;">
+                <img
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/14/vali-roncato-butterfly-1699939422.jpg"
+                  alt="banner"
+                  class="block"
+                />
+              </a>
+            </div>
+
+            <div id="card-item-1">
+              <script>
+                load("#card-item-1", "/_components/card-item-with-flag.html");
+              </script>
+            </div>
+
+            <div id="card-item-2">
+              <script>
+                load(
+                  "#card-item-2",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-3">
+              <script>
+                load(
+                  "#card-item-3",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-4">
+              <script>
+                load(
+                  "#card-item-4",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-5">
+              <script>
+                load(
+                  "#card-item-5",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-6">
+              <script>
+                load(
+                  "#card-item-6",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="col-span-2">
+              <a href="/">
+                <img
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/30/vali-modo-by-roncato-1701357276.jpg"
+                  alt="banner"
+                  class="block"
+                />
+              </a>
+            </div>
+
+            <div id="card-item-7">
+              <script>
+                load("#card-item-7", "/_components/card-item-with-flag.html");
+              </script>
+            </div>
+
+            <div id="card-item-8">
+              <script>
+                load(
+                  "#card-item-8",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-9">
+              <script>
+                load(
+                  "#card-item-9",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-10">
+              <script>
+                load(
+                  "#card-item-10",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-11">
+              <script>
+                load(
+                  "#card-item-11",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-12">
+              <script>
+                load(
+                  "#card-item-12",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAIL -->
+      <section class="mt-10">
+        <div class="myContainer">
+          <div id="detail-content" class="blur-content hide">
+            <p>
+              Đến KOS Shop chọn mua ngay các mẫu
+              <strong>vali kéo chính hãng giảm giá</strong> cực sốc tại TPHCM và
+              Hà Nội. Các sản phẩm vali giảm giá của KOS Shop đều là vali chính
+              hãng giảm giá, hàng chất lượng, tốt với nhiều kiểu dáng, mẫu mã
+              khác nhau.
+            </p>
+
+            <blockquote
+              class="max-w-[880px] mx-auto mt-4 pl-[70px] pr-5 py-5 border-l-[5px] border-primary bg-[#ededed] text-[#555] italic leading-6"
+            >
+              <div style="text-align: justify">
+                Những mẫu vali HOT NHẤT đang được khách hàng yêu thích lựa chọn
+                tại KOSSHOP hiện nay:
+              </div>
+              <div style="text-align: justify">
+                <strong
+                  ><em
+                    ><a
+                      href="https://www.kosshop.vn/balo-du-lich/"
+                      target="_blank"
+                      title="Balo du lịch cao cấp"
+                      class="text-primary hover:underline"
+                      >Balo du lịch</a
+                    ></em
+                  ></strong
+                >
+              </div>
+              <div style="text-align: justify">
+                <div>
+                  <strong
+                    ><em
+                      ><a
+                        href="https://www.kosshop.vn/balo-dung-laptop/"
+                        target="_blank"
+                        title="Balo đựng laptop"
+                        class="text-primary hover:underline"
+                        >Balo laptop</a
+                      ></em
+                    ></strong
+                  >
+                </div>
+                <div>
+                  <strong
+                    ><em
+                      ><a
+                        href="https://www.kosshop.vn/balo-xach-tay/"
+                        target="_blank"
+                        title="Balo xách tay"
+                        class="text-primary hover:underline"
+                        >Balo xách tay</a
+                      ></em
+                    ></strong
+                  >
+                </div>
+                <div>
+                  <strong
+                    ><em
+                      ><a
+                        href="https://www.kosshop.vn/vali-keo/"
+                        target="_blank"
+                        title="Vali kéo cao cấp"
+                        class="text-primary hover:underline"
+                        >Vali kéo</a
+                      ></em
+                    ></strong
+                  >
+                </div>
+                <div>
+                  <strong
+                    ><em
+                      ><a
+                        href="https://www.kosshop.vn/vali-keo-nhua/"
+                        target="_blank"
+                        title="Vali nhựa"
+                        class="text-primary hover:underline"
+                        >Vali kéo nhựa</a
+                      ></em
+                    ></strong
+                  >
+                </div>
+                <div>
+                  <strong
+                    ><em
+                      ><a
+                        href="https://www.kosshop.vn/vali-keo-vai-du-cao-cap/"
+                        target="_blank"
+                        title="Vali vải"
+                        class="text-primary hover:underline"
+                        >Vali kéo vải</a
+                      ></em
+                    ></strong
+                  >
+                </div>
+                <div>
+                  <strong
+                    ><em
+                      ><a
+                        href="https://www.kosshop.vn/vali-keo-vo-nhua-deo/"
+                        target="_blank"
+                        title="Vali nhựa dẻo"
+                        class="text-primary hover:underline"
+                        >Vali kéo nhựa dẻo</a
+                      ></em
+                    ></strong
+                  >
+                </div>
+                <div>
+                  <strong
+                    ><em
+                      ><a
+                        href="https://www.kosshop.vn/vali-keo-vo-nhua-cung/"
+                        target="_blank"
+                        title="Vali nhựa cứng"
+                        class="text-primary hover:underline"
+                        >Vali kéo nhựa cứng</a
+                      ></em
+                    ></strong
+                  >
+                </div>
+                <div>
+                  <strong
+                    ><em
+                      ><a
+                        href="https://www.kosshop.vn/vali-keo-xach-tay-len-may-bay/"
+                        target="_blank"
+                        title="Vali xách tay lên máy bay"
+                        class="text-primary hover:underline"
+                        >Vali xách tay</a
+                      ></em
+                    ></strong
+                  >
+                </div>
+              </div>
+            </blockquote>
+          </div>
+
+          <div class="relative flex justify-center -top-1">
+            <button
+              toggle-target="#detail-content"
+              class="toggleButton js-toggle flex items-center justify-center gap-2 text-primary h-12 w-full lg:w-[200px] max-w-full border rounded cursor-pointer border-primary hover:bg-primary hover:text-white transition-all ease-in-out"
+            >
+              <span>Xem tất cả</span>
+              <i class="text-sm fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERNATIONAL CUSTOMERS -->
+      <section id="international-customer" class="mt-10"></section>
+      <script>
+        load(
+          "#international-customer",
+          "/_components/international-customer.html"
+        );
+      </script>
+
+      <!-- NEWS -->
+      <section id="news" class="mt-10"></section>
+      <script>
+        load("#news", "/_components/news.html");
+      </script>
+
+      <!-- DOMESTIC CUSTOMERS -->
+      <section id="domestic-customer" class="mt-10"></section>
+      <script>
+        load("#domestic-customer", "/_components/domestic-customer.html");
+      </script>
+
+      <!-- SERVICES -->
+      <section
+        id="services"
+        class="relative bg-gradient mt-[25px] lg:mt-[50px] py-[30px] lg:pt-10 lg:pb-[60px]"
+      ></section>
+      <script>
+        load("#services", "/_components/services.html");
+      </script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <script>
+      load("#footer", "/_components/footer.html");
+    </script>
+
+    <!-- External Scripts -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Internal Scripts -->
+    
+  </body>
+</html>
