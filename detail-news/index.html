@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng.
+    </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
+      rel="stylesheet"
+    />
+    
+
+    <!-- Scripts -->
+    <script>
+      const getEl = document.querySelector.bind(document);
+      const getEls = document.querySelectorAll.bind(document);
+
+      function load(selector, path) {
+        const cached = localStorage.getItem(path);
+        if (cached) {
+          getEl(selector).innerHTML = cached;
+        }
+
+        fetch(path)
+          .then((res) => res.text())
+          .then((html) => {
+            if (html !== cached) {
+              getEl(selector).innerHTML = html;
+              localStorage.setItem(path, html);
+            }
+          })
+          .finally(() => {
+            window.dispatchEvent(new Event("template-loaded"));
+          });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-24ced934.js"></script>
+    <link rel="stylesheet" href="/assets/main-dbcbc9ec.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 bg-gradient h-[56px] lg:h-[76px] z-[999]"
+    ></header>
+    <script>
+      load("#header", "/_components/header.html");
+    </script>
+
+    <main class="pt-[56px] lg:pt-[76px] xl:pt-[116px]">
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
+      ></div>
+      <script>
+        load("#sidebar", "/_components/sidebar.html");
+      </script>
+
+      <!-- DETAIL NEWS -->
+      <section class="mt-5">
+        <div class="myContainer">
+          <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-12 lg:col-span-9">
+              <h1 class="text-heading text-[27px] font-bold">
+                Kinh nghiệm chọn mua vali khóa sập size 24 hiện đại
+              </h1>
+              <time
+                class="block my-5 text-[#808080] pb-[10px] border-b border-dashed border-greyC4"
+              >
+                28/11/2023
+              </time>
+
+              <div class="flex items-center gap-2">
+                <form action="" id="ratingForm">
+                  <fieldset class="rating">
+                    <input
+                      type="radio"
+                      id="star5"
+                      name="rating"
+                      value="5"
+                    /><label class="full" for="star5" title="5 stars"></label>
+                    <input
+                      type="radio"
+                      id="star4half"
+                      name="rating"
+                      value="4.5"
+                    /><label
+                      class="half"
+                      for="star4half"
+                      title="4.5 stars"
+                    ></label>
+                    <input
+                      type="radio"
+                      id="star4"
+                      name="rating"
+                      value="4"
+                    /><label class="full" for="star4" title="4 stars"></label>
+                    <input
+                      type="radio"
+                      id="star3half"
+                      name="rating"
+                      value="3.5"
+                    /><label
+                      class="half"
+                      for="star3half"
+                      title="3.5 stars"
+                    ></label>
+                    <input
+                      type="radio"
+                      id="star3"
+                      name="rating"
+                      value="3"
+                    /><label class="full" for="star3" title="3 stars"></label>
+                    <input
+                      type="radio"
+                      id="star2half"
+                      name="rating"
+                      value="2.5"
+                    /><label
+                      class="half"
+                      for="star2half"
+                      title="2.5 stars"
+                    ></label>
+                    <input
+                      type="radio"
+                      id="star2"
+                      name="rating"
+                      value="2"
+                    /><label class="full" for="star2" title="2 stars"></label>
+                    <input
+                      type="radio"
+                      id="star1half"
+                      name="rating"
+                      value="1.5"
+                    /><label
+                      class="half"
+                      for="star1half"
+                      title="1.5 stars"
+                    ></label>
+                    <input
+                      type="radio"
+                      id="star1"
+                      name="rating"
+                      value="1"
+                    /><label class="full" for="star1" title="1 star"></label>
+                    <input
+                      type="radio"
+                      id="starhalf"
+                      name="rating"
+                      value="0.5"
+                    /><label
+                      class="half"
+                      for="starhalf"
+                      title="0.5 stars"
+                    ></label>
+                  </fieldset>
+                </form>
+                <div class="text-lg text-dark">
+                  <span id="score-rating">0</span>/5 - (0 bình chọn)
+                </div>
+              </div>
+
+              <div
+                class="py-4 mt-4 text-xl italic border-y border-greyC4 text-dark"
+              >
+                Ngày nay,
+                <a href="https://www.kosshop.vn/vali-keo-khoa-sap-nap-bat/"
+                  ><span style="color: #0000ff">vali khóa sập</span></a
+                >
+                đã nhanh chóng trở thành một lựa chọn hàng đầu cho những người
+                yêu thích sự kết hợp hoàn hảo giữa tính năng an toàn, thiết kế
+                thời trang và kích thước linh hoạt. Hãy cùng KOS Shop khám phá
+                những đặc điểm nổi bật của vali khóa sập size 24, một biểu tượng
+                của sự tiện lợi và phong cách trong thế giới du lịch hiện đại.
+              </div>
+
+              <!-- RELATED PRODUCTS -->
+              <section class="mt-4">
+                <div class="myContainer">
+                  <div class="mt-3 lg:mt-5 slider-main-news">
+                    <div id="card-item-1">
+                      <script>
+                        load("#card-item-1", "/_components/card-item.html");
+                      </script>
+                    </div>
+
+                    <div id="card-item-2">
+                      <script>
+                        load(
+                          "#card-item-2",
+                          "/_components/card-item-with-discount.html"
+                        );
+                      </script>
+                    </div>
+
+                    <div id="card-item-3">
+                      <script>
+                        load(
+                          "#card-item-3",
+                          "/_components/card-item-with-discount.html"
+                        );
+                      </script>
+                    </div>
+
+                    <div id="card-item-4">
+                      <script>
+                        load(
+                          "#card-item-4",
+                          "/_components/card-item-with-discount.html"
+                        );
+                      </script>
+                    </div>
+
+                    <div id="card-item-5">
+                      <script>
+                        load(
+                          "#card-item-5",
+                          "/_components/card-item-with-discount.html"
+                        );
+                      </script>
+                    </div>
+
+                    <div id="card-item-6">
+                      <script>
+                        load(
+                          "#card-item-6",
+                          "/_components/card-item-with-discount.html"
+                        );
+                      </script>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <div
+                class="inline-flex flex-col p-4 border border-greyC4 bg-[#f9f9f9] min-h-[300px] mt-8"
+              >
+                <p class="text-[19px] text-dark font-bold mb-4">
+                  <strong>Nội dung bài viết</strong>
+                </p>
+
+                <a
+                  class="mb-2 ml-5 cursor-pointer hover:underline text-dark"
+                  href="#docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                >
+                  Đặc điểm của vali khóa sập size 24
+                </a>
+                <a
+                  class="mb-2 ml-5 cursor-pointer hover:underline text-dark"
+                  href="#docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                >
+                  Kinh nghiệm chọn mua vali khóa sập 24 inch
+                </a>
+                <a
+                  class="mb-2 ml-5 cursor-pointer hover:underline text-dark"
+                  href="#docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                >
+                  KOS Shop với lựa chọn vali khóa sập chất lượng
+                </a>
+                <a
+                  class="mb-2 ml-5 cursor-pointer hover:underline text-dark"
+                  href="#docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                >
+                  Kết luận
+                </a>
+              </div>
+
+              <div class="mt-4 Page">
+                <div class="PageContent">
+                  <div class="post type-post">
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Ngày nay,
+                        <a
+                          href="https://www.kosshop.vn/vali-keo-khoa-sap-nap-bat/"
+                          ><span style="color: #0000ff">vali khóa sập</span></a
+                        >
+                        đã nhanh chóng trở thành một lựa chọn hàng đầu cho những
+                        người yêu thích sự kết hợp hoàn hảo giữa tính năng an
+                        toàn, thiết kế thời trang và kích thước linh hoạt. Hãy
+                        cùng KOS Shop khám phá những đặc điểm nổi bật của vali
+                        khóa sập size 24, một biểu tượng của sự tiện lợi và
+                        phong cách trong thế giới du lịch hiện đại.</span
+                      >
+                    </p>
+
+                    <p dir="ltr" style="text-align: center">
+                      <span
+                        ><img
+                          alt=""
+                          src="https://admin.kosshop.vn/upload/images/2023/imagespost/images/vali-khoa-sap-size-24-du-lich.jpg"
+                          style="width: 960px; height: 640px"
+                      /></span>
+                    </p>
+
+                    <h2 dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Đặc điểm của vali khóa sập size 24</span
+                      >
+                    </h2>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Vali khóa sập size 24 đang ngày càng trở nên phổ biến
+                        trong giới du lịch, đặc biệt là với những người dành
+                        tình yêu cho hiện địa, kết hợp với tính năng bảo mật
+                        chắc chắn. Điểm nổi bật của loại vali này bởi chúng đa
+                        phần khung nhôm chắc chắn hoặc là những sản phẩm vali
+                        nhựa cao cấp, kết hợp với thiết kế thời trang, tạo nên
+                        một lựa chọn lý tưởng cho những chuyến đi ngắn ngày.
+                        Kích thước của vali này phù hợp với nhu cầu mang theo đồ
+                        dùng cá nhân và một số vật dụng cần thiết mà không quá
+                        cồng kềnh hay nặng nề.</span
+                      >
+                    </p>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Một trong những ưu điểm lớn của vali khóa sập size 24
+                        là khả năng bảo mật cao. Hệ thống khóa hiện đại hàng đầu
+                        tăng cường độ an toàn và giúp vali chống chịu tốt trước
+                        các tác động từ môi trường bên ngoài. Điều này rất quan
+                        trọng, đặc biệt trong những chuyến đi có nhiều di chuyển
+                        hoặc khi vali cần được gửi trong khoang hành lý.</span
+                      >
+                    </p>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Đối với những người quan tâm đến sự riêng tư và an
+                        ninh, vali khóa sập size 24 cung cấp các lựa chọn khóa
+                        an toàn như khóa số hoặc khóa vân tay. Loại khóa này góp
+                        phần tạo thêm lớp bảo vệ giúp đảm bảo rằng chỉ người sở
+                        hữu có quyền truy cập vào nội dung bên trong vali. Điều
+                        này rất quan trọng đối với những người thường xuyên mang
+                        theo các vật dụng giá trị hoặc tài liệu quan
+                        trọng.</span
+                      >
+                    </p>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Ngoài ra, vali khóa sập size 24 còn có thiết kế thời
+                        trang và hiện đại, phù hợp với nhiều phong cách và nhu
+                        cầu sử dụng. Đây chắc hẳn là một vật dụng tiện ích, là
+                        một phụ kiện thời trang, giúp nâng cao phong cách của
+                        người dùng trong mỗi chuyến đi. Sự kết hợp giữa chất
+                        liệu bền bỉ, thiết kế thời trang và khả năng bảo mật cao
+                        làm cho vali khóa sập size 24 trở thành một sự lựa chọn
+                        hàng đầu cho những ai đặt trọng tâm vào sự an toàn và
+                        phong cách khi du lịch.</span
+                      >
+                    </p>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Tóm lại, vali khóa sập size 24 là một lựa chọn thực tế
+                        cho những chuyến đi kéo dài khoảng 7 ngày mang lại nhiều
+                        sự an toàn, tính bảo mật cao và thời trang. Nó phản ánh
+                        xu hướng hiện đại trong cách du lịch, nơi mà an toàn và
+                        phong cách đi đôi với nhau.</span
+                      >
+                    </p>
+
+                    <p dir="ltr" style="text-align: center">
+                      <span
+                        ><img
+                          alt=""
+                          src="https://admin.kosshop.vn/upload/images/2023/imagespost/images/vali-khoa-sap-size-24-thoi-trang.jpg"
+                          style="width: 1600px; height: 1068px"
+                      /></span>
+                    </p>
+
+                    <h2 dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Kinh nghiệm chọn mua vali khóa sập 24 inch</span
+                      >
+                    </h2>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Khi lựa chọn vali khóa sập size 24, bạn cần chú ý đến
+                        chất lượng khóa, chất liệu nhựa cao cấp hoặc nhôm bền
+                        bỉ, cũng như thiết kế tổng thể của vali. Một vali tốt
+                        hiện đại luôn đẹp về mặt thẩm mỹ cũng như gắn liền với
+                        tính năng an toàn và tiện lợi. Đối với việc sử dụng, hãy
+                        chú ý đến cách bảo quản vali, tránh để vali ở nơi ẩm ướt
+                        hoặc tiếp xúc trực tiếp với ánh nắng mặt trời để kéo dài
+                        tuổi thọ của sản phẩm.</span
+                      >
+                    </p>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Trong quá trình chọn mua vali, người dùng phải xem xét
+                        một loạt các yếu tố quan trọng. Ngoài việc quan tâm đến
+                        thiết kế và màu sắc bên ngoài, khả năng chống va đập và
+                        độ bền của vali cũng như mức độ bảo mật ngày càng trở
+                        nên quan trọng hơn bao giờ hết trong quá trình lựa chọn
+                        và mua sắm. Vali khóa sập với thiết kế khóa khung hiện
+                        đại kết hợp cùng khoá số TSA mang đến cho bạn sự yên tâm
+                        về độ bảo mật và khả năng bảo vệ hành lý.</span
+                      >
+                    </p>
+
+                    <p dir="ltr" style="text-align: center">
+                      <span
+                        ><img
+                          alt=""
+                          src="https://admin.kosshop.vn/upload/images/2023/imagespost/images/vali-khoa-sap-size-24-cao-cap.jpg"
+                          style="width: 1080px; height: 1080px"
+                      /></span>
+                    </p>
+
+                    <h2 dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >KOS Shop với lựa chọn vali khóa sập chất lượng</span
+                      >
+                    </h2>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Khi quyết định mua
+                        <a href="https://www.kosshop.vn/vali-size-24-inch/"
+                          ><span style="color: #0000ff">vali size 24</span></a
+                        >, KOS Shop là điểm đến không thể bỏ qua. KOS Shop cung
+                        cấp một loạt các mẫu vali khóa sập chất lượng cao, với
+                        thiết kế đa dạng và phong phú, phù hợp với mọi nhu cầu
+                        và sở thích của khách hàng. Tại KOS Shop, bạn sẽ tìm
+                        thấy vali khóa sập với chất liệu nhựa cao cấp hoặc vali
+                        khung nhôm ấn tượng, mà còn được trải nghiệm dịch vụ
+                        khách hàng chuyên nghiệp và tận tâm.</span
+                      >
+                    </p>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Mua sắm tại KOS Shop, bạn sẽ được tư vấn kỹ lưỡng về
+                        từng sản phẩm, từ chất liệu, kích thước, đến các tính
+                        năng an toàn và bảo mật. Đội ngũ nhân viên tại KOS luôn
+                        sẵn sàng hỗ trợ bạn trong việc lựa chọn vali phù hợp
+                        nhất với nhu cầu cá nhân, đồng thời cung cấp các thông
+                        tin hữu ích về cách bảo quản và sử dụng vali để tối ưu
+                        hóa trải nghiệm sử dụng.</span
+                      >
+                    </p>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Hơn nữa, mua vali tại KOS Shop, bạn còn được hưởng các
+                        chính sách bảo hành và hậu mãi hấp dẫn, đảm bảo quyền
+                        lợi tốt nhất cho khách hàng. Với cam kết về chất lượng
+                        và dịch vụ, KOS Shop là nơi mua sắm vali lý tưởng đem
+                        đến nhiều sự lựa chọn tin cậy cho mọi hành trình của
+                        bạn.</span
+                      >
+                    </p>
+
+                    <p dir="ltr" style="text-align: center">
+                      <img
+                        alt=""
+                        src="https://admin.kosshop.vn/upload/images/2023/imagespost/images/vali-khoa-sap-size-24.jpg"
+                        style="width: 680px; height: 1020px"
+                      />
+                    </p>
+
+                    <h2 dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Kết luận</span
+                      >
+                    </h2>
+
+                    <p dir="ltr">
+                      <span
+                        id="docs-internal-guid-351c2565-7fff-132a-716f-793618548027"
+                        >Qua những thông tin và đánh giá về vali khóa sập size
+                        24,
+                        <a href="https://www.kosshop.vn/"
+                          ><span style="color: #0000ff">KOS Shop</span></a
+                        >
+                        hy vọng rằng người dùng có thể thấy rõ giá trị mà nó
+                        mang lại trong mỗi chuyến đi. Chúng đáp ứng nhu cầu về
+                        mặt chức năng, góp phần thể hiện gu thẩm mỹ và phong
+                        cách cá nhân, khẳng định xu hướng của một người du lịch
+                        hiện đại, biết cách chăm chút cho từng chi tiết trong
+                        mỗi chuyến đi của mình.</span
+                      >
+                    </p>
+                  </div>
+                  <div class="mt-4">
+                    <section
+                      class="flex flex-row items-center justify-between gap-4 border-b border-primary"
+                    >
+                      <div class="flex-1">
+                        <h2
+                          class="section__heading w-full lg:w-[300px] xl:w-[400px]"
+                        >
+                          <a href="/news-with-category/">BÀI VIẾT LIÊN QUAN</a>
+                        </h2>
+                      </div>
+                    </section>
+                    <div class="mt-6 space-y-3 mb-[15px] xl:mb-0">
+                      <a
+                        class="flex items-center shape-list-item hover:underline"
+                        href="/t/quy-dinh-vali-xach-tay-vietjet-va-nhung-dieu-can-biet.html"
+                        >Quy định vali xách tay VietJet và những điều cần biết
+                        trước chuyến bay</a
+                      ><a
+                        class="flex items-center shape-list-item hover:underline"
+                        href="/t/du-lich-1-ngay-nen-di-dau-de-trai-nghiem-tuyet-voi-nhat.html"
+                        >Du lịch 1 ngày nên đi đâu để trải nghiệm tuyệt vời
+                        nhất</a
+                      ><a
+                        class="flex items-center shape-list-item hover:underline"
+                        href="/t/kinh-nghiem-chon-mua-vali-khoa-sap-size-24-hien-dai.html"
+                        >Kinh nghiệm chọn mua vali khóa sập size 24 hiện đại</a
+                      ><a
+                        class="flex items-center shape-list-item hover:underline"
+                        href="/t/y-tuong-qua-tang-50-nam-ngay-cuoi-y-nghia.html"
+                        >Ý tưởng quà tặng 50 năm ngày cưới ý nghĩa</a
+                      ><a
+                        class="flex items-center shape-list-item hover:underline"
+                        href="/t/ban-co-biet-vali-size-28-chua-duoc-bao-nhieu-kg.html"
+                        >Bạn có biết vali size 28 chứa được bao nhiêu kg?</a
+                      ><a
+                        class="flex items-center shape-list-item hover:underline"
+                        href="/t/vali-keo-qua-tang-tu-kos-lua-chon-tot-cho-ca-nhan-va-doanh-nghiep.html"
+                        >Vali kéo quà tặng từ KOS: Lựa chọn tốt cho cá nhân và
+                        doanh nghiệp</a
+                      ><a
+                        class="flex items-center shape-list-item hover:underline"
+                        href="/t/vali-28-inch-chua-duoc-bao-nhieu-kg-do.html"
+                        >Vali 28 inch chứa được bao nhiêu kg đồ?</a
+                      ><a
+                        class="flex items-center shape-list-item hover:underline"
+                        href="/t/danh-gia-vali-vai-co-tot-khong-va-goi-y-mua-sam.html"
+                        >Đánh giá vali vải có tốt không và gợi ý mua sắm</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-12 lg:col-span-3">
+              <div class="py-[25px] px-5 bg-blueLight2">
+                <h3 class="text-lg font-bold uppercase text-dark">
+                  BÀI VIẾT XEM NHIỀU
+                </h3>
+                <div class="mt-4 space-y-2">
+                  <div class="flex gap-2">
+                    <div class="flag-icon">1</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/vali-keo-qua-tang-tu-kos-lua-chon-tot-cho-ca-nhan-va-doanh-nghiep.html"
+                        >Vali kéo quà tặng từ KOS: Lựa chọn tốt cho cá nhân và
+                        doanh nghiệp</a
+                      >
+                    </h4>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flag-icon">2</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/ban-co-biet-vali-size-28-chua-duoc-bao-nhieu-kg.html"
+                        >Bạn có biết vali size 28 chứa được bao nhiêu kg?</a
+                      >
+                    </h4>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flag-icon">3</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/y-tuong-qua-tang-50-nam-ngay-cuoi-y-nghia.html"
+                        >Ý tưởng quà tặng 50 năm ngày cưới ý nghĩa</a
+                      >
+                    </h4>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flag-icon">4</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/kinh-nghiem-chon-mua-vali-khoa-sap-size-24-hien-dai.html"
+                        >Kinh nghiệm chọn mua vali khóa sập size 24 hiện đại</a
+                      >
+                    </h4>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flag-icon">5</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/du-lich-1-ngay-nen-di-dau-de-trai-nghiem-tuyet-voi-nhat.html"
+                        >Du lịch 1 ngày nên đi đâu để trải nghiệm tuyệt vời
+                        nhất</a
+                      >
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-[30px] xl:mt-[60px] py-[25px] px-5 bg-blueLight2">
+                <h3 class="text-lg font-bold uppercase text-dark">
+                  BÀI VIẾT MỚI NHẤT
+                </h3>
+                <div class="mt-4 space-y-2">
+                  <div class="flex gap-2">
+                    <div class="flag-icon">1</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/vali-keo-qua-tang-tu-kos-lua-chon-tot-cho-ca-nhan-va-doanh-nghiep.html"
+                        >Vali kéo quà tặng từ KOS: Lựa chọn tốt cho cá nhân và
+                        doanh nghiệp</a
+                      >
+                    </h4>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flag-icon">2</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/ban-co-biet-vali-size-28-chua-duoc-bao-nhieu-kg.html"
+                        >Bạn có biết vali size 28 chứa được bao nhiêu kg?</a
+                      >
+                    </h4>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flag-icon">3</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/y-tuong-qua-tang-50-nam-ngay-cuoi-y-nghia.html"
+                        >Ý tưởng quà tặng 50 năm ngày cưới ý nghĩa</a
+                      >
+                    </h4>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flag-icon">4</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/kinh-nghiem-chon-mua-vali-khoa-sap-size-24-hien-dai.html"
+                        >Kinh nghiệm chọn mua vali khóa sập size 24 hiện đại</a
+                      >
+                    </h4>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flag-icon">5</div>
+                    <h4 class="text-justify text-dark">
+                      <a
+                        href="/t/du-lich-1-ngay-nen-di-dau-de-trai-nghiem-tuyet-voi-nhat.html"
+                        >Du lịch 1 ngày nên đi đâu để trải nghiệm tuyệt vời
+                        nhất</a
+                      >
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-[30px] flex flex-col gap-y-[30px] xl:gap-y-[50px]">
+                <article>
+                  <a
+                    href="/t/quy-dinh-vali-xach-tay-vietjet-va-nhung-dieu-can-biet.html"
+                  >
+                    <div>
+                      <img
+                        loading="lazy"
+                        src="https://cdn.kosshop.vn/upload/images/2023/12/02/quy-dinh-vali-xach-tay-vietjet-va-nhung-dieu-can-biet-1701495533.jpg"
+                        class="aspect-video"
+                        alt="KOS Shop - Hệ thống Vali Kéo, Balo, Túi xách nam, Cặp Xách Nam CHÍNH HÃNG CAO CẤP."
+                      />
+                    </div>
+                    <h4 class="font-bold text-heading line-clamp-2">
+                      Quy định vali xách tay VietJet và những điều cần biết
+                      trước chuyến bay
+                    </h4>
+                  </a>
+                </article>
+                <article>
+                  <a
+                    href="/t/quy-dinh-vali-xach-tay-vietjet-va-nhung-dieu-can-biet.html"
+                  >
+                    <div>
+                      <img
+                        loading="lazy"
+                        src="https://cdn.kosshop.vn/upload/images/2023/12/02/balo-dung-laptop-15-6-inch-cho-nam-da-nang-va-thoi-trang-1701495120.jpg"
+                        class="aspect-video"
+                        alt="KOS Shop - Hệ thống Vali Kéo, Balo, Túi xách nam, Cặp Xách Nam CHÍNH HÃNG CAO CẤP."
+                      />
+                    </div>
+                    <h4 class="font-bold text-heading line-clamp-2">
+                      Balo đựng laptop 15.6 inch cho nam đa năng và thời trang
+                    </h4>
+                  </a>
+                </article>
+                <article>
+                  <a
+                    href="/t/quy-dinh-vali-xach-tay-vietjet-va-nhung-dieu-can-biet.html"
+                  >
+                    <div>
+                      <img
+                        loading="lazy"
+                        src="https://cdn.kosshop.vn/upload/images/2023/12/02/du-lich-1-ngay-nen-di-dau-de-trai-nghiem-tuyet-voi-nhat-1701494766.jpg"
+                        class="aspect-video"
+                        alt="KOS Shop - Hệ thống Vali Kéo, Balo, Túi xách nam, Cặp Xách Nam CHÍNH HÃNG CAO CẤP."
+                      />
+                    </div>
+                    <h4 class="font-bold text-heading line-clamp-2">
+                      Du lịch 1 ngày nên đi đâu để trải nghiệm tuyệt vời nhất
+                    </h4>
+                  </a>
+                </article>
+              </div>
+
+              <div class="mt-[30px] xl:mt-[50px]">
+                <a class="" href="https://www.kosshop.vn/sale/">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.kosshop.vn/upload/images/2023/11/30/banner.jpg"
+                    alt="kosshop.vn"
+                    class="w-full"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERNATIONAL CUSTOMERS -->
+      <section id="international-customer" class="mt-10"></section>
+      <script>
+        load(
+          "#international-customer",
+          "/_components/international-customer.html"
+        );
+      </script>
+
+      <!-- NEWS -->
+      <section id="news" class="mt-10"></section>
+      <script>
+        load("#news", "/_components/news.html");
+      </script>
+
+      <!-- DOMESTIC CUSTOMERS -->
+      <section id="domestic-customer" class="mt-10"></section>
+      <script>
+        load("#domestic-customer", "/_components/domestic-customer.html");
+      </script>
+
+      <!-- SERVICES -->
+      <section
+        id="services"
+        class="relative bg-gradient mt-[25px] lg:mt-[50px] py-[30px] lg:pt-10 lg:pb-[60px]"
+      ></section>
+      <script>
+        load("#services", "/_components/services.html");
+      </script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <script>
+      load("#footer", "/_components/footer.html");
+    </script>
+
+    <!-- External Scripts -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Internal Scripts -->
+    
+  </body>
+</html>

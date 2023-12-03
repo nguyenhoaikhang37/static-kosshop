@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng.
+    </title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon.ico"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
+      rel="stylesheet"
+    />
+    
+
+    <!-- Scripts -->
+    <script>
+      const getEl = document.querySelector.bind(document);
+      const getEls = document.querySelectorAll.bind(document);
+
+      function load(selector, path) {
+        const cached = localStorage.getItem(path);
+        if (cached) {
+          getEl(selector).innerHTML = cached;
+        }
+
+        fetch(path)
+          .then((res) => res.text())
+          .then((html) => {
+            if (html !== cached) {
+              getEl(selector).innerHTML = html;
+              localStorage.setItem(path, html);
+            }
+          })
+          .finally(() => {
+            window.dispatchEvent(new Event("template-loaded"));
+          });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-24ced934.js"></script>
+    <link rel="stylesheet" href="/assets/main-dbcbc9ec.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 bg-gradient h-[56px] lg:h-[76px] z-[999]"
+    ></header>
+    <script>
+      load("#header", "/_components/header.html");
+    </script>
+
+    <main class="pt-[56px] lg:pt-[76px] xl:pt-[116px] bg-greyF8">
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
+      ></div>
+      <script>
+        load("#sidebar", "/_components/sidebar.html");
+      </script>
+
+      <!-- THANK YOU -->
+      <div class="pb-4 max-w-[540px] mx-auto px-[15px] sm:px-[20px]">
+        <div class="flex flex-col gap-y-8">
+          <div class="flex flex-col items-center">
+            <img
+              loading="lazy"
+              src="https://cdn.kosshop.vn/upload/theme/images/checkout-success.svg"
+              class="w-[240px] h-[200px]"
+              alt="kosshop.vn"
+            />
+            <h2 class="text-blueMedium text-xl font-bold uppercase mt-[30px]">
+              ĐẶT HÀNG THÀNH CÔNG
+            </h2>
+          </div>
+
+          <div class="text-dark">
+            <p>· Email: <strong>devtest@dev.com</strong></p>
+            <p>· Mã đơn hàng: <strong>17373</strong></p>
+            <p>· Địa chỉ nhận hàng: <strong>devtest@dev.com</strong></p>
+            <p>· Điện thoại nhận hàng: <strong>0123456789</strong></p>
+            <p>
+              · Tổng tiền: <strong class="text-[#db1a1d]">1,300,000₫</strong>
+            </p>
+          </div>
+
+          <p>
+            Khi cần hỗ trợ vui lòng gọi
+            <a
+              title="hotline"
+              rel="nofollow"
+              href="tel:18008050"
+              class="inline-block font-bold text-primary"
+            >
+              1800 1000
+            </a>
+          </p>
+
+          <a
+            class="block px-8 py-3 mx-auto text-white uppercase rounded bg-primary"
+            href="/"
+            >VỀ LẠI TRANG CHỦ</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <script>
+      load("#footer", "/_components/footer.html");
+    </script>
+
+    <!-- External Scripts -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Internal Scripts -->
+    
+  </body>
+</html>

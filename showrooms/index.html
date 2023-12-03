@@ -61,8 +61,8 @@
           });
       }
     </script>
-    <script type="module" crossorigin src="/assets/main-4896377b.js"></script>
-    <link rel="stylesheet" href="/assets/main-cc55ac36.css">
+    <script type="module" crossorigin src="/assets/main-24ced934.js"></script>
+    <link rel="stylesheet" href="/assets/main-dbcbc9ec.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -101,122 +101,111 @@
         </div>
       </section>
 
-      <!-- SYSTEMS -->
+      <!-- SHOWROOMS -->
       <section>
         <div class="myContainer">
-          <h1 class="heading mb-4 uppercase text-center">HỆ THỐNG CỬA HÀNG</h1>
-          <div class="flex justify-center items-center gap-2">
-            <button
-              data-filter="all"
-              class="js-filter-system text-filter-active"
+          <div class="grid grid-cols-12 gap-4">
+            <!-- Column 1: Select District and List of Stores -->
+            <div class="col-span-12 text-xs lg:col-span-4 text-dark">
+              <label for="district" class="font-medium text-gray-700"
+                >Chọn tỉnh thành phố</label
+              >
+              <select
+                id="district"
+                name="district"
+                class="w-full px-2 py-1 bg-[#ededed] border-r-4 border-transparent"
+              >
+                <option value="all">Tất cả</option>
+                <option value="hanoi">Hà Nội</option>
+                <option value="hochiminh">Hồ Chí Minh</option>
+              </select>
+
+              <div id="storeList" class="mt-2">
+                <button
+                  class="group w-full p-[10px] border border-[#ddd] text-sm flex items-center gap-4 hover:bg-gradient hover:text-white transition-all ease-in-out"
+                  data-iframe-link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.700075834429!2d105.8179815!3d21.0046564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac84a636d9bd%3A0xe3aae3d325c6fa26!2zS09TU2hvcC52biBMw6FuZyAtIFZhbGkga8OpbyBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1701573999881!5m2!1svi!2s"
+                  data-place="hanoi"
+                >
+                  <div class="w-[60px] h-[60px] rounded-lg">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-lang-dong-da-ha-noi-1620891421.jpg"
+                      alt=""
+                      class="object-cover rounded-lg"
+                    />
+                  </div>
+                  <div class="text-left">
+                    <p class="font-bold uppercase">QUẬN ĐỐNG ĐA</p>
+                    <p class="mt-1">140 Láng Đống Đa Hà Nội</p>
+                    <a href="tel:+842435641414">
+                      <i
+                        class="transition-all ease-in-out fa fa-phone text-primary group-hover:text-white"
+                      ></i>
+                      024 35 641 414
+                    </a>
+                  </div>
+                </button>
+                <button
+                  class="group mt-1 w-full p-[10px] border border-[#ddd] text-sm flex items-center gap-4 hover:bg-gradient hover:text-white transition-all ease-in-out"
+                  data-iframe-link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.3402636520905!2d105.85890599999999!3d21.019067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abee0f0ce63d%3A0x753f5c74c4514dcd!2zS09TU2hvcC52biBUcuG6p24gSMawbmcgxJDhuqFvIC0gVmFsaSBrw6lvIE1hZGUgaW4gSXRhbHk!5e0!3m2!1svi!2s!4v1701574036676!5m2!1svi!2s"
+                  data-place="hanoi"
+                >
+                  <div class="w-[60px] h-[60px] rounded-lg">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-tran-hung-dao-hoan-kiem-ha-noi-1620891434.jpg"
+                      alt=""
+                      class="object-cover rounded-lg"
+                    />
+                  </div>
+                  <div class="text-left">
+                    <p class="font-bold uppercase">QUẬN HOÀN KIẾM</p>
+                    <p class="mt-1">6B Trần Hưng Đạo, Hoàn Kiếm, Hà Nội</p>
+                    <a href="tel:+842439978001">
+                      <i
+                        class="transition-all ease-in-out fa fa-phone text-primary group-hover:text-white"
+                      ></i>
+                      024 39 978 001
+                    </a>
+                  </div>
+                </button>
+                <button
+                  class="group mt-1 w-full p-[10px] border border-[#ddd] text-sm flex items-center gap-4 hover:bg-gradient hover:text-white transition-all ease-in-out"
+                  data-iframe-link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1699589159207!2d106.6428846!3d10.798291599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175294e692a0b4d%3A0x723ead3011c77f71!2sKOS%20Tr%C6%B0%E1%BB%9Dng%20Chinh%20-%20Vali%20k%C3%A9o%20Made%20in%20Italy!5e0!3m2!1svi!2s!4v1701573687295!5m2!1svi!2s"
+                  data-place="hochiminh"
+                >
+                  <div class="w-[60px] h-[60px] rounded-lg">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2021/11/17/showroom-truong-chinh-tan-binh-1637141022.jpg"
+                      alt=""
+                      class="object-cover rounded-lg"
+                    />
+                  </div>
+                  <div class="text-left">
+                    <p class="font-bold uppercase">QUẬN TÂN BÌNH</p>
+                    <p class="mt-1">387 Trường Chinh P.14 Tân Bình</p>
+                    <a href="tel:+842866807092">
+                      <i
+                        class="transition-all ease-in-out fa fa-phone text-primary group-hover:text-white"
+                      ></i>
+                      028 66 807 092
+                    </a>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Column 2: Google Map (Iframe) -->
+            <div
+              class="col-span-12 -order-1 lg:col-span-8 aspect-video lg:order-1"
             >
-              Tất cả (3)
-            </button>
-            <button data-filter="hcm" class="js-filter-system text-filter">
-              Tp. HCM
-            </button>
-            <button data-filter="hanoi" class="js-filter-system text-filter">
-              Hà Nội
-            </button>
-          </div>
-        </div>
-        <div
-          class="mt-4 pb-20 relative bg-[url('https://www.kosshop.vn/images/contact-bg.svg')] bg-no-repeat bg-auto bg-bottom"
-        >
-          <div class="myContainer">
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-8">
-              <div data-place="hanoi" class="js-showroom shadow flex flex-col">
-                <div class="Showrooms_img__cGslY">
-                  <img
-                    src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-lang-dong-da-ha-noi-1620891421.jpg"
-                    alt="kosshop.vn"
-                    class="aspect-square"
-                  />
-                </div>
-                <div class="p-2 bg-white flex-1">
-                  <h2 class="text-[#1f95f3] font-bold text-sm lg:text-base">
-                    <a
-                      href="https://www.google.com/maps/place/Vali+k%C3%A9o+H%C3%A0+N%E1%BB%99i+-+KOS+L%C3%A1ng/@21.0046614,105.8157928,17z/data=!3m1!4b1!4m5!3m4!1s0x3135ac84a636d9bd:0xe3aae3d325c6fa26!8m2!3d21.004657!4d105.8179821?hl=vi-VN"
-                      target="_blank"
-                    >
-                      140 Láng Đống Đa Hà Nội (gần ngã tư sở)
-                    </a>
-                  </h2>
-                  <a
-                    href="tel:+842435641414"
-                    class="text-[#1f95f3] flex items-center gap-2 mt-2 font-bold text-sm lg:text-base"
-                  >
-                    <img
-                      alt=""
-                      src="https://admin.kosshop.vn/upload/images/2022/imagespost/images/icons8-phone-48%281%29.png"
-                      class="w-10 h-10 lg:w-12 lg:h-12"
-                    />
-                    024 35 641 414
-                  </a>
-                </div>
-              </div>
-              <div data-place="hanoi" class="js-showroom shadow flex flex-col">
-                <div class="Showrooms_img__cGslY">
-                  <img
-                    src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-tran-hung-dao-hoan-kiem-ha-noi-1620891434.jpg"
-                    alt="kosshop.vn"
-                    class="aspect-square"
-                  />
-                </div>
-                <div class="p-2 bg-white flex-1">
-                  <h2 class="text-[#1f95f3] font-bold text-sm lg:text-base">
-                    <a
-                      href="https://www.google.com/maps/place/KOS+Shop+Tran+Hung+Dao+Hanoi/@21.019072,105.8567173,17z/data=!3m1!4b1!4m5!3m4!1s0x3135abee0f0ce63d:0x753f5c74c4514dcd!8m2!3d21.019067!4d105.858906"
-                      target="_blank"
-                    >
-                      6B Trần Hưng Đạo, Hoàn Kiếm, Hà Nội (ngay góc ngã 6 Trần
-                      Hưng Đạo)
-                    </a>
-                  </h2>
-                  <a
-                    href="tel:+842866548563"
-                    class="text-[#1f95f3] flex items-center gap-2 mt-2 font-bold text-sm lg:text-base"
-                  >
-                    <img
-                      alt=""
-                      src="https://admin.kosshop.vn/upload/images/2022/imagespost/images/icons8-phone-48%281%29.png"
-                      class="w-10 h-10 lg:w-12 lg:h-12"
-                    />
-                    024 39 978 001
-                  </a>
-                </div>
-              </div>
-              <div data-place="hcm" class="js-showroom shadow flex flex-col">
-                <div class="Showrooms_img__cGslY">
-                  <img
-                    src="https://cdn.kosshop.vn/upload/images/2021/11/17/showroom-truong-chinh-tan-binh-1637141022.jpg"
-                    alt="kosshop.vn"
-                    class="aspect-square"
-                  />
-                </div>
-                <div class="p-2 bg-white flex-1">
-                  <h2 class="text-[#1f95f3] font-bold text-sm lg:text-base">
-                    <a
-                      href="https://www.google.com/maps/place/Vali+k%C3%A9o+TPHCM+-+KOS+Tr%C6%B0%E1%BB%9Dng+Chinh/@10.7987903,106.6407563,17z/data=!3m1!4b1!4m5!3m4!1s0x3175294e692a0b4d:0x723ead3011c77f71!8m2!3d10.7988218!4d106.6429621?hl=vi-VN"
-                      target="_blank"
-                    >
-                      387 Trường Chinh P.14 Tân Bình (khúc giữa Trương Công Định
-                      và Nguyễn Hồng Đào)
-                    </a>
-                  </h2>
-                  <a
-                    href="tel:+842866807092"
-                    class="text-[#1f95f3] flex items-center gap-2 mt-2 font-bold text-sm lg:text-base"
-                  >
-                    <img
-                      alt=""
-                      src="https://admin.kosshop.vn/upload/images/2022/imagespost/images/icons8-phone-48%281%29.png"
-                      class="w-10 h-10 lg:w-12 lg:h-12"
-                    />
-                    028 66 807 092
-                  </a>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1699589159207!2d106.6428846!3d10.798291599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175294e692a0b4d%3A0x723ead3011c77f71!2sKOS%20Tr%C6%B0%E1%BB%9Dng%20Chinh%20-%20Vali%20k%C3%A9o%20Made%20in%20Italy!5e0!3m2!1svi!2s!4v1701573687295!5m2!1svi!2s"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-full"
+                id="mapIframe"
+              ></iframe>
             </div>
           </div>
         </div>
