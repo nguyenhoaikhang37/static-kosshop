@@ -66,8 +66,8 @@
           });
       }
     </script>
-    <script type="module" crossorigin src="/assets/main-8a7a340e.js"></script>
-    <link rel="stylesheet" href="/assets/main-dfb32222.css">
+    <script type="module" crossorigin src="/assets/main-ea2016be.js"></script>
+    <link rel="stylesheet" href="/assets/main-34618b9c.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -100,7 +100,7 @@
               <i class="fa-solid fa-chevron-left"></i>
               Xem thêm sản phẩm
             </a>
-            <h1 class="font-bold text-dark">Giỏ hàng (3)</h1>
+            <h1 class="font-bold text-dark">Giỏ hàng (1)</h1>
           </div>
 
           <div class="p-4 bg-white divide-y">
@@ -115,7 +115,9 @@
                   />
                 </a>
                 <div>
-                  <h2 class="font-bold text-heading line-clamp-1">
+                  <h2
+                    class="text-sm font-bold lg:text-base text-heading line-clamp-2"
+                  >
                     Vali Modo by Roncato Space size S (20 inch) - Yellow
                   </h2>
                   <div class="flex flex-col mt-1">
@@ -129,76 +131,55 @@
               <div>
                 <div class="flex items-center gap-2">
                   <button
-                    class="flex items-center justify-center w-5 h-5 text-white rounded cursor-pointer bg-greyC4"
+                    class="flex items-center justify-center w-5 h-5 text-white rounded cursor-pointer bg-greyC4 js-decrease-quantity-btn"
                     data-quantity="1"
                   >
                     -
                   </button>
                   <input
-                    class="flex justify-center w-10 h-5 text-center border-b border-greyC4"
+                    class="flex justify-center w-10 h-5 text-center border-b border-greyC4 js-input-quantity"
                     type="number"
                     data-quantity="1"
                     value="1"
                   />
                   <button
-                    class="flex items-center justify-center w-5 h-5 text-white rounded cursor-pointer bg-blueMedium"
+                    class="flex items-center justify-center w-5 h-5 text-white rounded cursor-pointer bg-blueMedium js-increase-quantity-btn"
                     data-quantity="1"
                   >
                     +
                   </button>
                 </div>
-                <button class="block mt-2 ml-auto" data-id="3309">
+                <button
+                  class="block mt-2 ml-auto js-delete-cart js-dialog-button"
+                  data-dialog-id="confirm-dialog"
+                >
                   <i class="text-2xl text-greyC4 fa fa-trash-alt"></i>
                 </button>
-              </div>
-            </div>
 
-            <div class="flex justify-between py-4 first:pt-0 last:pb-0">
-              <div class="flex items-center gap-2">
-                <a href="/detail-news/">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.kosshop.vn/upload/images/2023/10/06/vali-modo-by-roncato-space-size-s-20-inch-yellow-1696567801.jpg"
-                    class="aspect-square w-[68px]"
-                    alt="Vali Modo by Roncato Space size S (20 inch) - Yellow"
-                  />
-                </a>
-                <div>
-                  <h2 class="font-bold text-heading line-clamp-1">
-                    Vali Modo by Roncato Space size S (20 inch) - Yellow
-                  </h2>
-                  <div class="flex flex-col mt-1">
-                    <strong class="text-primary">1,300,000₫</strong>
-                    <del class="text-sm text-heading">2,700,000₫</del>
-                    <strong class="hidden">-52%</strong>
+                <!-- Dialog -->
+                <div class="confirm-modal" id="confirm-dialog">
+                  <div class="confirm-modal-content max-w-[400px]">
+                    <div class="p-3">
+                      <p class="text-sm text-dark xl:text-base">
+                        Bạn chắc chắn muốn bỏ sản phẩm này ra khỏi giỏ hàng?
+                      </p>
+                      <div class="flex w-full gap-2 mt-[30px]">
+                        <button
+                          class="flex-1 px-4 py-3 text-sm text-white uppercase rounded bg-primary js-dialog-close"
+                          data-dialog-id="confirm-dialog"
+                        >
+                          Đồng ý
+                        </button>
+                        <button
+                          class="flex-1 px-4 py-3 text-sm text-white uppercase rounded bg-slate-300 js-dialog-close"
+                          data-dialog-id="confirm-dialog"
+                        >
+                          Hủy
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <div class="flex items-center gap-2">
-                  <button
-                    class="flex items-center justify-center w-5 h-5 text-white rounded cursor-pointer bg-greyC4"
-                    data-quantity="1"
-                  >
-                    -
-                  </button>
-                  <input
-                    class="flex justify-center w-10 h-5 text-center border-b border-greyC4"
-                    type="number"
-                    data-quantity="1"
-                    value="1"
-                  />
-                  <button
-                    class="flex items-center justify-center w-5 h-5 text-white rounded cursor-pointer bg-blueMedium"
-                    data-quantity="1"
-                  >
-                    +
-                  </button>
-                </div>
-                <button class="block mt-2 ml-auto" data-id="3309">
-                  <i class="text-2xl text-greyC4 fa fa-trash-alt"></i>
-                </button>
               </div>
             </div>
           </div>

@@ -57,8 +57,8 @@
           });
       }
     </script>
-    <script type="module" crossorigin src="/assets/main-8a7a340e.js"></script>
-    <link rel="stylesheet" href="/assets/main-dfb32222.css">
+    <script type="module" crossorigin src="/assets/main-ea2016be.js"></script>
+    <link rel="stylesheet" href="/assets/main-34618b9c.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -126,12 +126,15 @@
               <div
                 class="flex items-center gap-2 pl-4 bg-greyLight text-primary"
               >
-                <button id="gallery-button" class="flex items-center gap-6">
+                <button
+                  class="flex items-center gap-6 js-dialog-button"
+                  data-dialog-id="gallery-dialog"
+                >
                   <i class="text-lg fa fa-search-plus"></i>
                   <span>BẤM PHÓNG TO NHIỀU HÌNH SẢN PHẨM</span>
                 </button>
                 <!-- Gallery Dialog -->
-                <div id="gallery-dialog" class="modal full">
+                <div class="modal full" id="gallery-dialog">
                   <!-- Modal content -->
                   <div class="modal-content full">
                     <div
@@ -157,7 +160,9 @@
                         </button>
                       </div>
 
-                      <span class="p-2 cursor-pointer js-gallery-close"
+                      <span
+                        class="p-2 cursor-pointer js-dialog-close"
+                        data-dialog-id="gallery-dialog"
                         ><i class="text-xl text-primary fa-solid fa-xmark"></i
                       ></span>
                     </div>
@@ -297,7 +302,8 @@
                     </div>
                     <div class="flex justify-center p-4">
                       <button
-                        class="flex items-center js-gallery-close text-primary hover:underline"
+                        class="flex items-center js-dialog-close text-primary hover:underline"
+                        data-dialog-id="gallery-dialog"
                       >
                         <i class="mr-2 fa-solid fa-arrow-left-long"></i>
                         Xem tiếp sản phẩm
@@ -325,14 +331,14 @@
                 </li>
                 <li class="w-[108px]">
                   <button
-                    id="specifications-button"
-                    class="text-[#0000ee] flex items-center text-center flex-col gap-2 bg-blueLight py-4"
+                    class="text-[#0000ee] flex items-center text-center flex-col gap-2 bg-blueLight py-4 js-dialog-button"
+                    data-dialog-id="info-product-dialog"
                   >
                     <i class="fa fa-info-circle"></i
                     ><span class="text-sm underline">Thông số kỹ thuật</span>
                   </button>
-                  <!-- Specifications Dialog -->
-                  <div id="specifications-dialog" class="modal">
+                  <!-- Dialog -->
+                  <div class="modal" id="info-product-dialog">
                     <!-- Modal content -->
                     <div class="modal-content">
                       <div
@@ -344,7 +350,9 @@
                           THÔNG SỐ KỸ THUẬT
                         </p>
 
-                        <span class="p-2 cursor-pointer js-specifications-close"
+                        <span
+                          class="p-2 cursor-pointer js-dialog-close"
+                          data-dialog-id="info-product-dialog"
                           ><i class="text-xl text-primary fa-solid fa-xmark"></i
                         ></span>
                       </div>
@@ -388,7 +396,8 @@
                       </div>
                       <div class="flex justify-center p-4">
                         <button
-                          class="flex items-center js-specifications-close text-primary hover:underline"
+                          class="flex items-center js-dialog-close text-primary hover:underline"
+                          data-dialog-id="info-product-dialog"
                         >
                           <i class="mr-2 fa-solid fa-arrow-left-long"></i>
                           Xem tiếp sản phẩm

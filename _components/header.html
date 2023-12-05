@@ -254,7 +254,7 @@
       </a>
 
       <button rel="nofollow" class="relative px-[20px] lg:px-[10px]">
-        <a href="/cart">
+        <a href="/cart/">
           <i class="text-xl text-white fa fa-shopping-cart"></i>
           <span
             class="absolute top-[4px] right-[12px] lg:right-[0] w-[18px] h-[18px] rounded-full bg-secondary flex items-center justify-center text-white text-[11px]"
@@ -276,12 +276,16 @@
         <!-- Header -->
         <div class="flex items-center justify-between bg-gradient h-[50px]">
           <div class="flex items-center">
-            <button class="py-3 pl-5 pr-3" title="Tìm kiếm">
+            <button
+              class="py-3 pl-5 pr-3"
+              title="Tìm kiếm"
+              id="search-btn-on-dialog"
+            >
               <i class="text-xl text-white fa fa-search"></i>
             </button>
 
             <button rel="nofollow" class="relative p-3">
-              <a href="/cart">
+              <a href="/cart/">
                 <i class="text-xl text-white fa fa-shopping-cart"></i>
                 <span
                   class="absolute top-[5px] right-[6px] w-[18px] h-[18px] rounded-full bg-secondary flex items-center justify-center text-white text-[11px]"
@@ -317,15 +321,15 @@
               >
                 VALI KÉO
                 <i
-                  class="flex items-center h-full px-5 fa fa-chevron-right"
+                  class="flex items-center h-full px-5 fa fa-chevron-right arrow-sidebar"
                 ></i>
               </a>
-              <ul class="pl-5">
+              <ul class="hidden pl-5">
                 <li>
                   <span class="flex items-center justify-between h-10">
                     Thương hiệu
                     <i
-                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right"
+                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right arrow-sidebar active"
                     ></i>
                   </span>
                   <ul class="pl-5">
@@ -370,7 +374,7 @@
                   <span class="flex items-center justify-between h-10">
                     Chất liệu
                     <i
-                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right"
+                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right arrow-sidebar active"
                     ></i>
                   </span>
 
@@ -417,7 +421,7 @@
                   <span class="flex items-center justify-between h-10">
                     Loại khóa
                     <i
-                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right"
+                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right arrow-sidebar active"
                     ></i>
                   </span>
                   <ul class="pl-5">
@@ -441,7 +445,7 @@
                   <span class="flex items-center justify-between h-10">
                     Tính năng
                     <i
-                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right"
+                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right arrow-sidebar active"
                     ></i>
                   </span>
                   <ul class="pl-5">
@@ -472,7 +476,7 @@
                   <span class="flex items-center justify-between h-10">
                     Đối tượng
                     <i
-                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right"
+                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right arrow-sidebar active"
                     ></i>
                   </span>
                   <ul class="pl-5">
@@ -517,7 +521,7 @@
                   <span class="flex items-center justify-between h-10">
                     Màu
                     <i
-                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right"
+                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right arrow-sidebar active"
                     ></i>
                   </span>
                   <ul class="pl-5">
@@ -555,7 +559,7 @@
                   <span class="flex items-center justify-between h-10">
                     Kích thước
                     <i
-                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right"
+                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right arrow-sidebar active"
                     ></i>
                   </span>
                   <ul class="pl-5">
@@ -614,7 +618,7 @@
                   <span class="flex items-center justify-between h-10">
                     Phụ kiện
                     <i
-                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right"
+                      class="flex items-center h-full px-5 text-xs fa fa-chevron-right arrow-sidebar active"
                     ></i>
                   </span>
                   <ul class="pl-5">
@@ -670,8 +674,9 @@
     </div>
   </div>
 
+  <!-- SEARCH INPUT MOBILE -->
   <div
-    class="items-center hidden w-full h-full px-2 search-input-mobile"
+    class="relative items-center hidden w-full h-full px-2 search-input-mobile search-form"
     id="search-input-mobile"
   >
     <form class="flex w-full">
@@ -690,6 +695,179 @@
         <i class="text-dark fa fa-times"></i>
       </button>
     </form>
+    <!-- SEARCH BOX -->
+    <div
+      class="absolute bottom-0 left-0 right-0 z-10 hidden w-full bg-white search-box top-full"
+    >
+      <div class="relative pb-[29px] shadow-xl">
+        <ul class="max-h-[360px] overflow-y-auto bg-white">
+          <li>
+            <a
+              class="flex items-center gap-4 p-2 text-sm hover:bg-slate-200 bg-slate-100"
+              href="#!"
+            >
+              <div class="flex-shrink-0">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/27/vali-skyway-glacier-bay-size-l-28-inch-green-1701061283.jpg"
+                  alt="Green"
+                  width="30"
+                  height="30"
+                  class="aspect-square"
+                />
+              </div>
+              <p class="text-dark line-clamp-2">Vali Skyway</p>
+              <strong class="ml-auto text-primary">1,990,000đ</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-4 p-2 text-sm bg-white hover:bg-slate-200"
+              href="#!"
+            >
+              <div class="flex-shrink-0">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/27/vali-skyway-glacier-bay-size-l-28-inch-green-1701061283.jpg"
+                  alt="Green"
+                  width="30"
+                  height="30"
+                  class="aspect-square"
+                />
+              </div>
+              <p class="text-dark line-clamp-2">Vali Skyway</p>
+              <strong class="ml-auto text-primary">1,990,000đ</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-4 p-2 text-sm bg-slate-100 hover:bg-slate-200"
+              href="#!"
+            >
+              <div class="flex-shrink-0">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/27/vali-skyway-glacier-bay-size-l-28-inch-green-1701061283.jpg"
+                  alt="Green"
+                  width="30"
+                  height="30"
+                  class="aspect-square"
+                />
+              </div>
+              <p class="text-dark line-clamp-2">
+                Vali Skyway Vali Skyway Vali Skyway Vali Skyway Vali Skyway
+                Skyway Vali Skyway
+              </p>
+              <strong class="ml-auto text-primary">1,990,000đ</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-4 p-2 text-sm bg-white hover:bg-slate-200"
+              href="#!"
+            >
+              <div class="flex-shrink-0">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/27/vali-skyway-glacier-bay-size-l-28-inch-green-1701061283.jpg"
+                  alt="Green"
+                  width="30"
+                  height="30"
+                  class="aspect-square"
+                />
+              </div>
+              <p class="text-dark line-clamp-2">Vali Skyway</p>
+              <strong class="ml-auto text-primary">1,990,000đ</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-4 p-2 text-sm bg-slate-100 hover:bg-slate-200"
+              href="#!"
+            >
+              <div class="flex-shrink-0">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/27/vali-skyway-glacier-bay-size-l-28-inch-green-1701061283.jpg"
+                  alt="Green"
+                  width="30"
+                  height="30"
+                  class="aspect-square"
+                />
+              </div>
+              <p class="text-dark line-clamp-2">Vali Skyway</p>
+              <strong class="ml-auto text-primary">1,990,000đ</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-4 p-2 text-sm bg-white hover:bg-slate-200"
+              href="#!"
+            >
+              <div class="flex-shrink-0">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/27/vali-skyway-glacier-bay-size-l-28-inch-green-1701061283.jpg"
+                  alt="Green"
+                  width="30"
+                  height="30"
+                  class="aspect-square"
+                />
+              </div>
+              <p class="text-dark line-clamp-2">Vali Skyway</p>
+              <strong class="ml-auto text-primary">1,990,000đ</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-4 p-2 text-sm bg-slate-100 hover:bg-slate-200"
+              href="#!"
+            >
+              <div class="flex-shrink-0">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/27/vali-skyway-glacier-bay-size-l-28-inch-green-1701061283.jpg"
+                  alt="Green"
+                  width="30"
+                  height="30"
+                  class="aspect-square"
+                />
+              </div>
+              <p class="text-dark line-clamp-2">Vali Skyway</p>
+              <strong class="ml-auto text-primary">1,990,000đ</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              class="flex items-center gap-4 p-2 text-sm bg-white hover:bg-slate-200"
+              href="#!"
+            >
+              <div class="flex-shrink-0">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/27/vali-skyway-glacier-bay-size-l-28-inch-green-1701061283.jpg"
+                  alt="Green"
+                  width="30"
+                  height="30"
+                  class="aspect-square"
+                />
+              </div>
+              <p class="text-dark line-clamp-2">Vali Skyway</p>
+              <strong class="ml-auto text-primary">1,990,000đ</strong>
+            </a>
+          </li>
+        </ul>
+
+        <div
+          class="absolute bottom-0 left-0 right-0 px-2 py-1 text-sm bg-white border-t border-greyLight"
+        >
+          <a href="#!">
+            <span class="text-primary">Tìm kiếm các sản phẩm về:</span>
+            <span class="font-bold text-dark">Vali Skyway</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- HEADER MOBILE -->

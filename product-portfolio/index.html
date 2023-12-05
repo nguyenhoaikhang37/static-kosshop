@@ -57,8 +57,10 @@
           });
       }
     </script>
-    <script type="module" crossorigin src="/assets/main-8a7a340e.js"></script>
-    <link rel="stylesheet" href="/assets/main-dfb32222.css">
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script type="module" crossorigin src="/assets/main-ea2016be.js"></script>
+    <link rel="stylesheet" href="/assets/main-34618b9c.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -110,7 +112,89 @@
 
           <h1 class="my-4 heading">VALI KÉO</h1>
 
-          <div class="flex flex-wrap items-center gap-2">
+          <div class="flex flex-wrap items-center gap-2 my-4">
+            <strong>Tìm kiếm nhiều</strong>
+
+            <a
+              title="Vali kéo Roncato Made in Italy"
+              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
+              href="/made-in-italy/"
+            >
+              <img
+                src="https://cdn.kosshop.vn/upload/images/2022/01/25/vali-keo-roncato-made-in-italy-1643085266.jpg"
+                alt="Vali kéo Roncato Made in Italy"
+                width="117"
+                height="25"
+                class="aspect-auto"
+              />
+            </a>
+            <a
+              title="Vali kéo Ricardo"
+              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
+              href="/vali-keo-ricardo/"
+            >
+              <img
+                src="https://cdn.kosshop.vn/upload/images/2022/10/11/vali-keo-ricardo-1665462864.jpg"
+                alt="Vali kéo Ricardo"
+                width="117"
+                height="25"
+                class="aspect-auto"
+              />
+            </a>
+            <a
+              title="Modo "
+              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
+              href="/modo/"
+            >
+              <img
+                src="https://cdn.kosshop.vn/upload/images/2023/07/15/modo--1689384767.jpg"
+                alt="Modo "
+                width="117"
+                height="25"
+                class="aspect-auto"
+              />
+            </a>
+            <a
+              title="Vali kéo Roncato"
+              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
+              href="/vali-keo-roncato/"
+            >
+              <img
+                src="https://cdn.kosshop.vn/upload/images/2022/01/25/vali-keo-roncato-1643086922.jpg"
+                alt="Vali kéo Roncato"
+                width="117"
+                height="25"
+                class="aspect-auto"
+              />
+            </a>
+            <a
+              title="Vali kéo Skyway"
+              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
+              href="/vali-keo-skyway/"
+            >
+              <img
+                src="https://cdn.kosshop.vn/upload/images/2022/01/25/vali-keo-skyway-1643085278.jpg"
+                alt="Vali kéo Skyway"
+                width="117"
+                height="25"
+                class="aspect-auto"
+              />
+            </a>
+            <a
+              title="Vali kéo Heys"
+              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
+              href="/heys/"
+            >
+              <img
+                src="https://cdn.kosshop.vn/upload/images/2022/01/25/vali-keo-heys-1643085255.jpg"
+                alt="Vali kéo Heys"
+                width="117"
+                height="25"
+                class="aspect-auto"
+            /></a>
+          </div>
+
+          <!-- <div class="flex flex-wrap items-center gap-2">
             <a
               href="#!"
               class="flex items-center gap-2 px-3 py-1 border rounded-full border-primary"
@@ -204,208 +288,365 @@
                 >Phụ kiện du lịch</span
               >
             </a>
-          </div>
+          </div> -->
 
-          <div class="grid grid-cols-12 gap-4 my-4">
-            <div
-              class="grid grid-cols-2 col-span-12 gap-2 xl:grid-cols-6 lg:col-span-8"
-            >
-              <select
-                name="branch"
-                id="brand"
-                class="px-2 py-2 border border-greyC4"
+          <div class="flex items-center justify-between gap-4 my-4">
+            <div class="">
+              <button
+                id="filter-btn"
+                class="flex items-center text-primary px-[10px] py-2 bg-greyLight2 border border-primary h-8 lg:h-10"
               >
-                <option value="">Hãng</option>
-                <option value="1">Hãng 1</option>
-                <option value="2">Hãng 2</option>
-                <option value="3">Hãng 3</option>
-              </select>
+                <i class="mr-2 text-sm fa-solid fa-filter"></i>
+                Lọc theo
+              </button>
+              <div
+                id="popover"
+                class="hidden w-full h-full bg-white rounded shadow-md xl:h-auto xl:mt-2 xl:max-w-[900px] z-[1000]"
+              >
+                <header
+                  class="flex justify-end px-4 py-2 border-b border-slate-200"
+                >
+                  <button
+                    id="close-filter-btn"
+                    class="flex items-center p-2 text-sm border text-dark border-slate-200"
+                  >
+                    <i class="mr-1 fa-solid fa-times"></i>
+                    Đóng
+                  </button>
+                </header>
+                <div
+                  class="flex flex-col p-4 gap-y-4 h-[calc(100%-108px)] xl:h-[calc(508px-108px)] overflow-y-auto xl:pb-[70px]"
+                >
+                  <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-dark">Thương hiệu</h3>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-primary"
+                      >
+                        Vali kéo Roncato
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo Skyway
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo Ricardo
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo Modo
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo Heys
+                      </a>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-dark">Kích thước</h3>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Size S
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Size M
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Size L
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali size 20 inch
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali size 24 inch
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali size 26 inch
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali size 28 inch
+                      </a>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-dark">Giá tiền</h3>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Dưới 1 triệu
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Từ 1-2 triệu
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Từ 2-4 triệu
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Từ 4-6 triệu
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Trên 6 triệu
+                      </a>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-dark">Tính năng</h3>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo có ngăn đựng laptop
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo có sạc điện thoại
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo có bánh xe
+                      </a>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-dark">Màu sắc</h3>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Hồng
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vàng
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Bạc
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Cam
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Đỏ
+                      </a>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-dark">Chất liệu</h3>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo siêu nhẹ
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo nhựa
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo vải
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo nhựa cứng
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo nhựa dẻo
+                      </a>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-dark">Đối tượng</h3>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo doanh nhân
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo nam
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo nữ
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo trẻ em
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo ngang phi công
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo du học
+                      </a>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3 class="font-bold text-dark">Đối tượng</h3>
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo doanh nhân
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo nam
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo nữ
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo trẻ em
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo ngang phi công
+                      </a>
+                      <a
+                        href="#!"
+                        class="flex items-center gap-2 px-3 py-1 text-sm text-center border rounded text-dark border-greyC4"
+                      >
+                        Vali kéo du học
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <footer
+                  class="absolute bottom-0 left-0 right-0 flex justify-end px-4 py-2 bg-white border-t border-slate-200"
+                >
+                  <button
+                    id="close-filter-btn"
+                    class="flex items-center p-2 text-sm text-white text-dark bg-primary"
+                  >
+                    <i class="mr-2 fa-solid fa-filter"></i>
+                    Xem kết quả
+                  </button>
+                </footer>
+              </div>
 
-              <select
-                name="size"
-                id="size"
-                class="px-2 py-2 border border-greyC4"
-              >
-                <option value="">Kích thước</option>
-                <option value="1">Kích thước 1</option>
-                <option value="2">Kích thước 2</option>
-                <option value="3">Kích thước 3</option>
-              </select>
-
-              <select
-                name="type"
-                id="type"
-                class="px-2 py-2 border border-greyC4"
-              >
-                <option value="">Loại khóa</option>
-                <option value="1">Loại khóa 1</option>
-                <option value="2">Loại khóa 2</option>
-                <option value="3">Loại khóa 3</option>
-              </select>
-
-              <select
-                name="material"
-                id="material"
-                class="px-2 py-2 border border-greyC4"
-              >
-                <option value="">Chất liệu</option>
-                <option value="1">Chất liệu 1</option>
-                <option value="2">Chất liệu 2</option>
-                <option value="3">Chất liệu 3</option>
-              </select>
-
-              <select
-                name="feature"
-                id="feature"
-                class="px-2 py-2 border border-greyC4"
-              >
-                <option value="">Tính năng</option>
-                <option value="1">Tính năng 1</option>
-                <option value="2">Tính năng 2</option>
-                <option value="3">Tính năng 3</option>
-              </select>
-
-              <select
-                name="object"
-                id="object"
-                class="px-2 py-2 border border-greyC4"
-              >
-                <option value="">Đối tượng</option>
-                <option value="1">Đối tượng 1</option>
-                <option value="2">Đối tượng 2</option>
-                <option value="3">Đối tượng 3</option>
-              </select>
-
-              <select
-                name="color"
-                id="color"
-                class="px-2 py-2 border border-greyC4"
-              >
-                <option value="">Màu sắc</option>
-                <option value="1">Màu sắc 1</option>
-                <option value="2">Màu sắc 2</option>
-                <option value="3">Màu sắc 3</option>
-              </select>
-
-              <select
-                name="price"
-                id="price"
-                class="px-2 py-2 border border-greyC4"
-              >
-                <option value="">Giá</option>
-                <option value="1">Giá 1</option>
-                <option value="2">Giá 2</option>
-                <option value="3">Giá 3</option>
-              </select>
-
-              <select
-                name="accessory"
-                id="accessory"
-                class="px-2 py-2 border border-greyC4"
-              >
-                <option value="">Phụ kiện</option>
-                <option value="1">Phụ kiện 1</option>
-                <option value="2">Phụ kiện 2</option>
-                <option value="3">Phụ kiện 3</option>
-              </select>
+              <div
+                id="backdrop"
+                class="fixed inset-0 z-[999] hidden bg-black opacity-50"
+              ></div>
             </div>
 
-            <div class="col-span-12 lg:col-span-4 lg:ml-auto">
-              <select
-                name="arrange"
-                id="arrange"
-                class="w-full px-2 py-2 border border-greyC4"
-              >
-                <option value="">Sắp xếp theo</option>
-                <option value="1">Mới nhất</option>
-                <option value="2">Xem nhiều nhất</option>
-                <option value="3">Giá từ thấp đến cao</option>
-                <option value="4">Giá từ cao đến thấp</option>
-                <option value="5">Bán chạy nhất</option>
-              </select>
+            <div class="lg:ml-auto">
+              <div class="flex items-center gap-x-4">
+                <p class="flex-shrink-0 hidden text-primary lg:block">
+                  Sắp xếp theo
+                </p>
+                <select
+                  name="arrange"
+                  id="arrange"
+                  class="flex items-center px-[10px] py-2 text-primary bg-greyLight2 border-r-8 border-transparent outline outline-primary max-w-[150px] h-8 lg:h-10"
+                >
+                  <option value="1">Mới nhất</option>
+                  <option value="2">Xem nhiều nhất</option>
+                  <option value="3">Giá từ thấp đến cao</option>
+                  <option value="4">Giá từ cao đến thấp</option>
+                  <option value="5" selected>Bán chạy nhất</option>
+                </select>
+              </div>
             </div>
-          </div>
-
-          <div class="flex flex-wrap items-center gap-2 my-4">
-            <strong>Tìm kiếm nhiều</strong>
-
-            <a
-              title="Vali kéo Roncato Made in Italy"
-              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
-              href="/made-in-italy/"
-            >
-              <img
-                src="https://cdn.kosshop.vn/upload/images/2022/01/25/vali-keo-roncato-made-in-italy-1643085266.jpg"
-                alt="Vali kéo Roncato Made in Italy"
-                width="117"
-                height="25"
-                class="aspect-auto"
-              />
-            </a>
-            <a
-              title="Vali kéo Ricardo"
-              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
-              href="/vali-keo-ricardo/"
-            >
-              <img
-                src="https://cdn.kosshop.vn/upload/images/2022/10/11/vali-keo-ricardo-1665462864.jpg"
-                alt="Vali kéo Ricardo"
-                width="117"
-                height="25"
-                class="aspect-auto"
-              />
-            </a>
-            <a
-              title="Modo "
-              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
-              href="/modo/"
-            >
-              <img
-                src="https://cdn.kosshop.vn/upload/images/2023/07/15/modo--1689384767.jpg"
-                alt="Modo "
-                width="117"
-                height="25"
-                class="aspect-auto"
-              />
-            </a>
-            <a
-              title="Vali kéo Roncato"
-              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
-              href="/vali-keo-roncato/"
-            >
-              <img
-                src="https://cdn.kosshop.vn/upload/images/2022/01/25/vali-keo-roncato-1643086922.jpg"
-                alt="Vali kéo Roncato"
-                width="117"
-                height="25"
-                class="aspect-auto"
-              />
-            </a>
-            <a
-              title="Vali kéo Skyway"
-              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
-              href="/vali-keo-skyway/"
-            >
-              <img
-                src="https://cdn.kosshop.vn/upload/images/2022/01/25/vali-keo-skyway-1643085278.jpg"
-                alt="Vali kéo Skyway"
-                width="117"
-                height="25"
-                class="aspect-auto"
-              />
-            </a>
-            <a
-              title="Vali kéo Heys"
-              class="flex items-center gap-2 px-2 py-1 border rounded-full border-greyC4 w-[117px] h-[25px]"
-              href="/heys/"
-            >
-              <img
-                src="https://cdn.kosshop.vn/upload/images/2022/01/25/vali-keo-heys-1643085255.jpg"
-                alt="Vali kéo Heys"
-                width="117"
-                height="25"
-                class="aspect-auto"
-            /></a>
           </div>
 
           <div class="flex flex-wrap items-center gap-2">
@@ -584,6 +825,12 @@
           <div id="card-item-11">
             <script>
               load("#card-item-11", "/_components/card-item-with-label.html");
+            </script>
+          </div>
+
+          <div id="card-item-12">
+            <script>
+              load("#card-item-12", "/_components/card-item-with-label.html");
             </script>
           </div>
         </div>
