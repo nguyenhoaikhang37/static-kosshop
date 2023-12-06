@@ -57,8 +57,10 @@
           });
       }
     </script>
-    <script type="module" crossorigin src="/assets/main-ea2016be.js"></script>
-    <link rel="stylesheet" href="/assets/main-34618b9c.css">
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script type="module" crossorigin src="/assets/main-5a2ac6cc.js"></script>
+    <link rel="stylesheet" href="/assets/main-809be3bf.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -114,307 +116,360 @@
       <section>
         <div class="myContainer">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-4">
-            <div class="flex flex-col gap-4 lg:col-span-5">
-              <div class="h-[300px]">
-                <img
-                  src="https://cdn.kosshop.vn/upload/plupload/2023/10/vali-modo-by-roncato-galaxy-size-s-20-inch-orchid4055.jpg"
-                  alt="Vali Modo by Roncato Space size S (20 inch) - Yellow hình sản phẩm 5"
-                  class="object-cover w-full h-full aspect-square"
-                />
-              </div>
-
-              <div
-                class="flex items-center gap-2 pl-4 bg-greyLight text-primary"
-              >
-                <button
-                  class="flex items-center gap-6 js-dialog-button"
-                  data-dialog-id="gallery-dialog"
-                >
-                  <i class="text-lg fa fa-search-plus"></i>
-                  <span>BẤM PHÓNG TO NHIỀU HÌNH SẢN PHẨM</span>
-                </button>
-                <!-- Gallery Dialog -->
-                <div class="modal full" id="gallery-dialog">
-                  <!-- Modal content -->
-                  <div class="modal-content full">
-                    <div
-                      class="flex items-center justify-between pt-2 bg-slate-100"
-                    >
-                      <div></div>
-
-                      <div class="flex items-center gap-4">
-                        <button
-                          class="pb-2 font-bold uppercase border-b-4 text-primary border-primary"
-                        >
-                          Hình sản phẩm
-                        </button>
-                        <button
-                          class="uppercase text-dark pb-2 border-b-4 border-[transparent]"
-                        >
-                          Hình thực tế
-                        </button>
-                        <button
-                          class="uppercase text-dark pb-2 border-b-4 border-[transparent]"
-                        >
-                          Video sản phẩm
-                        </button>
-                      </div>
-
-                      <span
-                        class="p-2 cursor-pointer js-dialog-close"
-                        data-dialog-id="gallery-dialog"
-                        ><i class="text-xl text-primary fa-solid fa-xmark"></i
-                      ></span>
-                    </div>
-                    <div class="mt-8 modal-body">
-                      <ul
-                        class="slider slider-single relative max-w-[740px] mt-4 mx-auto"
-                      >
-                        <li class="block w-[740px] h-[494px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[740px] h-[494px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[740px] h-[494px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[740px] h-[494px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[740px] h-[494px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[740px] h-[494px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[740px] h-[494px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[740px] h-[494px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[740px] h-[494px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                      </ul>
-                      <ul class="slider slider-nav mt-4 max-w-[940px] mx-auto">
-                        <li class="block w-[112.5px] h-[75px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[112.5px] h-[75px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[112.5px] h-[75px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[112.5px] h-[75px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[112.5px] h-[75px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[112.5px] h-[75px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[112.5px] h-[75px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[112.5px] h-[75px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block w-[112.5px] h-[75px]">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="flex justify-center p-4">
-                      <button
-                        class="flex items-center js-dialog-close text-primary hover:underline"
-                        data-dialog-id="gallery-dialog"
-                      >
-                        <i class="mr-2 fa-solid fa-arrow-left-long"></i>
-                        Xem tiếp sản phẩm
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <span class="ml-auto px-4 py-2 bg-[#ebeaea] text-dark"
-                  >5/9</span
-                >
-              </div>
-
-              <ul class="flex justify-center gap-4">
-                <li class="text-center">
-                  <span class="block py-2 border border-primary">
-                    <img
-                      src="https://cdn.kosshop.vn/upload/plupload/2023/10/vali-modo-by-roncato-galaxy-size-s-20-inch-orchid4055.jpg"
-                      alt="Vali Modo by Roncato Space size S (20 inch) - Orchid hình sản phẩm 1"
-                      width="90"
-                      height="60"
-                      class="aspect-auto"
-                    />
-                  </span>
-                  <span class="text-xs">Hình sản phẩm</span>
+            <div class="flex flex-col gap-4 lg:col-span-7">
+              <ul class="relative w-full slider slider-single">
+                <li class="relative">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-auto"
+                  />
+                  <i
+                    class="absolute bottom-0 text-xl cursor-pointer text-primary right-2 lg:right-5 fa-solid fa-expand js-dialog-button"
+                    data-dialog-id="gallery-dialog"
+                  ></i>
                 </li>
-                <li class="w-[108px]">
-                  <button
-                    class="text-[#0000ee] flex items-center text-center flex-col gap-2 bg-blueLight py-4 js-dialog-button"
-                    data-dialog-id="info-product-dialog"
-                  >
-                    <i class="fa fa-info-circle"></i
-                    ><span class="text-sm underline">Thông số kỹ thuật</span>
-                  </button>
-                  <!-- Dialog -->
-                  <div class="modal" id="info-product-dialog">
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                      <div
-                        class="flex items-center justify-between p-2 bg-slate-100"
-                      >
-                        <div></div>
-
-                        <p class="text-xl font-bold uppercase text-primary">
-                          THÔNG SỐ KỸ THUẬT
-                        </p>
-
-                        <span
-                          class="p-2 cursor-pointer js-dialog-close"
-                          data-dialog-id="info-product-dialog"
-                          ><i class="text-xl text-primary fa-solid fa-xmark"></i
-                        ></span>
-                      </div>
-                      <div class="modal-body">
-                        <table class="basic-table">
-                          <tbody>
-                            <tr>
-                              <th>Chất liệu</th>
-                              <td>PET &amp; PC FILM</td>
-                            </tr>
-                            <tr>
-                              <th>Model</th>
-                              <td>Ricardo&nbsp;Tioga 2.0</td>
-                            </tr>
-                            <tr>
-                              <th>Màu</th>
-                              <td>Wine</td>
-                            </tr>
-                            <tr>
-                              <th>Kích thước</th>
-                              <td>54.5 x 35 x 22 cm</td>
-                            </tr>
-                            <tr>
-                              <th>Cân nặng</th>
-                              <td>3.27 kg</td>
-                            </tr>
-                            <tr>
-                              <th>Thương hiệu</th>
-                              <td>Mỹ</td>
-                            </tr>
-                            <tr>
-                              <th>Xuất xứ</th>
-                              <td>Made in China</td>
-                            </tr>
-                            <tr>
-                              <th>Bảo hành</th>
-                              <td>5 năm</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="flex justify-center p-4">
-                        <button
-                          class="flex items-center js-dialog-close text-primary hover:underline"
-                          data-dialog-id="info-product-dialog"
-                        >
-                          <i class="mr-2 fa-solid fa-arrow-left-long"></i>
-                          Xem tiếp sản phẩm
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                <li class="relative">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-auto"
+                  />
+                  <i
+                    class="absolute bottom-0 text-xl cursor-pointer text-primary right-2 lg:right-5 fa-solid fa-expand js-dialog-button"
+                    data-dialog-id="gallery-dialog"
+                  ></i>
+                </li>
+                <li class="relative">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-auto"
+                  />
+                  <i
+                    class="absolute bottom-0 text-xl cursor-pointer text-primary right-2 lg:right-5 fa-solid fa-expand js-dialog-button"
+                    data-dialog-id="gallery-dialog"
+                  ></i>
+                </li>
+                <li class="relative">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-auto"
+                  />
+                  <i
+                    class="absolute bottom-0 text-xl cursor-pointer text-primary right-2 lg:right-5 fa-solid fa-expand js-dialog-button"
+                    data-dialog-id="gallery-dialog"
+                  ></i>
+                </li>
+                <li class="relative">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-auto"
+                  />
+                  <i
+                    class="absolute bottom-0 text-xl cursor-pointer text-primary right-2 lg:right-5 fa-solid fa-expand js-dialog-button"
+                    data-dialog-id="gallery-dialog"
+                  ></i>
+                </li>
+                <li class="relative">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-auto"
+                  />
+                  <i
+                    class="absolute bottom-0 text-xl cursor-pointer text-primary right-2 lg:right-5 fa-solid fa-expand js-dialog-button"
+                    data-dialog-id="gallery-dialog"
+                  ></i>
+                </li>
+                <li class="relative">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-auto"
+                  />
+                  <i
+                    class="absolute bottom-0 text-xl cursor-pointer text-primary right-2 lg:right-5 fa-solid fa-expand js-dialog-button"
+                    data-dialog-id="gallery-dialog"
+                  ></i>
+                </li>
+                <li class="relative">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-auto"
+                  />
+                  <i
+                    class="absolute bottom-0 text-xl cursor-pointer text-primary right-2 lg:right-5 fa-solid fa-expand js-dialog-button"
+                    data-dialog-id="gallery-dialog"
+                  ></i>
+                </li>
+                <li class="relative">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-auto"
+                  />
+                  <i
+                    class="absolute bottom-0 text-xl cursor-pointer text-primary right-2 lg:right-5 fa-solid fa-expand js-dialog-button"
+                    data-dialog-id="gallery-dialog"
+                  ></i>
                 </li>
               </ul>
+              <ul class="w-full mt-4 slider slider-nav">
+                <li>
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-square"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-square"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-square"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-square"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-square"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-square"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-square"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-square"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
+                    alt=""
+                    class="block w-full h-full aspect-square"
+                  />
+                </li>
+              </ul>
+
+              <!-- Gallery Dialog -->
+              <div class="modal full" id="gallery-dialog">
+                <!-- Modal content -->
+                <div class="modal-content full">
+                  <div
+                    class="flex items-center justify-between pt-2 bg-slate-100"
+                  >
+                    <div></div>
+
+                    <div class="flex items-center gap-4">
+                      <button
+                        class="pb-2 font-bold uppercase border-b-4 text-primary border-primary"
+                      >
+                        Hình sản phẩm
+                      </button>
+                      <button
+                        class="uppercase text-dark pb-2 border-b-4 border-[transparent]"
+                      >
+                        Hình thực tế
+                      </button>
+                      <button
+                        class="uppercase text-dark pb-2 border-b-4 border-[transparent]"
+                      >
+                        Video sản phẩm
+                      </button>
+                    </div>
+
+                    <span
+                      class="p-2 cursor-pointer js-dialog-close"
+                      data-dialog-id="gallery-dialog"
+                      ><i class="text-xl text-primary fa-solid fa-xmark"></i
+                    ></span>
+                  </div>
+                  <div class="mt-8 modal-body">
+                    <ul
+                      class="slider slider-single relative max-w-[740px] mt-4 mx-auto"
+                    >
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-auto"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-auto"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-auto"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-auto"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-auto"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-auto"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-auto"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-auto"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-auto"
+                        />
+                      </li>
+                    </ul>
+                    <ul class="slider slider-nav mt-4 max-w-[940px] mx-auto">
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-square"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-square"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-square"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-square"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-square"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-square"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-square"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-square"
+                        />
+                      </li>
+                      <li class="block">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
+                          alt=""
+                          class="block w-full h-full aspect-square"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex justify-center p-4">
+                    <button
+                      class="flex items-center js-dialog-close text-primary hover:underline"
+                      data-dialog-id="gallery-dialog"
+                    >
+                      <i class="mr-2 fa-solid fa-arrow-left-long"></i>
+                      Xem tiếp sản phẩm
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="lg:col-span-4">
+            <div class="flex flex-col gap-y-4 lg:col-span-5">
               <h1 class="uppercase heading">
                 Vali Modo by Roncato Space size S (20 inch) - Orchid
               </h1>
 
-              <div class="flex flex-wrap items-center gap-1 mt-2">
+              <div class="flex flex-wrap items-center gap-1">
                 <i class="text-yellow-400 fa-solid fa-star"></i>
                 <i class="text-yellow-400 fa-solid fa-star"></i>
                 <i class="text-yellow-400 fa-solid fa-star"></i>
@@ -422,7 +477,7 @@
                 <span class="ml-1 text-xs text-dark">12 đánh giá</span>
               </div>
 
-              <div class="flex flex-wrap items-center mt-2 gap-x-4">
+              <div class="flex flex-wrap items-center gap-x-4">
                 <p class="text-sm text-dark">
                   Thương hiệu: <strong class="text-primary">Roncato</strong>
                 </p>
@@ -433,7 +488,7 @@
                 </p>
               </div>
 
-              <div class="mt-4">
+              <div>
                 <div class="flex items-center gap-4">
                   <strong class="text-[28px] font-bold text-primary"
                     >1,300,000đ</strong
@@ -449,7 +504,7 @@
                 </span>
               </div>
 
-              <div class="mt-4">
+              <div>
                 <h3
                   class="inline-block px-2 py-1 text-sm rounded text-white bg-[#ed3324]"
                 >
@@ -468,10 +523,10 @@
                 </ul>
               </div>
 
-              <div class="flex items-center gap-4 mt-4">
+              <div class="flex items-center gap-4">
                 <p class="text-xs font-bold text-heading">MÀU SẮC</p>
                 <ul class="flex items-center gap-2">
-                  <li class="border border-greyLight p-[3px]">
+                  <li class="border border-primary p-[3px]">
                     <a href="#!"
                       ><img
                         loading="lazy"
@@ -507,7 +562,185 @@
                 </ul>
               </div>
 
-              <div class="mt-4">
+              <div class="flex items-center gap-4">
+                <p class="text-xs font-bold text-heading">KÍCH THƯỚC</p>
+                <ul class="flex items-center gap-2">
+                  <li
+                    class="flex items-center gap-x-2 border border-[#f89008] shadow-size bg-[#fffbf5] p-2 font-semibold cursor-pointer"
+                  >
+                    <i
+                      class="text-sm text-green-500 fa-solid fa-circle-check"
+                    ></i>
+                    <span>Size S</span>
+                  </li>
+                  <li
+                    class="flex items-center p-2 bg-white border cursor-pointer border-slate-200 gap-x-2"
+                  >
+                    <i
+                      class="text-sm text-slate-300 fa-solid fa-circle-check"
+                    ></i>
+                    <span>Size M</span>
+                  </li>
+                  <li
+                    class="flex items-center p-2 bg-white border cursor-pointer border-slate-200 gap-x-2"
+                  >
+                    <i
+                      class="text-sm text-slate-300 fa-solid fa-circle-check"
+                    ></i>
+                    <span>Size L</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <button
+                  id="popover-btn"
+                  class="flex items-center justify-center w-full p-1 text-lg font-bold text-center border-2 rounded shadow cursor-pointer text-primary border-primary gap-x-4"
+                >
+                  <i class="fa-solid fa-store"></i>
+                  XEM SHOWROOM CÒN HÀNG
+                </button>
+
+                <div id="popover" class="hidden">
+                  <header
+                    class="flex justify-end px-4 py-2 border-b border-slate-200"
+                  >
+                    <button
+                      id="close-popover-btn"
+                      class="flex items-center p-2 text-sm border text-dark border-slate-200"
+                    >
+                      <i class="mr-1 fa-solid fa-times"></i>
+                      Đóng
+                    </button>
+                  </header>
+                  <div class="flex flex-col p-4 w-full max-w-[500px] text-dark">
+                    <div class="flex justify-between">
+                      <div
+                        class="group w-full p-[10px] text-sm flex items-center gap-4"
+                      >
+                        <div class="w-[60px] h-[60px] rounded-lg">
+                          <img
+                            src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-lang-dong-da-ha-noi-1620891421.jpg"
+                            alt=""
+                            class="object-cover rounded-lg aspect-square"
+                          />
+                        </div>
+                        <div class="text-left">
+                          <p class="font-bold uppercase">QUẬN ĐỐNG ĐA</p>
+                          <p class="mt-1">140 Láng Đống Đa Hà Nội</p>
+                          <a href="tel:+842435641414">
+                            <i class="fa fa-phone text-primary"></i>
+                            024 35 641 414
+                          </a>
+                        </div>
+                      </div>
+                      <a
+                        class="flex-shrink-0 cursor-pointer text-primary"
+                        href="https://www.google.com/maps/place/Vali+k%C3%A9o+H%C3%A0+N%E1%BB%99i+-+KOS+L%C3%A1ng/@21.0046614,105.8157928,17z/data=!3m1!4b1!4m5!3m4!1s0x3135ac84a636d9bd:0xe3aae3d325c6fa26!8m2!3d21.004657!4d105.8179821?hl=vi-VN"
+                        target="_blank"
+                      >
+                        <i class="mr-1 text-base fa-solid fa-location-dot"></i>
+                        Xem bản đồ
+                      </a>
+                    </div>
+                    <div class="flex justify-between">
+                      <div
+                        class="group w-full p-[10px] text-sm flex items-center gap-4"
+                      >
+                        <div class="w-[60px] h-[60px] rounded-lg">
+                          <img
+                            src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-tran-hung-dao-hoan-kiem-ha-noi-1620891434.jpg"
+                            alt=""
+                            class="object-cover rounded-lg aspect-square"
+                          />
+                        </div>
+                        <div class="text-left">
+                          <p class="font-bold uppercase">QUẬN HOÀN KIẾM</p>
+                          <p class="mt-1">
+                            6B Trần Hưng Đạo, Hoàn Kiếm, Hà Nội
+                          </p>
+                          <a href="tel:+842439978001">
+                            <i class="fa fa-phone text-primary"></i>
+                            024 39 978 001
+                          </a>
+                        </div>
+                      </div>
+                      <a
+                        class="flex-shrink-0 cursor-pointer text-primary"
+                        href="https://www.google.com/maps/place/KOS+Shop+Tran+Hung+Dao+Hanoi/@21.019072,105.8567173,17z/data=!3m1!4b1!4m5!3m4!1s0x3135abee0f0ce63d:0x753f5c74c4514dcd!8m2!3d21.019067!4d105.858906"
+                        target="_blank"
+                      >
+                        <i class="mr-1 text-base fa-solid fa-location-dot"></i>
+                        Xem bản đồ
+                      </a>
+                    </div>
+                    <div class="flex justify-between">
+                      <div
+                        class="group w-full p-[10px] text-sm flex items-center gap-4"
+                      >
+                        <div class="w-[60px] h-[60px] rounded-lg">
+                          <img
+                            src="https://cdn.kosshop.vn/upload/images/2021/11/17/showroom-truong-chinh-tan-binh-1637141022.jpg"
+                            alt=""
+                            class="object-cover rounded-lg aspect-square"
+                          />
+                        </div>
+                        <div class="text-left">
+                          <p class="font-bold uppercase">QUẬN TÂN BÌNH</p>
+                          <p class="mt-1">387 Trường Chinh P.14 Tân Bình</p>
+                          <a href="tel:+842866807092">
+                            <i class="fa fa-phone text-primary"></i>
+                            028 66 807 092
+                          </a>
+                        </div>
+                      </div>
+                      <a
+                        class="flex-shrink-0 cursor-pointer text-primary"
+                        href="https://www.google.com/maps/place/Vali+k%C3%A9o+TPHCM+-+KOS+Tr%C6%B0%E1%BB%9Dng+Chinh/@10.7987903,106.6407563,17z/data=!3m1!4b1!4m5!3m4!1s0x3175294e692a0b4d:0x723ead3011c77f71!8m2!3d10.7988218!4d106.6429621?hl=vi-VN"
+                        target="_blank"
+                      >
+                        <i class="mr-1 text-base fa-solid fa-location-dot"></i>
+                        Xem bản đồ
+                      </a>
+                    </div>
+                    <div class="flex justify-between">
+                      <div
+                        class="group w-full p-[10px] text-sm flex items-center gap-4"
+                      >
+                        <div class="w-[60px] h-[60px] rounded-lg">
+                          <img
+                            src="https://cdn.kosshop.vn/upload/images/2023/12/04/showroom-hcm-hai-ba-trung-quan-3-1701673402.jpg"
+                            alt=""
+                            class="object-cover rounded-lg aspect-square"
+                          />
+                        </div>
+                        <div class="text-left">
+                          <p class="font-bold uppercase">QUẬN 3</p>
+                          <p class="mt-1">397 Hai Bà Trưng phường 8 quận 3</p>
+                          <a href="tel:+8428">
+                            <i class="fa fa-phone text-primary"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <a
+                        class="flex-shrink-0 cursor-pointer text-primary"
+                        href="https://www.google.com/maps/place/Vali+k%C3%A9o+TPHCM+-+KOS+Tr%C6%B0%E1%BB%9Dng+Chinh/@10.7987903,106.6407563,17z/data=!3m1!4b1!4m5!3m4!1s0x3175294e692a0b4d:0x723ead3011c77f71!8m2!3d10.7988218!4d106.6429621?hl=vi-VN"
+                        target="_blank"
+                      >
+                        <i class="mr-1 text-base fa-solid fa-location-dot"></i>
+                        Xem bản đồ
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  id="backdrop"
+                  class="fixed inset-0 z-[999] hidden bg-black opacity-50"
+                ></div>
+              </div>
+
+              <div>
                 <div
                   class="py-1 pl-2 text-sm border-l-4 shadow border-primary text-heading"
                 >
@@ -515,10 +748,10 @@
                 </div>
               </div>
 
-              <div class="mt-4">
+              <div>
                 <a
                   href="/cart"
-                  class="block w-full p-3 text-center text-white rounded cursor-pointer bg-secondary shadow-red"
+                  class="block w-full p-3 text-center text-white rounded cursor-pointer secondary-gradient shadow-red"
                 >
                   <div class="text-[22px] font-bold">
                     <strong>MUA NGAY</strong>
@@ -531,19 +764,16 @@
                 <a
                   rel="nofollow"
                   href="tel:18008050"
-                  class="flex items-center justify-center gap-2 mt-3 text-sm hover:underline text-primary"
+                  class="flex items-center justify-center w-full p-1 mt-3 text-lg font-bold text-center rounded cursor-pointer gap-x-4 text-primary"
                 >
-                  <span
-                    class="w-[26px] h-[26px] rounded-full flex items-center justify-center bg-primary"
-                  >
-                    <i class="text-sm text-white fa fa-phone"></i>
-                  </span>
-                  Hotline tư vấn, đặt hàng miễn phí 18008050
+                  <i class="fa fa-phone"></i>
+
+                  18008050
                 </a>
 
                 <a
                   href="/cart"
-                  class="block w-full p-3 mt-3 text-center text-white rounded cursor-pointer bg-primary"
+                  class="block w-full p-3 mt-3 text-center text-white rounded cursor-pointer bg-gradient"
                 >
                   <div class="text-lg font-bold">
                     <strong>TRẢ GÓP QUA THẺ</strong>
@@ -551,144 +781,105 @@
                   <div class="text-sm">Visa/Master/JCB</div>
                 </a>
               </div>
-            </div>
 
-            <div
-              class="flex flex-col-reverse lg:col-span-3 lg:flex-col gap-y-4"
-            >
-              <section
-                class="pt-[20px] pb-3 px-3 border border-greyC4 rounded bg-greyLight"
-              >
-                <h3 class="text-lg font-bold text-orange0e">ĐANG CÓ HÀNG Ở</h3>
-                <ul class="mt-[10px] text-sm text-heading #f5810e space-y-1">
-                  <li>
-                    <span class="text-lg text-primary">&#8811;</span>
-                    <strong> Hà Nội Hoàn Kiếm:</strong>
-                    6B Trần Hưng Đạo ( còn 2 sản phẩm )
-                  </li>
-                  <li>
-                    <span class="text-xl text-primary">&#8811;</span>
-                    <strong> HÀ NỘI: </strong>
-                    140 Láng Đống Đa Hà Nội (gần ngã tư sở) ( còn 3 sản phẩm )
-                  </li>
-                  <li>
-                    <span class="text-xl text-primary">&#8811;</span>
-                    <strong> HCM Tân Bình: </strong>
-                    387 Trường Chinh P.14 Tân Bình ( còn 2 sản phẩm )
-                  </li>
-                </ul>
-              </section>
-
-              <section class="py-2 px-[10px] bg-secondary shadow-red rounded">
+              <section class="px-4 py-2 rounded secondary-gradient shadow-red">
                 <h3 class="font-bold text-center text-white">ĐẶT HÀNG NHANH</h3>
                 <div class="mt-2">
                   <form>
-                    <div class="flex">
-                      <div class="flex-1">
-                        <input
-                          class="w-full text-sm px-2 py-[2px] rounded-tl"
-                          type="text"
-                          placeholder="Nhập họ và tên"
-                          name="your-name"
-                          value=""
-                        />
-                        <input
-                          class="w-full mt-1 text-sm px-2 py-[2px] rounded-bl"
-                          type="tel"
-                          placeholder="Để lại số điện thoại tư vấn"
-                          name="your-phone"
-                          value=""
-                        />
-                      </div>
-                      <div class="flex-shrink-0 relative top-[1px]">
-                        <button
-                          class="text-white bg-primary px-[11px] py-[14px] rounded-r uppercase font-bold"
-                          type="submit"
-                        >
-                          Đặt
-                        </button>
-                      </div>
+                    <div class="flex items-center">
+                      <input
+                        class="flex-1 w-full p-2 text-sm"
+                        type="tel"
+                        placeholder="Để lại số điện thoại tư vấn"
+                        name="your-phone"
+                        value=""
+                      />
+                      <button
+                        class="p-2 font-bold text-white uppercase rounded bg-primary"
+                        type="submit"
+                      >
+                        Đặt ngay
+                      </button>
                     </div>
                   </form>
                 </div>
               </section>
 
-              <section class="mt-2 pt-[25px] pb-[15px] px-[15px] bg-blueLight">
-                <h3 class="text-[20px] font-bold text-dark text-center">
-                  CHỈ CÓ TẠI KOSSHOP
-                </h3>
-
-                <ul class="mt-2 space-y-4 text-sm">
-                  <li class="flex items-start gap-2">
-                    <span class="flex-shrink-0">
-                      <i class="text-lg text-primary fa-solid fa-shop"></i>
-                    </span>
-                    <span
-                      >Hệ thống cửa hàng <strong>lớn nhất</strong> Việt
-                      Nam</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="flex-shrink-0 w-5 text-lg">
-                      <i class="text-primary fa-solid fa-ranking-star"></i>
-                    </span>
-                    <span>Hàng <strong>chính hãng</strong></span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="flex-shrink-0 w-5 text-lg">
-                      <i class="text-primary fa-solid fa-shield-halved"></i>
-                    </span>
-                    <span
-                      ><strong
-                        >Bảo hành miễn phí linh kiện sản phẩm vĩnh viễn</strong
-                      >
-                    </span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="flex-shrink-0 w-5 text-lg">
-                      <i class="text-primary fa-solid fa-store"></i>
-                    </span>
-                    <span
-                      >Đại lý <strong>Nhà phân phối</strong> ủy quyền từ các
-                      hãng</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="flex-shrink-0 w-5 text-lg">
-                      <i class="text-primary fa-solid fa-gears"></i>
-                    </span>
-                    <span
-                      >Hỗ trợ kỹ thuật <strong>trọn đời</strong> với
-                      <strong>đội ngũ KTV kinh nghiệm lâu năm</strong></span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="flex-shrink-0 w-5 text-lg">
-                      <i class="text-primary fa-solid fa-shield-heart"></i>
-                    </span>
-                    <span
-                      >Dịch vụ bảo hành, bảo trì sản phẩm nhanh
-                      <strong>số 1 Việt Nam</strong></span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="flex-shrink-0 w-5 text-lg">
-                      <i class="text-primary fa-solid fa-truck"></i>
-                    </span>
-                    <span
-                      >Giải pháp đồng bộ, trải nghiệm thực tế, giao hàng
-                      <strong>miễn phí 30km</strong></span
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="/lien-he/"
-                      class="block px-6 py-2 font-semibold text-center transition-all ease-in-out border-2 rounded border-primary text-primary hover:bg-primary hover:text-white"
-                    >
-                      Ghé showroom KOS <span class="ml-2">➔</span>
-                    </a>
-                  </li>
-                </ul>
+              <section class="p-4 bg-blueLight">
+                <div class="grid grid-cols-3 gap-4">
+                  <div
+                    class="flex flex-col items-center justify-center text-xs text-center gap-y-2 text-dark"
+                  >
+                    <div class="max-h-[37px]">
+                      <img
+                        src="/assets/func-1-1f0663d5.svg"
+                        alt=""
+                        class="w-full h-full"
+                      />
+                    </div>
+                    <p>Bảo hành trọn đời trên toàn hệ thống</p>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-center text-xs text-center gap-y-2 text-dark"
+                  >
+                    <div class="max-h-[37px]">
+                      <img
+                        src="/assets/func-2-19204136.svg"
+                        alt=""
+                        class="w-full h-full"
+                      />
+                    </div>
+                    <p>Đổi trả trong 365 ngày nếu không hài lòng</p>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-center text-xs text-center gap-y-2 text-dark"
+                  >
+                    <div class="max-h-[37px]">
+                      <img
+                        src="/assets/func-3-3b674294.svg"
+                        alt=""
+                        class="w-full h-full"
+                      />
+                    </div>
+                    <p>Hoàn tiền 100% nếu sản phẩm gặp lỗi</p>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-center text-xs text-center gap-y-2 text-dark"
+                  >
+                    <div class="max-h-[37px]">
+                      <img
+                        src="/assets/func-4-e8ec3db6.svg"
+                        alt=""
+                        class="w-full h-full"
+                      />
+                    </div>
+                    <p>Cam kết chính hãng 100%</p>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-center text-xs text-center gap-y-2 text-dark"
+                  >
+                    <div class="max-h-[37px]">
+                      <img
+                        src="/assets/func-5-07fb0a59.svg"
+                        alt=""
+                        class="w-full h-full"
+                      />
+                    </div>
+                    <p>Độc quyền phân phối tại Kosshop.vn</p>
+                  </div>
+                  <div
+                    class="flex flex-col items-center justify-center text-xs text-center gap-y-2 text-dark"
+                  >
+                    <div class="max-h-[37px]">
+                      <img
+                        src="/assets/func-6-d356b554.svg"
+                        alt=""
+                        class="w-full h-full"
+                      />
+                    </div>
+                    <p>Thanh toán khi nhận hàng (COD)</p>
+                  </div>
+                </div>
               </section>
             </div>
           </div>
@@ -697,171 +888,64 @@
 
       <!-- PRODUCT DESCRIPTION -->
       <section class="mt-10">
-        <div class="grid grid-cols-12 gap-8 myContainer">
-          <div class="col-span-12">
-            <div class="Page">
-              <div class="PageContent">
-                <div class="post type-post">
-                  <div
-                    id="manufacturer-content"
-                    class="space-y-4 blur-content hide"
-                  >
-                    <p style="text-align: center">
-                      <strong>Quang Vinh tham quan Roncato tại Italia</strong>
-                    </p>
-                    <p style="text-align: center">
-                      <iframe
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen=""
-                        frameborder="0"
-                        height="315"
-                        src="https://www.youtube.com/embed/PWyLBrvWZ24"
-                        title="YouTube video player"
-                        width="560"
-                      ></iframe>
-                    </p>
-                    <p>
-                      Roncato chính hãng từ Ý, với hơn 50 năm phát triển, thương
-                      hiệu Roncato đã trở thành biểu tượng thời trang, sang
-                      trọng, đẳng cấp Ý. Với hơn 2000 cửa hàng toàn cầu, Roncato
-                      đã và đang là thương hiệu
-                      <strong>
-                        <a
-                          href="https://www.kosshop.vn/vali-keo/"
-                          target="_blank"
-                          title="vali"
-                          type="vali kéo cao cấp"
-                          >vali</a
-                        > </strong
-                      >&nbsp;cao cấp có sức hút tốt nhất hiện nay.&nbsp;
-                    </p>
-                    <p style="text-align: center">
-                      <img
-                        alt="ban lãnh đạo thương hiệu vali Roncato"
-                        src="https://admin.kosshop.vn/upload/images/2020/imagespost/images/roncato_storia.jpg"
-                        style="width: 560px; height: 526px"
-                      />
-                    </p>
-                    <p style="text-align: center">
-                      Những nhà sáng lập thương hiệu Roncato số 1 tại Ý
-                    </p>
-                    <p style="text-align: center">
-                      <img
-                        alt="roncato store tại hà nội"
-                        src="https://admin.kosshop.vn/upload/images/2022/imagespost/images/roncato-store-ha-noi-by-kos-shop.jpg"
-                        style="width: 700px; height: 467px"
-                      />
-                    </p>
-                    <p style="text-align: center">Roncato Store tại Hà Nội</p>
-
-                    <p style="text-align: center">
-                      <img
-                        alt="tổng lãnh sự quán ý"
-                        src="https://admin.kosshop.vn/upload/images/2022/imagespost/images/tong-lanh-su-quan-y-tai-roncato-store-ha-noi.jpg"
-                        style="width: 700px; height: 1050px"
-                      />
-                    </p>
-
-                    <p style="text-align: center">
-                      Đại diện Roncato từ Ý và Tổng lãnh sự quán Ý tại Hà Nội
-                    </p>
-
-                    <p style="text-align: center">
-                      <img
-                        alt="Quang Vinh cùng nhà sáng lập Roncato"
-                        src="https://admin.kosshop.vn/upload/images/2022/imagespost/images/quang-vinh-cung-nha-sang-lap-roncato.JPG"
-                        style="width: 700px; height: 467px"
-                      />
-                    </p>
-
-                    <p style="text-align: center">
-                      Quang Vinh cùng nhà sáng lập Roncato
-                    </p>
-
-                    <p>
-                      Các sản phẩm vali Roncato được chính những nhà thiết kế
-                      đẳng cấp từ Ý đảm nhiệm, vì thế trong mỗi sản phẩm
-                      <strong>
-                        <a
-                          href="https://www.kosshop.vn/vali-keo-roncato/"
-                          target="_blank"
-                          title="vali kéo Roncato"
-                          type="vali kéo Roncato"
-                          >vali kéo Roncato</a
-                        >
-                      </strong>
-                      luôn mang dáng vẻ rất Ý.&nbsp;
-                    </p>
-
-                    <blockquote>
-                      <p dir="ltr">
-                        Đặc biệt, thương hiệu Roncato ứng dụng thành công công
-                        nghệ hiện đại, cho ra nhiều dòng sản phẩm
-                        <strong>
-                          <a
-                            href="https://www.kosshop.vn/vali-keo-nhua/"
-                            target="_blank"
-                            title="vali nhựa cao cấp"
-                            type="vali nhựa cao cấp"
-                            >vali nhựa cao cấp</a
-                          > </strong
-                        >&nbsp;với đa dạng mẫu mã, kích thước phù hợp với nhiều
-                        đối tượng. Xem ngay sản phẩm vali kéo nhựa chính hãng
-                        tại
-                        <strong>
-                          <a
-                            href="https://www.kosshop.vn/"
-                            target="_blank"
-                            title="KOS SHOP"
-                            type="KOS"
-                            >KOS SHOP</a
-                          > </strong
-                        >&nbsp;để chọn cho mình một chiếc vali ưng ý nhất!
-                      </p>
-                    </blockquote>
-
-                    <p>
-                      Video giới thiệu
-                      <strong>
-                        <a
-                          href="https://www.roncato.com"
-                          target="_blank"
-                          title="thương hiệu Roncato"
-                          type="thương hiệu Roncato"
-                          >thương hiệu Roncato</a
-                        >
-                      </strong>
-                      tại Ý:
-                    </p>
-
-                    <p style="text-align: center">
-                      <iframe
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen=""
-                        frameborder="0"
-                        height="315"
-                        src="https://www.youtube.com/embed/NhwgLCOBimA"
-                        title="YouTube video player"
-                        width="560"
-                      ></iframe>
-                    </p>
-                  </div>
-                </div>
-              </div>
+        <div class="myContainer">
+          <div class="grid grid-cols-12 gap-8">
+            <div class="col-span-12 lg:col-span-6">
+              <iframe
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen=""
+                frameborder="0"
+                src="https://www.youtube.com/embed/nskHdD_nWtw"
+                title="YouTube video player"
+                class="w-full h-full aspect-video"
+              ></iframe>
             </div>
-
-            <div class="relative flex justify-center -top-1">
-              <button
-                toggle-target="#manufacturer-content"
-                class="toggleButton js-toggle flex items-center justify-center gap-2 text-primary h-12 w-full lg:w-[200px] max-w-full border rounded cursor-pointer border-primary hover:bg-primary hover:text-white transition-all ease-in-out"
-              >
-                <span>Xem tất cả</span>
-                <i class="text-sm fa-solid fa-chevron-down"></i>
-              </button>
+            <div
+              class="col-span-12 row-start-1 lg:col-span-6 lg:row-start-auto"
+            >
+              <h2 class="text-xl font-bold text-heading">THÔNG SỐ KỸ THUẬT</h2>
+              <div class="mt-4">
+                <table class="basic-table">
+                  <tbody>
+                    <tr>
+                      <th>Chất liệu</th>
+                      <td>PET &amp; PC FILM</td>
+                    </tr>
+                    <tr>
+                      <th>Model</th>
+                      <td>Ricardo&nbsp;Tioga 2.0</td>
+                    </tr>
+                    <tr>
+                      <th>Màu</th>
+                      <td>Wine</td>
+                    </tr>
+                    <tr>
+                      <th>Kích thước</th>
+                      <td>54.5 x 35 x 22 cm</td>
+                    </tr>
+                    <tr>
+                      <th>Cân nặng</th>
+                      <td>3.27 kg</td>
+                    </tr>
+                    <tr>
+                      <th>Thương hiệu</th>
+                      <td>Mỹ</td>
+                    </tr>
+                    <tr>
+                      <th>Xuất xứ</th>
+                      <td>Made in China</td>
+                    </tr>
+                    <tr>
+                      <th>Bảo hành</th>
+                      <td>5 năm</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
-          <div class="col-span-12 lg:col-span-6">
+          <div class="mt-8">
             <div class="Page">
               <div class="PageContent">
                 <div class="post type-post">
@@ -869,17 +953,6 @@
                     id="describe-content"
                     class="space-y-4 blur-content hide"
                   >
-                    <p style="text-align: center">
-                      <iframe
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen=""
-                        frameborder="0"
-                        height="355"
-                        src="https://www.youtube.com/embed/nskHdD_nWtw"
-                        title="YouTube video player"
-                        width="632"
-                      ></iframe>
-                    </p>
                     <p>
                       Một trong những dòng&nbsp;<strong
                         ><a
@@ -1008,7 +1081,6 @@
                 </div>
               </div>
             </div>
-
             <div class="relative flex justify-center -top-1">
               <button
                 toggle-target="#describe-content"
@@ -1017,47 +1089,6 @@
                 <span>Xem tất cả</span>
                 <i class="text-sm fa-solid fa-chevron-down"></i>
               </button>
-            </div>
-          </div>
-          <div class="col-span-12 row-start-1 lg:col-span-6 lg:row-start-auto">
-            <h2 class="text-xl font-bold text-heading">THÔNG SỐ KỸ THUẬT</h2>
-            <div class="mt-4">
-              <table class="basic-table">
-                <tbody>
-                  <tr>
-                    <th>Chất liệu</th>
-                    <td>PET &amp; PC FILM</td>
-                  </tr>
-                  <tr>
-                    <th>Model</th>
-                    <td>Ricardo&nbsp;Tioga 2.0</td>
-                  </tr>
-                  <tr>
-                    <th>Màu</th>
-                    <td>Wine</td>
-                  </tr>
-                  <tr>
-                    <th>Kích thước</th>
-                    <td>54.5 x 35 x 22 cm</td>
-                  </tr>
-                  <tr>
-                    <th>Cân nặng</th>
-                    <td>3.27 kg</td>
-                  </tr>
-                  <tr>
-                    <th>Thương hiệu</th>
-                    <td>Mỹ</td>
-                  </tr>
-                  <tr>
-                    <th>Xuất xứ</th>
-                    <td>Made in China</td>
-                  </tr>
-                  <tr>
-                    <th>Bảo hành</th>
-                    <td>5 năm</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>

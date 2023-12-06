@@ -59,8 +59,8 @@
     </script>
     <script src="https://unpkg.com/popper.js@1"></script>
     <script src="https://unpkg.com/tippy.js@4"></script>
-    <script type="module" crossorigin src="/assets/main-ea2016be.js"></script>
-    <link rel="stylesheet" href="/assets/main-34618b9c.css">
+    <script type="module" crossorigin src="/assets/main-5a2ac6cc.js"></script>
+    <link rel="stylesheet" href="/assets/main-809be3bf.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -290,24 +290,23 @@
             </a>
           </div> -->
 
-          <div class="flex items-center justify-between gap-4 my-4">
+          <div
+            class="flex items-center justify-between gap-4 my-4 filter-tippy"
+          >
             <div class="">
               <button
-                id="filter-btn"
-                class="flex items-center text-primary px-[10px] py-2 bg-greyLight2 border border-primary h-8 lg:h-10"
+                id="popover-btn"
+                class="flex items-center text-primary px-[10px] py-2 bg-greyLight2 border border-primary h-auto lg:h-10"
               >
                 <i class="mr-2 text-sm fa-solid fa-filter"></i>
                 Lọc theo
               </button>
-              <div
-                id="popover"
-                class="hidden w-full h-full bg-white rounded shadow-md xl:h-auto xl:mt-2 xl:max-w-[900px] z-[1000]"
-              >
+              <div id="popover" class="hidden">
                 <header
                   class="flex justify-end px-4 py-2 border-b border-slate-200"
                 >
                   <button
-                    id="close-filter-btn"
+                    id="close-popover-btn"
                     class="flex items-center p-2 text-sm border text-dark border-slate-200"
                   >
                     <i class="mr-1 fa-solid fa-times"></i>
@@ -614,7 +613,6 @@
                   class="absolute bottom-0 left-0 right-0 flex justify-end px-4 py-2 bg-white border-t border-slate-200"
                 >
                   <button
-                    id="close-filter-btn"
                     class="flex items-center p-2 text-sm text-white text-dark bg-primary"
                   >
                     <i class="mr-2 fa-solid fa-filter"></i>
@@ -637,7 +635,7 @@
                 <select
                   name="arrange"
                   id="arrange"
-                  class="flex items-center px-[10px] py-2 text-primary bg-greyLight2 border-r-8 border-transparent outline outline-primary max-w-[150px] h-8 lg:h-10"
+                  class="flex items-center px-[10px] py-2 text-primary bg-greyLight2 border-r-8 border-transparent outline outline-primary max-w-[150px] h-8 h-auto lg:h-10"
                 >
                   <option value="1">Mới nhất</option>
                   <option value="2">Xem nhiều nhất</option>
