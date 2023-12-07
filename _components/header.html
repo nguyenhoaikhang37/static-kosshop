@@ -223,7 +223,7 @@
       </div>
     </div>
 
-    <div class="flex ml-auto">
+    <div class="flex ml-auto gap-x-4">
       <div
         class="hidden mx-[20px] lg:mx-[10px] gap-5 text-white transition-all ease-linear border border-white rounded-md lg:flex hover:text-primary hover:bg-white"
       >
@@ -237,27 +237,23 @@
       </div>
 
       <button
-        class="px-[20px] lg:px-[10px] py-3 cursor-pointer menu-btn lg:hidden flex items-center justify-center"
+        class="flex items-center justify-center py-3 cursor-pointer menu-btn lg:hidden"
         title="Tìm kiếm"
         id="search-btn-mobile"
       >
         <i class="text-xl text-white fa fa-search"></i>
       </button>
 
-      <a
-        rel="nofollow"
-        href="/showrooms/"
-        class="flex items-center px-[20px] lg:px-[10px] text-white"
-      >
+      <a rel="nofollow" href="/showrooms/" class="flex items-center text-white">
         <i class="text-xl fa-solid fa-location-dot"></i>
         <strong class="hidden ml-1 font-normal lg:block">Cửa hàng</strong>
       </a>
 
-      <button rel="nofollow" class="relative px-[20px] lg:px-[10px]">
+      <button rel="nofollow" class="relative">
         <a href="/cart/">
           <i class="text-xl text-white fa fa-shopping-cart"></i>
           <span
-            class="absolute top-[4px] right-[12px] lg:right-[0] w-[18px] h-[18px] rounded-full bg-secondary flex items-center justify-center text-white text-[11px]"
+            class="absolute top-[4px] -right-[25%] w-[18px] h-[18px] rounded-full bg-secondary flex items-center justify-center text-white text-[11px]"
           >
             1
           </span>
@@ -265,7 +261,7 @@
       </button>
 
       <button
-        class="block pl-[20px] lg:pl-[10px] cursor-pointer menu-btn js-toggle xl:hidden"
+        class="block cursor-pointer menu-btn js-toggle xl:hidden"
         toggle-target="#menuBar"
       >
         <i class="text-xl text-white fa-solid fa-bars"></i>
