@@ -1,0 +1,327 @@
+/*===================CUSTOM DETAIL NEWS=========================*/
+.Page {
+  margin-top: 20px;
+
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+
+  .PageTitle {
+    margin: 0 0 0.5em;
+
+    color: var(--heading-color);
+    font-size: 1.7em;
+    line-height: 1.3;
+    text-align: justify;
+    min-height: 35px;
+  }
+
+  .CreatedAt {
+    padding: 0 0 10px;
+    margin: 20px 0;
+    min-height: 35px;
+    color: gray;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+
+    border-bottom: 1px dashed #8080804f;
+  }
+
+  .Ratings {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 32px;
+    min-height: 35px;
+    .Stars {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .Summary {
+      color: var(--text-color);
+      font-size: 1.2em;
+    }
+  }
+
+  .Disabled {
+    pointer-events: none;
+  }
+
+  .PageSummary {
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .PageContent {
+    table {
+      tr:first-child {
+        td,
+        th {
+          span {
+            white-space: pre;
+          }
+        }
+      }
+    }
+
+    @import "./flatsome";
+    @import "./theme";
+    @import "./custom";
+  }
+}
+.Page .PageContent blockquote span {
+  display: initial;
+}
+.Page .PageContent .post-image {
+  margin-bottom: 2em;
+  max-width: 100%;
+  text-align: center;
+}
+
+.Page .ega-container {
+  @media (max-width: 991.98px) {
+    max-width: unset !important;
+  }
+}
+
+.Page a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.AsidePosts {
+  padding: 25px 20px;
+  margin-bottom: 30px;
+  background-color: var(--blue-light-2);
+
+  .AsidePostsTitle {
+    margin: 0 0 20px;
+
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    text-transform: uppercase;
+  }
+
+  .List {
+    .Item {
+      display: flex;
+      margin-bottom: 0.6em;
+    }
+
+    .Item__Label {
+      min-width: 30px;
+      padding-right: 5px;
+      margin-right: 15px;
+
+      background-image: url("/images/flag-icon.svg");
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-size: 30px 37px;
+
+      color: white;
+      font-size: 12px;
+      line-height: 27px;
+      text-align: center;
+    }
+
+    .Item__Content {
+      flex: 1;
+      margin: 0;
+
+      font-size: 16px;
+      line-height: 1.6em;
+      text-align: justify;
+    }
+
+    .Item__Content a {
+      color: var(--text-color);
+      font-weight: 400;
+    }
+  }
+}
+
+.AsidePosts:not(:first-child) {
+  margin-top: 60px;
+}
+
+.TOCContainer {
+  min-height: 300px;
+  display: flex;
+  margin-bottom: 16px;
+
+  .TOCWrapper {
+    padding: 20px;
+
+    background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+
+  .TOCTitle {
+    margin-bottom: 5px;
+
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  .TOCItem {
+    margin: 3px 0;
+    color: #444;
+
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .TOCItem:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
+.RelatingPosts {
+  margin-top: 25px;
+
+  .Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid var(--primary-color);
+
+    .Title {
+      display: flex;
+      align-items: center;
+      max-width: 500px;
+      width: 75%;
+      height: 40px;
+
+      position: relative;
+      z-index: 1;
+
+      color: white;
+      font-size: 22.4px;
+      font-weight: 500;
+      text-indent: 60px;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      @media (max-width: 991.98px) {
+        font-size: 15px;
+      }
+    }
+
+    .Title::before {
+      content: "";
+      display: block;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 15px;
+      right: 15px;
+      z-index: -1;
+
+      background-color: var(--primary-color);
+      border-radius: 5px;
+      transform: skewX(-40deg);
+    }
+
+    .Title::after {
+      content: "";
+
+      display: block;
+      width: 52px;
+      height: 52px;
+
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+
+      background-color: var(--primary-color);
+      background-image: url("/images/logo-icon.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+      border-radius: 50%;
+      border: 5px solid white;
+    }
+
+    .ViewAll {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 12px;
+      color: var(--primary-color);
+
+      .Icon {
+        margin-left: 3px;
+
+        fill: var(--primary-color);
+        font-size: 10px;
+      }
+    }
+  }
+
+  .Item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    color: var(--text-color);
+  }
+
+  .Item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .Item::before {
+    content: "";
+
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+
+    background: linear-gradient(90deg, #03a9e1 4.72%, #1074a5 95.8%);
+    transform: rotate(45deg);
+  }
+}
+
+.BannerWrapper {
+  .Banner {
+    display: block;
+    margin-top: 20px;
+
+    .Image {
+      position: unset !important;
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+
+  .Banner > span {
+    display: block !important;
+  }
+
+  .Banner > span > span {
+    display: none !important;
+  }
+}
+
+.Overflow {
+  &Hidden {
+    overflow: hidden;
+  }
+
+  &XScroll {
+    overflow-x: scroll;
+  }
+}

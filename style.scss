@@ -1,0 +1,569 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Import news custom scss
+@import "./news-custom.scss";
+
+// Embed fontawesome and font family
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Roboto-Regular.woff);
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/Roboto-Bold.woff);
+}
+
+@font-face {
+  font-family: "Font Awesome";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/fa-brands-400.woff2);
+}
+@font-face {
+  font-family: "Font Awesome";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/fa-light-300.woff2);
+}
+@font-face {
+  font-family: "Font Awesome";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/fonts/fa-solid-900.woff2);
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+
+  // Disable number input spinners
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .myContainer {
+    @apply max-w-[650px] lg:max-w-[1146px] mx-auto px-[15px] sm:px-[20px];
+  }
+
+  .otherContentContainer {
+    @apply max-w-[640px] lg:max-w-[830px] mx-auto px-[15px] sm:px-[20px];
+  }
+
+  .cartContainer {
+    @apply max-w-[640px] lg:max-w-[740px] mx-auto px-[15px] sm:px-[20px];
+  }
+
+  .heading {
+    @apply font-bold text-[22px] text-heading;
+  }
+
+  .text-filter-active {
+    @apply cursor-pointer px-4 py-3 text-xs font-bold text-heading rounded bg-white border border-primary shadow-[0_0_6px_rgba(3,169,225,.4)];
+  }
+
+  .text-filter {
+    @apply px-4 py-3 text-xs font-bold cursor-pointer text-greyC4;
+  }
+
+  .bg-gradient {
+    background: linear-gradient(90deg, #1074a5 4.72%, #1799d9 95.8%) 000;
+  }
+
+  .secondary-gradient {
+    background: linear-gradient(90deg, #db1a1d -4.61%, #f25321);
+  }
+
+  .side-dialog {
+    @apply fixed top-0 right-0 bottom-0 w-[300px] transition-transform ease-in-out transform bg-white shadow-lg;
+    z-index: 1000;
+    transform: translateX(100%);
+  }
+
+  .backdrop {
+    @apply fixed top-0 left-0 right-0 bottom-0 w-full h-full transition-all ease-in-out z-[900];
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .side-dialog.show {
+    transform: translateX(0);
+  }
+
+  .side-dialog.show ~ .backdrop {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Style for section heading */
+  .section__heading {
+    font-size: 17.6px;
+    line-height: 40px;
+    height: 40px;
+    @apply text-white w-full lg:w-[300px] xl:w-[400px] relative pl-[60px] font-bold uppercase;
+  }
+
+  .section__heading::before {
+    transform: skewX(-40deg);
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 15px;
+    right: 15px;
+    z-index: -1;
+    @apply bg-gradient;
+  }
+
+  .section__heading::after {
+    content: url(https://www.kosshop.vn/images/logo-icon.svg);
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: block;
+    border: 5px solid #fff;
+    z-index: 1;
+    bottom: 10px;
+    text-align: center;
+    font-size: 2.8rem;
+    line-height: 46px;
+    text-indent: 0;
+    left: 0;
+    @apply bg-primary;
+  }
+
+  /* Discount label */
+  .discount-label {
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    line-height: 45px;
+    padding: 50px 50px 5px 10px;
+    z-index: 100;
+    @apply text-white bg-secondary;
+  }
+
+  /* Custom slick library */
+  .slick-prev {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    padding: 16px;
+    font-size: 1.6rem;
+    @apply text-arrow lg:-translate-x-full translate-x-[-36%] top-1/2 -translate-y-1/2;
+  }
+
+  .slick-next {
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    padding: 16px;
+    font-size: 1.6rem;
+    @apply text-arrow lg:translate-x-full translate-x-[36%] top-1/2 -translate-y-1/2;
+  }
+
+  .slider-hover-button {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    padding: 10px;
+    font-size: 1.6rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    @apply hover:bg-white transition-all ease-in-out;
+
+    &:hover i {
+      @apply text-primary;
+    }
+  }
+
+  .slider-hover-button--prev {
+    left: 0;
+  }
+
+  .slider-hover-button--next {
+    right: 0;
+  }
+
+  @media screen and (min-width: 1024.98px) {
+    .slider-hover-button {
+      padding: 6px;
+    }
+
+    .slider-hover-button--prev {
+      transform: translateX(-100%);
+    }
+
+    .slider-hover-button--next {
+      transform: translateX(100%);
+    }
+
+    .slider-main-news {
+      overflow: hidden;
+
+      &:hover .slider-hover-button--prev {
+        transform: translateX(0);
+      }
+
+      &:hover .slider-hover-button--next {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+/* Handle hover mega menu */
+.mega-menu:hover {
+  display: block !important;
+}
+
+/* Custom gap spacing between rows */
+.slick-track {
+  display: flex;
+  gap: 10px;
+}
+
+.full-width-slider .slick-track {
+  gap: 0 !important;
+}
+
+/* Custom dots style of slick library */
+.slick-dots {
+  position: absolute;
+  display: flex !important;
+  gap: 8px;
+  bottom: 5%;
+  left: 50%;
+}
+
+.slick-dots li button {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 0px;
+  border: 0;
+}
+
+.slick-dots .slick-active button {
+  width: 25px;
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid white;
+}
+
+/* Custom initial slider breaking style height */
+.css-slider-item {
+  display: none;
+}
+.css-slider-item:first-child {
+  display: block;
+}
+.no-import-slider .css-slider-item:first-child {
+  display: none;
+}
+
+/* Custom border of small slide */
+.slick-active.is-active {
+  border: 2px solid #1074a5 !important;
+}
+
+/* Style for disabled button */
+.slick-disabled.slick-arrow {
+  cursor: auto;
+}
+
+.slick-disabled.slick-arrow i {
+  opacity: 0.5;
+}
+
+/* Responsive media queries for slick */
+/* Show 2.5 items on mobile */
+@media screen and (max-width: 769px) {
+  .slider-x-0 .slick-list {
+    padding: 0 !important;
+  }
+}
+
+/* Custom blur bor detail product */
+.blur-content.hide {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.blur-content.show {
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.blur-content.hide::before {
+  content: "";
+  display: block;
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 63.02%, #fff);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+}
+
+/* Style table */
+.basic-table {
+  width: 100%;
+  font-size: 15px;
+}
+
+.basic-table table,
+.basic-table tbody,
+.basic-table td,
+.basic-table th {
+  border: none;
+}
+
+.basic-table th {
+  width: 35%;
+  padding: 10px 5px 10px 15px;
+  color: #c5c4c4;
+  text-align: left;
+}
+
+.basic-table tr:nth-child(even) {
+  background-color: #f8f7f7;
+}
+
+/* Custom dialog */
+/* The Modal (background) */
+.modal,
+.confirm-modal {
+  opacity: 0;
+  visibility: hidden;
+  /* display: none; Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal.full {
+  padding-top: 0;
+}
+
+/* Modal Content */
+.modal-content,
+.confirm-modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+.modal-content.full {
+  width: 100%;
+  height: 100%;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    padding-top: 0;
+  }
+
+  .modal-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .confirm-modal-content {
+    width: 100%;
+  }
+}
+
+/* Style star rating */
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+
+// .rating > label:before {
+//   margin: 3px;
+//   font-size: 20px;
+//   font-family: FontAwesome;
+//   display: inline-block;
+//   content: "\f005";
+// }
+
+.rating > .half:before {
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+  color: #ffd700;
+} /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+  color: #ffed85;
+}
+
+.rating input,
+.rating label {
+  cursor: pointer;
+}
+
+// CUSTOM FLAG ICON
+.flag-icon {
+  min-width: 30px;
+  padding-right: 5px;
+  margin-right: 15px;
+  background-image: url("https://www.kosshop.vn/images/flag-icon.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 30px 37px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 27px;
+  text-align: center;
+}
+
+// CUSTOM SHAPE ICON LIST ITEM
+.shape-list-item {
+  position: relative;
+}
+
+.shape-list-item::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  background: linear-gradient(90deg, #03a9e1 4.72%, #1074a5 95.8%);
+  transform: rotate(45deg);
+}
+
+// LOGIC SEARCH BOX (Optional)
+.search-form:focus-within .search-box {
+  display: block;
+}
+
+// ANIMATION SEARCH BOX MOBILE
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.search-input-mobile {
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: fadeInFromLeft 0.5s forwards;
+}
+
+// Custom show/hide arrow in sidebar
+.arrow-sidebar {
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow-sidebar.active {
+  transform: rotate(90deg);
+}
+
+.hidden {
+  display: none;
+}
+
+// CUSTOM TIPPYJS
+.tippy-tooltip {
+  max-width: 900px !important;
+  background-color: #fff;
+  text-align: left !important;
+}
+
+.tippy-popper[x-placement^="left"] .tippy-arrow {
+  border-left-color: #fff !important;
+}
+
+.tippy-popper[x-placement^="right"] .tippy-arrow {
+  border-right-color: #fff !important;
+}
