@@ -262,7 +262,7 @@
 
       <button
         class="block cursor-pointer menu-btn js-toggle xl:hidden"
-        toggle-target="#menuBar"
+        data-toggle-target="#menuBar"
       >
         <i class="text-xl text-white fa fa-bars"></i>
       </button>
@@ -294,7 +294,10 @@
             </button>
           </div>
 
-          <button toggle-target="#menuBar" class="py-3 pl-3 pr-5 js-toggle">
+          <button
+            data-toggle-target="#menuBar"
+            class="py-3 pl-3 pr-5 js-toggle"
+          >
             <i class="text-xl text-white fa fa-times"></i>
           </button>
         </div>
@@ -667,7 +670,7 @@
       <!-- Backdrop -->
       <div
         class="block js-toggle backdrop xl:hidden"
-        toggle-target="#menuBar"
+        data-toggle-target="#menuBar"
       ></div>
     </div>
   </div>
