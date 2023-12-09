@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng.
+    </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="/fonts/FontAwesome/css/all.css" />
+
+    <!-- Styles -->
+    <link href="/lib/slick/slick.min.css" rel="stylesheet" />
+    
+
+    <!-- External Scripts -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/slick/slick.min.js"></script>
+
+    <!-- Scripts -->
+    <script>
+      const getEl = document.querySelector.bind(document);
+      const getEls = document.querySelectorAll.bind(document);
+
+      function load(selector, path) {
+        const cached = localStorage.getItem(path);
+        if (cached) {
+          getEl(selector).innerHTML = cached;
+        }
+
+        fetch(path)
+          .then((res) => res.text())
+          .then((html) => {
+            if (html !== cached) {
+              getEl(selector).innerHTML = html;
+              localStorage.setItem(path, html);
+            }
+          })
+          .finally(() => {
+            window.dispatchEvent(new Event("template-loaded"));
+          });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-8bef70c3.js"></script>
+    <link rel="stylesheet" href="/assets/main-99a91be4.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 bg-gradient h-[56px] lg:h-[76px] z-[999]"
+    ></header>
+    <script>
+      load("#header", "/_components/header.html");
+    </script>
+
+    <main class="pt-[56px] lg:pt-[76px] xl:pt-[132px] bg-greyF8">
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
+      ></div>
+      <script>
+        load("#sidebar", "/_components/sidebar.html");
+      </script>
+
+      <!-- BREADCRUMBS -->
+      <section>
+        <div class="myContainer">
+          <ul class="flex flex-wrap items-center gap-2 py-5">
+            <li class="text-sm text-primary">
+              <a href="/" class="block">Trang chủ</a>
+            </li>
+            <li>
+              <i class="text-sm fal fa-chevron-right text-primary"></i>
+            </li>
+            <li class="text-sm text-primary">
+              <strong>CÁCH THANH TOÁN ONLINE KHI MUA HÀNG </strong>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CONTENT -->
+      <section>
+        <div class="otherContentContainer">
+          <h1 class="heading">CÁCH THANH TOÁN ONLINE KHI MUA HÀNG</h1>
+          <div class="p-[30px] bg-white mt-4">
+            <div class="Page">
+              <div class="PageContent">
+                <div class="post type-post">
+                  <h2>Quý khách có thể mua hàng theo cách sau:</h2>
+                  <p>
+                    1. Mua hàng và thanh toán tiền mặt hoặc quẹt thẻ tại Hệ
+                    thống Cửa hàng KOS
+                  </p>
+                  <p>2. Mua hàng Online:</p>
+                  <p>
+                    2.1 Đặt hàng online tại website:&nbsp;<a
+                      href="https://www.kosshop.vn/"
+                      >https://www.kosshop.vn/</a
+                    >
+                  </p>
+                  <p>
+                    2.2 Đặt hàng thông qua tổng đài&nbsp;<strong
+                      >miễn phí:</strong
+                    >&nbsp;<strong>1800 8050</strong>
+                  </p>
+                  <p>
+                    <strong>2.3&nbsp;</strong>Đặt hàng trực tiếp trên
+                    Facebook:&nbsp;<a
+                      href="https://www.facebook.com/kosshop.vn/"
+                      >https://www.facebook.com/kosshop.vn/</a
+                    >
+                  </p>
+                  <p>
+                    <strong
+                      >Sau khi nhận được đơn hàng nhân viên KOS sẽ liên hệ xác
+                      nhận với khách hàng thông qua số điện thoại Khách hàng đã
+                      cung cấp,hướng dẫn khách hàng cách thanh toán online, sau
+                      đó KOS sẽ thực hiện lệnh giao hàng cho quý khách thông qua
+                      các dịch vụ vận chuyển.</strong
+                    >
+                  </p>
+                  <p>
+                    Quý khách hàng có thể nhận được hàng trong 24h/tính từ khi
+                    KOS xác nhận đơn hàng, với các khu vực nội thành TPHCM,Hà
+                    Nội, Biên Hòa (Hàng hóa đang có sẵn tại khu vực phát sinh
+                    đơn hàng)
+                  </p>
+                  <p>
+                    <strong
+                      >Đối với khách hàng ở tỉnh thành khác,sẽ nhận được hàng từ
+                      3 – 6 ngày&nbsp;</strong
+                    >
+                  </p>
+                  <div>
+                    <p>
+                      <strong
+                        >Trường hợp sau 3 -6 ngày không nhận được sản phẩm, hãy
+                        liên hệ với KOS qua Hotline&nbsp;</strong
+                      ><strong>1800 8050&nbsp;</strong
+                      ><strong>để tra cứu thông tin đơn hàng</strong>
+                    </p>
+                    <p>
+                      <strong
+                        >KOS có cung cấp dịch giao hàng COD (thanh toán khi nhận
+                        hàng)</strong
+                      >
+                    </p>
+                  </div>
+                  <p>
+                    <strong
+                      >Mọi thắc mắc hoặc khiếu nại vui lòng gọi vào số hotline :
+                      1800 8050 (miễn phí) hoặc gửi vào</strong
+                    >&nbsp;<strong>Email:&nbsp;</strong
+                    ><a href="mailto:support@kosshop.vn"
+                      ><strong>support@kosshop.vn</strong></a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOP PRODUCTS -->
+      <section class="mt-8">
+        <div class="myContainer">
+          <h2 class="text-[17px] text-heading font-bold">
+            TOP SẢN PHẨM ĐƯỢC ĐÁNH GIÁ TỐT NHẤT
+          </h2>
+
+          <div class="mt-3 lg:mt-5 slider-products">
+            <div id="card-item-1">
+              <script>
+                load("#card-item-1", "/_components/card-item.html");
+              </script>
+            </div>
+
+            <div id="card-item-2">
+              <script>
+                load(
+                  "#card-item-2",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-3">
+              <script>
+                load(
+                  "#card-item-3",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-4">
+              <script>
+                load(
+                  "#card-item-4",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-5">
+              <script>
+                load(
+                  "#card-item-5",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+
+            <div id="card-item-6">
+              <script>
+                load(
+                  "#card-item-6",
+                  "/_components/card-item-with-discount.html"
+                );
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERNATIONAL CUSTOMERS -->
+      <section id="international-customer" class="mt-10"></section>
+      <script>
+        load(
+          "#international-customer",
+          "/_components/international-customer.html"
+        );
+      </script>
+
+      <!-- NEWS -->
+      <section id="news" class="mt-10"></section>
+      <script>
+        load("#news", "/_components/news.html");
+      </script>
+
+      <!-- DOMESTIC CUSTOMERS -->
+      <section id="domestic-customer" class="mt-10"></section>
+      <script>
+        load("#domestic-customer", "/_components/domestic-customer.html");
+      </script>
+
+      <!-- SERVICES -->
+      <section
+        id="services"
+        class="relative bg-gradient mt-[25px] lg:mt-[50px] py-[30px] lg:pt-10 lg:pb-[60px]"
+      ></section>
+      <script>
+        load("#services", "/_components/services.html");
+      </script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <script>
+      load("#footer", "/_components/footer.html");
+    </script>
+
+    <!-- Internal Scripts -->
+    
+  </body>
+</html>

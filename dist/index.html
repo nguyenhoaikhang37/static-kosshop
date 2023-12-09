@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng.
+    </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="/fonts/FontAwesome/css/all.css" />
+
+    <!-- Styles -->
+    <link href="/lib/slick/slick.min.css" rel="stylesheet" />
+    
+
+    <!-- External Scripts -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/slick/slick.min.js"></script>
+
+    <!-- Scripts -->
+    <script>
+      const getEl = document.querySelector.bind(document);
+      const getEls = document.querySelectorAll.bind(document);
+
+      function load(selector, path) {
+        const cached = localStorage.getItem(path);
+        if (cached) {
+          getEl(selector).innerHTML = cached;
+        }
+
+        fetch(path)
+          .then((res) => res.text())
+          .then((html) => {
+            if (html !== cached) {
+              getEl(selector).innerHTML = html;
+              localStorage.setItem(path, html);
+            }
+          })
+          .finally(() => {
+            window.dispatchEvent(new Event("template-loaded"));
+          });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-8bef70c3.js"></script>
+    <link rel="stylesheet" href="/assets/main-99a91be4.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 bg-gradient h-[56px] lg:h-[76px] z-[999]"
+    ></header>
+    <script>
+      load("#header", "/_components/header.html");
+    </script>
+
+    <main class="pt-[56px] lg:pt-[76px] xl:pt-[132px]">
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
+      ></div>
+      <script>
+        load("#sidebar", "/_components/sidebar.html");
+      </script>
+
+      <!-- BANNER -->
+      <section id="banner"></section>
+      <script>
+        load("#banner", "/_sections/banner.html");
+      </script>
+
+      <!-- Brands -->
+      <section id="brands" class="mt-5 xl:mt-[30px]"></section>
+      <script>
+        load("#brands", "/_sections/brands.html");
+      </script>
+
+      <!-- About KOS -->
+      <section id="about-us" class="mt-[30px] xl:mt-[50px]"></section>
+      <script>
+        load("#about-us", "/_sections/about-us.html");
+      </script>
+
+      <!-- QUICK ACCESS -->
+      <section class="block mt-10 lg:hidden">
+        <div class="myContainer">
+          <h2 class="mb-6 text-lg font-bold text-center text-heading">
+            TRUY CẬP NHANH
+          </h2>
+          <div class="flex flex-wrap justify-center gap-y-4">
+            <div class="flex justify-center w-1/4 md:w-1/5">
+              <a href="https://www.kosshop.vn/vali-keo/">
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/13/img61.png"
+                  alt="kosshop.vn"
+                  width="80"
+                  height="80"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+            <div class="flex justify-center w-1/4 md:w-1/5">
+              <a href="https://www.kosshop.vn/balo-dep/">
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/13/img98.png"
+                  alt="kosshop.vn"
+                  width="80"
+                  height="80"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+            <div class="flex justify-center w-1/4 md:w-1/5">
+              <a href="https://www.kosshop.vn/tui-xach-nam/">
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/13/img69.png"
+                  alt="kosshop.vn"
+                  width="80"
+                  height="80"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+            <div class="flex justify-center w-1/4 md:w-1/5">
+              <a href="https://www.kosshop.vn/phu-kien-do-du-lich/">
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/13/img1.png"
+                  alt="kosshop.vn"
+                  width="80"
+                  height="80"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+            <div class="flex justify-center w-1/4 md:w-1/5">
+              <a href="https://www.kosshop.vn/cap-da-nam/">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/13/img25.png"
+                  alt="kosshop.vn"
+                  width="80"
+                  height="80"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+            <div class="flex justify-center w-1/4 md:w-1/5">
+              <a href="https://www.kosshop.vn/vi-da-bop-da-nam/">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/13/img80.png"
+                  alt="kosshop.vn"
+                  width="80"
+                  height="80"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+            <div class="flex justify-center w-1/4 md:w-1/5">
+              <a href="https://www.kosshop.vn/lien-he/">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/13/img5.png"
+                  alt="kosshop.vn"
+                  width="80"
+                  height="80"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+            <div class="flex justify-center w-1/4 md:w-1/5">
+              <a href="https://www.kosshop.vn/sale/">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/13/img85.png"
+                  class="lazy undefined entered loaded aspect-square"
+                  alt="kosshop.vn"
+                  width="80"
+                  height="80"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCT LIST -->
+      <section class="mt-[60px]">
+        <div class="myContainer">
+          <div>
+            <section
+              class="flex flex-col gap-4 lg:items-center lg:justify-between lg:flex-row"
+            >
+              <div>
+                <h2 class="section__heading">
+                  <a href="/vali-keo-ricardo/">VALI KÉO RICARDO</a>
+                </h2>
+              </div>
+              <div>
+                <a
+                  class="hidden px-3 py-2 hover:underline text-primary lg:block"
+                  href="/product-portfolio/"
+                >
+                  Xem thêm sản phẩm
+                  <i class="ml-2 text-sm fal fa-chevron-right"></i>
+                </a>
+              </div>
+            </section>
+
+            <div class="lg:mt-5 slider-products">
+              <div id="card-item-1">
+                <script>
+                  load("#card-item-1", "/_components/card-item.html");
+                </script>
+              </div>
+
+              <div id="card-item-2">
+                <script>
+                  load("#card-item-2", "/_components/card-item.html");
+                </script>
+              </div>
+
+              <div id="card-item-3">
+                <script>
+                  load("#card-item-3", "/_components/card-item-with-flag.html");
+                </script>
+              </div>
+
+              <div id="card-item-4">
+                <script>
+                  load(
+                    "#card-item-4",
+                    "/_components/card-item-with-discount.html"
+                  );
+                </script>
+              </div>
+
+              <div id="card-item-5">
+                <script>
+                  load("#card-item-5", "/_components/card-item.html");
+                </script>
+              </div>
+
+              <div id="card-item-6">
+                <script>
+                  load("#card-item-6", "/_components/card-item.html");
+                </script>
+              </div>
+            </div>
+
+            <div class="flex justify-center mt-2 lg:mt-0 lg:hidden">
+              <a
+                class="px-3 py-2 border rounded hover:underline text-primary border-primary"
+                href="/product-portfolio/"
+              >
+                Xem thêm sản phẩm
+                <i class="ml-2 text-sm fal fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-[60px]">
+            <section
+              class="flex flex-col gap-4 lg:items-center lg:justify-between lg:flex-row"
+            >
+              <div>
+                <h2 class="section__heading">
+                  <a href="/vali-keo-ricardo/">Vali Roncato Made in Italy </a>
+                </h2>
+              </div>
+            </section>
+
+            <div class="lg:mt-5 slider-products">
+              <div id="card-item-10">
+                <script>
+                  load("#card-item-10", "/_components/card-item.html");
+                </script>
+              </div>
+
+              <div id="card-item-11">
+                <script>
+                  load("#card-item-11", "/_components/card-item.html");
+                </script>
+              </div>
+
+              <div id="card-item-12">
+                <script>
+                  load(
+                    "#card-item-12",
+                    "/_components/card-item-with-flag.html"
+                  );
+                </script>
+              </div>
+
+              <div id="card-item-13">
+                <script>
+                  load(
+                    "#card-item-13",
+                    "/_components/card-item-with-discount.html"
+                  );
+                </script>
+              </div>
+
+              <div id="card-item-14">
+                <script>
+                  load("#card-item-14", "/_components/card-item.html");
+                </script>
+              </div>
+
+              <div id="card-item-15">
+                <script>
+                  load("#card-item-15", "/_components/card-item.html");
+                </script>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-[60px]">
+            <section
+              class="flex flex-col gap-4 lg:items-center lg:justify-between lg:flex-row"
+            >
+              <div>
+                <h2 class="section__heading">
+                  <a href="/vali-keo-ricardo/">VALI KÉO</a>
+                </h2>
+              </div>
+              <div>
+                <ul class="flex flex-wrap">
+                  <li>
+                    <a
+                      class="block px-2 py-1 leading-[8px] border-r hover:underline text-primary border-primary"
+                      href="https://www.kosshop.vn/made-in-italy/"
+                      >Vali Roncato Made in Italia</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="block px-2 py-1 leading-[8px] border-r hover:underline text-primary border-primary"
+                      href="https://www.kosshop.vn/vali-keo-nhua/"
+                    >
+                      Vali nhựa
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-2 py-1 leading-[8px] hover:underline text-primary"
+                      href="https://www.kosshop.vn/vali-keo-xach-tay-len-may-bay/"
+                    >
+                      Vali Size S xách tay
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <a
+                  class="hidden px-3 py-2 hover:underline text-primary lg:block"
+                  href="/product-portfolio/"
+                >
+                  Xem thêm sản phẩm
+                  <i class="ml-2 text-sm fal fa-chevron-right"></i>
+                </a>
+              </div>
+            </section>
+
+            <div class="lg:mt-5 slider-products">
+              <div id="card-item-20">
+                <script>
+                  load("#card-item-20", "/_components/card-item.html");
+                </script>
+              </div>
+
+              <div id="card-item-21">
+                <script>
+                  load("#card-item-21", "/_components/card-item.html");
+                </script>
+              </div>
+
+              <div id="card-item-22">
+                <script>
+                  load(
+                    "#card-item-22",
+                    "/_components/card-item-with-flag.html"
+                  );
+                </script>
+              </div>
+
+              <div id="card-item-23">
+                <script>
+                  load(
+                    "#card-item-23",
+                    "/_components/card-item-with-discount.html"
+                  );
+                </script>
+              </div>
+
+              <div id="card-item-24">
+                <script>
+                  load("#card-item-24", "/_components/card-item.html");
+                </script>
+              </div>
+
+              <div id="card-item-25">
+                <script>
+                  load("#card-item-25", "/_components/card-item.html");
+                </script>
+              </div>
+            </div>
+
+            <div class="flex justify-center mt-2 lg:mt-0 lg:hidden">
+              <a
+                class="px-3 py-2 border rounded hover:underline text-primary border-primary"
+                href="/product-portfolio/"
+              >
+                Xem thêm sản phẩm
+                <i class="ml-2 text-sm fal fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOGS -->
+      <section id="blogs" class="mt-[50px]"></section>
+      <script>
+        load("#blogs", "/_sections/blogs.html");
+      </script>
+
+      <!-- INTERNATIONAL CUSTOMERS -->
+      <section id="international-customer" class="mt-10"></section>
+      <script>
+        load(
+          "#international-customer",
+          "/_components/international-customer.html"
+        );
+      </script>
+
+      <!-- NEWS -->
+      <section id="news" class="mt-10"></section>
+      <script>
+        load("#news", "/_components/news.html");
+      </script>
+
+      <!-- DOMESTIC CUSTOMERS -->
+      <section id="domestic-customer" class="mt-10"></section>
+      <script>
+        load("#domestic-customer", "/_components/domestic-customer.html");
+      </script>
+
+      <!-- SERVICES -->
+      <section
+        id="services"
+        class="relative bg-gradient mt-[25px] lg:mt-[50px] py-[30px] lg:pt-10 lg:pb-[60px]"
+      ></section>
+      <script>
+        load("#services", "/_components/services.html");
+      </script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <script>
+      load("#footer", "/_components/footer.html");
+    </script>
+
+    <!-- Internal Scripts -->
+    
+  </body>
+</html>

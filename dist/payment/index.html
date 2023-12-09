@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng.
+    </title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon.ico"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="/fonts/FontAwesome/css/all.css" />
+
+    <!-- Styles -->
+    <link href="/lib/slick/slick.min.css" rel="stylesheet" />
+    
+
+    <!-- External Scripts -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/slick/slick.min.js"></script>
+
+    <!-- Scripts -->
+    <script>
+      const getEl = document.querySelector.bind(document);
+      const getEls = document.querySelectorAll.bind(document);
+
+      function load(selector, path) {
+        const cached = localStorage.getItem(path);
+        if (cached) {
+          getEl(selector).innerHTML = cached;
+        }
+
+        fetch(path)
+          .then((res) => res.text())
+          .then((html) => {
+            if (html !== cached) {
+              getEl(selector).innerHTML = html;
+              localStorage.setItem(path, html);
+            }
+          })
+          .finally(() => {
+            window.dispatchEvent(new Event("template-loaded"));
+          });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-8bef70c3.js"></script>
+    <link rel="stylesheet" href="/assets/main-99a91be4.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 bg-gradient h-[56px] lg:h-[76px] z-[999]"
+    ></header>
+    <script>
+      load("#header", "/_components/header.html");
+    </script>
+
+    <main class="pt-[56px] lg:pt-[76px] xl:pt-[132px] bg-greyF8">
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
+      ></div>
+      <script>
+        load("#sidebar", "/_components/sidebar.html");
+      </script>
+
+      <!-- CART -->
+      <section>
+        <div class="cartContainer">
+          <div class="flex items-center justify-between py-4">
+            <a
+              href="/cart/"
+              class="flex items-center gap-x-2 bg-blueLight2 border border-blueMedium p-[10px] rounded"
+            >
+              <i class="fal fa-chevron-left"></i>
+              Chỉnh sửa giỏ hàng
+            </a>
+            <h1 class="font-bold text-heading">Thông tin mua hàng</h1>
+          </div>
+
+          <form>
+            <div class="px-4 py-5 space-y-4 bg-white">
+              <div class="grid grid-cols-12 gap-x-4">
+                <div class="col-span-3">
+                  <label for="phone">
+                    Số điện thoại: <span class="text-red-500">*</span>
+                  </label>
+                </div>
+                <div class="w-full col-span-9">
+                  <input
+                    id="phone"
+                    name="phone"
+                    placeholder="Nhập số điện thoại"
+                    class="w-full px-2 py-1 border rounded border-greyC4"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-3">
+                  <label for="name"
+                    >Họ tên: <span class="text-red-500">*</span></label
+                  >
+                </div>
+                <div class="w-full col-span-9">
+                  <input
+                    id="name"
+                    name="name"
+                    placeholder="Nhập họ tên người nhận"
+                    class="w-full px-2 py-1 border rounded border-greyC4"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="grid grid-cols-12 gap-x-4">
+                <div class="col-span-3">
+                  <label for="email"
+                    >Email: <span class="text-red-500">*</span></label
+                  >
+                </div>
+                <div class="w-full col-span-9">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Nhập email của bạn"
+                    class="w-full px-2 py-1 border rounded border-greyC4"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="grid grid-cols-12 gap-x-4">
+                <div class="col-span-3">
+                  <label for="address"
+                    >Địa chỉ: <span class="text-red-500">*</span></label
+                  >
+                </div>
+                <div class="w-full col-span-9">
+                  <textarea
+                    id="address"
+                    name="address"
+                    placeholder="Nhập đầy đủ địa chỉ"
+                    class="w-full px-2 py-1 border rounded border-greyC4"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-4 py-5 mt-4 space-y-2 text-white bg-heading">
+              <h3 class="text-xl font-bold uppercase">
+                SẢN PHẨM ĐƯỢC CHUYỂN VỀ
+              </h3>
+              <p class="!mt-0 opacity-60">
+                Chọn địa chỉ để biết thời gian và phí ship giao hàng
+              </p>
+              <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-12 lg:col-span-4">
+                  <select
+                    id="province"
+                    name="province"
+                    class="w-full p-2 bg-white border-r-4 border-transparent rounded text-greyC4"
+                  >
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="hochiminh">Hồ Chí Minh</option>
+                  </select>
+                </div>
+                <div class="col-span-6 lg:col-span-4">
+                  <select
+                    id="district"
+                    name="district"
+                    class="w-full p-2 bg-white border-r-4 border-transparent rounded text-greyC4"
+                  >
+                    <option value="badinh">Quận Ba Đình</option>
+                    <option value="hoankiem">Quận Hoàn Kiếm</option>
+                  </select>
+                </div>
+                <div class="col-span-6 lg:col-span-4">
+                  <select
+                    id="phuong"
+                    name="phuong"
+                    class="w-full p-2 bg-white border-r-4 border-transparent rounded text-greyC4"
+                  >
+                    <option value="badinh">Phường Phúc Xá</option>
+                    <option value="hoankiem">Phường Trúc Bạch</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-4 py-5 mt-4 space-y-4 bg-white">
+              <div class="flex justify-between gap-x-4 text-dark">
+                <span>Tạm tính</span>
+                <strong>3,090,000đ</strong>
+              </div>
+              <div class="flex justify-between mt-2 gap-x-4 text-dark">
+                <span>Phí vận chuyển</span>
+                <strong>0đ</strong>
+              </div>
+              <div
+                class="justify-between hidden mt-2 lg:flex gap-x-4 text-dark"
+              >
+                <span>Thành tiền</span>
+                <strong>3,090,000đ</strong>
+              </div>
+
+              <a
+                href="/thank-you/"
+                class="hidden lg:flex items-center justify-center max-w-[300px] h-[66px] mx-auto p-3 text-white rounded cursor-pointer secondary-gradient"
+              >
+                <div class="text-xl font-bold">
+                  <strong>HOÀN TẤT</strong>
+                </div>
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- PAYMENT SUBMIT MOBILE -->
+    <div
+      class="fixed bottom-0 left-0 right-0 w-full h-[56px] bg-white lg:hidden shadow-payment"
+    >
+      <div class="flex">
+        <div class="flex flex-col pl-6 gap-y-1">
+          <span class="text-dark">Thành tiền</span>
+          <strong class="text-[#db1a1d] text-lg">3,090,000đ</strong>
+        </div>
+        <div class="w-2/4 md:w-2/5 ml-auto relative -right-4 skew-x-[-20deg]">
+          <a
+            href="/thank-you/"
+            class="flex items-center justify-center h-full text-white rounded cursor-pointer secondary-gradient"
+          >
+            <div class="text-xl font-bold skew-x-[20deg]">
+              <strong>HOÀN TẤT</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <script>
+      load("#footer", "/_components/footer.html");
+    </script>
+
+    <!-- Internal Scripts -->
+    
+  </body>
+</html>

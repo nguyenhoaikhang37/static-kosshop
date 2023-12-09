@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng.
+    </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="/fonts/FontAwesome/css/all.css" />
+
+    <!-- Styles -->
+    <link href="/lib/slick/slick.min.css" rel="stylesheet" />
+    
+
+    <!-- External Scripts -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/slick/slick.min.js"></script>
+
+    <!-- Scripts -->
+    <script>
+      const getEl = document.querySelector.bind(document);
+      const getEls = document.querySelectorAll.bind(document);
+
+      function load(selector, path) {
+        const cached = localStorage.getItem(path);
+        if (cached) {
+          getEl(selector).innerHTML = cached;
+        }
+
+        fetch(path)
+          .then((res) => res.text())
+          .then((html) => {
+            if (html !== cached) {
+              getEl(selector).innerHTML = html;
+              localStorage.setItem(path, html);
+            }
+          })
+          .finally(() => {
+            window.dispatchEvent(new Event("template-loaded"));
+          });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-8bef70c3.js"></script>
+    <link rel="stylesheet" href="/assets/main-99a91be4.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 bg-gradient h-[56px] lg:h-[76px] z-[999]"
+    ></header>
+    <script>
+      load("#header", "/_components/header.html");
+    </script>
+
+    <main class="pt-[56px] lg:pt-[76px] xl:pt-[132px]">
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
+      ></div>
+      <script>
+        load("#sidebar", "/_components/sidebar.html");
+      </script>
+
+      <!-- OUTSTANDING NEWS -->
+      <section>
+        <div class="grid grid-cols-12 gap-4 myContainer">
+          <div class="col-span-12 lg:col-span-9">
+            <div class="grid grid-cols-12">
+              <div class="xl:col-span-4"></div>
+              <div class="col-span-12 xl:col-span-8 slider-x-0">
+                <div
+                  class="relative col-span-12 xl:col-span-9 slider-outstanding-news"
+                >
+                  <div class="css-slider-item">
+                    <article>
+                      <a href="/detail-news/">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/images/2023/12/02/quy-dinh-vali-xach-tay-vietjet-va-nhung-dieu-can-biet-1701495533.jpg"
+                          class="aspect-video"
+                          alt="Quy định vali xách tay VietJet và những điều cần biết trước chuyến bay"
+                        />
+                      </a>
+                      <div class="mt-4">
+                        <a
+                          class="inline-block font-bold uppercase py-[2px] px-[5px] text-[10px] text-white hover:text-dark bg-slate-400 hover:bg-orange-600"
+                          href="/news-with-category"
+                        >
+                          Mẹo sử dụng hành lý
+                        </a>
+                        <h1 class="text-2xl font-bold text-dark">
+                          <a href="/detail-news/"
+                            >Quy định vali xách tay VietJet và những điều cần
+                            biết trước chuyến bay
+                          </a>
+                        </h1>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="css-slider-item">
+                    <article>
+                      <a href="/detail-news/">
+                        <img
+                          src="https://cdn.kosshop.vn/upload/images/2023/12/02/du-lich-1-ngay-nen-di-dau-de-trai-nghiem-tuyet-voi-nhat-1701494766.jpg"
+                          class="aspect-video"
+                          alt="Quy định vali xách tay VietJet và những điều cần biết trước chuyến bay"
+                        />
+                      </a>
+                      <div class="mt-4">
+                        <a
+                          class="inline-block font-bold uppercase py-[2px] px-[5px] text-[10px] text-white hover:text-dark bg-slate-400 hover:bg-orange-600"
+                          href="/news-with-category"
+                        >
+                          Mẹo sử dụng hành lý
+                        </a>
+                        <h1 class="text-2xl font-bold text-dark">
+                          <a href="/detail-news/"
+                            >Quy định vali xách tay VietJet và những điều cần
+                            biết trước chuyến bay</a
+                          >
+                        </h1>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-[50px] flex flex-col gap-y-[50px]">
+              <div>
+                <section
+                  class="flex flex-row items-center justify-between gap-4 border-b border-primary"
+                >
+                  <div class="flex-1">
+                    <h2
+                      class="section__heading w-full lg:w-[300px] xl:w-[400px]"
+                    >
+                      <a href="/news-with-category/">MẸO SỬ DỤNG HÀNH LÝ</a>
+                    </h2>
+                  </div>
+                  <div>
+                    <a
+                      class="px-3 py-2 text-xs hover:underline text-primary lg:block"
+                      href="/news-with-category/"
+                    >
+                      Xem tất cả
+                      <i class="ml-2 text-sm fal fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </section>
+
+                <div class="mt-4 slider-main-news">
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                </div>
+              </div>
+
+              <div>
+                <section
+                  class="flex flex-row items-center justify-between gap-4 border-b border-primary"
+                >
+                  <div class="flex-1">
+                    <h2
+                      class="section__heading w-full lg:w-[300px] xl:w-[400px]"
+                    >
+                      <a href="/news-with-category/">KINH NGHIỆM HAY</a>
+                    </h2>
+                  </div>
+                  <div>
+                    <a
+                      class="px-3 py-2 text-xs hover:underline text-primary lg:block"
+                      href="/news-with-category/"
+                    >
+                      Xem tất cả
+                      <i class="ml-2 text-sm fal fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </section>
+
+                <div class="mt-4 slider-main-news">
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                </div>
+              </div>
+
+              <div>
+                <section
+                  class="flex flex-row items-center justify-between gap-4 border-b border-primary"
+                >
+                  <div class="flex-1">
+                    <h2
+                      class="section__heading w-full lg:w-[300px] xl:w-[400px]"
+                    >
+                      <a href="/news-with-category/">KINH NGHIỆM DU LỊCH</a>
+                    </h2>
+                  </div>
+                  <div>
+                    <a
+                      class="px-3 py-2 text-xs hover:underline text-primary lg:block"
+                      href="/news-with-category/"
+                    >
+                      Xem tất cả
+                      <i class="ml-2 text-sm fal fa-chevron-right"></i>
+                    </a>
+                  </div>
+                </section>
+
+                <div class="mt-4 slider-main-news">
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="css-slider-item">
+                    <a href="/detail-news/">
+                      <div class="relative overflow-hidden">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                          class="transition-all ease-in-out aspect-video hover:scale-110"
+                          alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                        />
+                      </div>
+                      <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                        Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                      </h3>
+                    </a>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col col-span-12 gap-8 lg:col-span-3">
+            <article>
+              <a href="/detail-news/">
+                <div class="relative overflow-hidden">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.kosshop.vn/wp-content/uploads/2023/08/da-microfiber-la-gi.jpg"
+                    class="transition-all ease-in-out aspect-video hover:scale-110"
+                    alt="Da Microfiber là gì Khám phá độ bền và ứng dụng của nó"
+                  />
+                </div>
+                <h3 class="mt-2 mb-1 font-bold text-dark line-clamp-3">
+                  Da Microfiber là gì Khám phá độ bền và ứng dụng của nó
+                </h3>
+                <p class="text-justify line-clamp-3 text-dark">
+                  Bạn đang muốn tìm hiểu da Microfiber là gì? cũng như những đặc
+                  điểm của loại da này có giống với loại da khác. Để có thể giúp
+                  bạn hiểu rõ về loại da này để ứng dụng trong việc chọn mua sản
+                  phẩm về da hay sản xuất… KOS SHOP mang đến cho bạn những thông
+                  tin cụ thể nhất về loại da tổng hợp thông qua bài viết bên
+                  dưới.
+                </p>
+              </a>
+            </article>
+
+            <aside>
+              <a href="https://www.kosshop.vn/sale/">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/images/2023/11/30/banner.jpg"
+                  alt="kosshop.vn"
+                  class="block w-full aspect-auto"
+                />
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERNATIONAL CUSTOMERS -->
+      <section id="international-customer" class="mt-10"></section>
+      <script>
+        load(
+          "#international-customer",
+          "/_components/international-customer.html"
+        );
+      </script>
+
+      <!-- NEWS -->
+      <section id="news" class="mt-10"></section>
+      <script>
+        load("#news", "/_components/news.html");
+      </script>
+
+      <!-- DOMESTIC CUSTOMERS -->
+      <section id="domestic-customer" class="mt-10"></section>
+      <script>
+        load("#domestic-customer", "/_components/domestic-customer.html");
+      </script>
+
+      <!-- SERVICES -->
+      <section
+        id="services"
+        class="relative bg-gradient mt-[25px] lg:mt-[50px] py-[30px] lg:pt-10 lg:pb-[60px]"
+      ></section>
+      <script>
+        load("#services", "/_components/services.html");
+      </script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <script>
+      load("#footer", "/_components/footer.html");
+    </script>
+
+    <!-- Internal Scripts -->
+    
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng.
+    </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="/fonts/FontAwesome/css/all.css" />
+
+    <!-- Styles -->
+    <link href="/lib/slick/slick.min.css" rel="stylesheet" />
+    
+
+    <!-- External Scripts -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/slick/slick.min.js"></script>
+
+    <!-- Scripts -->
+    <script>
+      const getEl = document.querySelector.bind(document);
+      const getEls = document.querySelectorAll.bind(document);
+
+      function load(selector, path) {
+        const cached = localStorage.getItem(path);
+        if (cached) {
+          getEl(selector).innerHTML = cached;
+        }
+
+        fetch(path)
+          .then((res) => res.text())
+          .then((html) => {
+            if (html !== cached) {
+              getEl(selector).innerHTML = html;
+              localStorage.setItem(path, html);
+            }
+          })
+          .finally(() => {
+            window.dispatchEvent(new Event("template-loaded"));
+          });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/main-8bef70c3.js"></script>
+    <link rel="stylesheet" href="/assets/main-99a91be4.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 right-0 bg-gradient h-[56px] lg:h-[76px] z-[999]"
+    ></header>
+    <script>
+      load("#header", "/_components/header.html");
+    </script>
+
+    <main class="pt-[56px] lg:pt-[76px] xl:pt-[132px]">
+      <!-- SIDEBAR -->
+      <div
+        id="sidebar"
+        class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
+      ></div>
+      <script>
+        load("#sidebar", "/_components/sidebar.html");
+      </script>
+
+      <!-- BREADCRUMBS -->
+      <section>
+        <div class="myContainer">
+          <ul class="flex flex-wrap items-center gap-2 py-5">
+            <li class="text-sm text-primary">
+              <a href="/" class="block">Trang chủ</a>
+            </li>
+            <li>
+              <i class="text-sm fal fa-chevron-right text-primary"></i>
+            </li>
+            <li class="text-sm text-primary">
+              <strong>Hệ thống cửa hàng</strong>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SHOWROOMS -->
+      <section>
+        <div class="myContainer">
+          <div class="grid grid-cols-12 gap-4">
+            <!-- Column 1: Select District and List of Stores -->
+            <div class="col-span-12 lg:col-span-4 text-dark">
+              <label for="district" class="font-medium text-gray-700">
+                Chọn tỉnh thành phố
+              </label>
+              <select
+                id="district"
+                name="district"
+                class="mt-1 w-full px-2 py-1 bg-[#ededed] border-r-4 border-transparent"
+              >
+                <option value="all">Tất cả</option>
+                <option value="hanoi">Hà Nội</option>
+                <option value="hochiminh">Hồ Chí Minh</option>
+              </select>
+
+              <div id="storeList" class="mt-4">
+                <div
+                  class="group w-full p-[10px] border border-[#ddd] text-sm flex items-center gap-4 hover:bg-gradient hover:text-white transition-all ease-in-out"
+                  data-iframe-link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.700075834429!2d105.8179815!3d21.0046564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac84a636d9bd%3A0xe3aae3d325c6fa26!2zS09TU2hvcC52biBMw6FuZyAtIFZhbGkga8OpbyBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1701573999881!5m2!1svi!2s"
+                  data-place="hanoi"
+                >
+                  <div class="w-[60px] h-[60px] rounded-lg">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-lang-dong-da-ha-noi-1620891421.jpg"
+                      alt=""
+                      class="object-cover rounded-lg aspect-square"
+                    />
+                  </div>
+                  <div class="text-left">
+                    <p class="font-bold uppercase">QUẬN ĐỐNG ĐA</p>
+                    <p class="mt-1">140 Láng Đống Đa Hà Nội</p>
+                    <a href="tel:+842435641414">
+                      <i
+                        class="transition-all ease-in-out fa fa-phone text-primary group-hover:text-white"
+                      ></i>
+                      024 35 641 414
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="group mt-1 w-full p-[10px] border border-[#ddd] text-sm flex items-center gap-4 hover:bg-gradient hover:text-white transition-all ease-in-out"
+                  data-iframe-link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.3402636520905!2d105.85890599999999!3d21.019067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abee0f0ce63d%3A0x753f5c74c4514dcd!2zS09TU2hvcC52biBUcuG6p24gSMawbmcgxJDhuqFvIC0gVmFsaSBrw6lvIE1hZGUgaW4gSXRhbHk!5e0!3m2!1svi!2s!4v1701574036676!5m2!1svi!2s"
+                  data-place="hanoi"
+                >
+                  <div class="w-[60px] h-[60px] rounded-lg">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2021/05/13/showroom-tran-hung-dao-hoan-kiem-ha-noi-1620891434.jpg"
+                      alt=""
+                      class="object-cover rounded-lg aspect-square"
+                    />
+                  </div>
+                  <div class="text-left">
+                    <p class="font-bold uppercase">QUẬN HOÀN KIẾM</p>
+                    <p class="mt-1">6B Trần Hưng Đạo, Hoàn Kiếm, Hà Nội</p>
+                    <a href="tel:+842439978001">
+                      <i
+                        class="transition-all ease-in-out fa fa-phone text-primary group-hover:text-white"
+                      ></i>
+                      024 39 978 001
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="group mt-1 w-full p-[10px] border border-[#ddd] text-sm flex items-center gap-4 hover:bg-gradient hover:text-white transition-all ease-in-out"
+                  data-iframe-link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1699589159207!2d106.6428846!3d10.798291599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175294e692a0b4d%3A0x723ead3011c77f71!2sKOS%20Tr%C6%B0%E1%BB%9Dng%20Chinh%20-%20Vali%20k%C3%A9o%20Made%20in%20Italy!5e0!3m2!1svi!2s!4v1701573687295!5m2!1svi!2s"
+                  data-place="hochiminh"
+                >
+                  <div class="w-[60px] h-[60px] rounded-lg">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2021/11/17/showroom-truong-chinh-tan-binh-1637141022.jpg"
+                      alt=""
+                      class="object-cover rounded-lg aspect-square"
+                    />
+                  </div>
+                  <div class="text-left">
+                    <p class="font-bold uppercase">QUẬN TÂN BÌNH</p>
+                    <p class="mt-1">387 Trường Chinh P.14 Tân Bình</p>
+                    <a href="tel:+842866807092">
+                      <i
+                        class="transition-all ease-in-out fa fa-phone text-primary group-hover:text-white"
+                      ></i>
+                      028 66 807 092
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: Google Map (Iframe) -->
+            <div
+              class="col-span-12 -order-1 lg:col-span-8 aspect-video lg:order-1"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1699589159207!2d106.6428846!3d10.798291599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175294e692a0b4d%3A0x723ead3011c77f71!2sKOS%20Tr%C6%B0%E1%BB%9Dng%20Chinh%20-%20Vali%20k%C3%A9o%20Made%20in%20Italy!5e0!3m2!1svi!2s!4v1701573687295!5m2!1svi!2s"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-full"
+                id="mapIframe"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERNATIONAL CUSTOMERS -->
+      <section id="international-customer" class="mt-10"></section>
+      <script>
+        load(
+          "#international-customer",
+          "/_components/international-customer.html"
+        );
+      </script>
+
+      <!-- NEWS -->
+      <section id="news" class="mt-10"></section>
+      <script>
+        load("#news", "/_components/news.html");
+      </script>
+
+      <!-- DOMESTIC CUSTOMERS -->
+      <section id="domestic-customer" class="mt-10"></section>
+      <script>
+        load("#domestic-customer", "/_components/domestic-customer.html");
+      </script>
+
+      <!-- SERVICES -->
+      <section
+        id="services"
+        class="relative bg-gradient mt-[25px] lg:mt-[50px] py-[30px] lg:pt-10 lg:pb-[60px]"
+      ></section>
+      <script>
+        load("#services", "/_components/services.html");
+      </script>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <script>
+      load("#footer", "/_components/footer.html");
+    </script>
+
+    <!-- Internal Scripts -->
+    
+  </body>
+</html>
