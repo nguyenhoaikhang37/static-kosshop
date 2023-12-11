@@ -189,27 +189,11 @@ $(window).ready(function () {
       $(".slider-nav .slick-slide.slick-current").addClass("is-active");
     })
     .slick({
-      slidesToShow: 9,
-      slidesToScroll: 9,
+      slidesToShow: 8,
+      slidesToScroll: 8,
       dots: false,
       focusOnSelect: false,
       infinite: false,
-      responsive: [
-        {
-          breakpoint: 1025,
-          settings: {
-            slidesToShow: 6,
-            slidesToScroll: 6,
-          },
-        },
-        {
-          breakpoint: 769,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
-          },
-        },
-      ],
       prevArrow:
         "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-0 pull-left'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
       nextArrow:

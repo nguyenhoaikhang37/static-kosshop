@@ -571,24 +571,100 @@
 }
 
 // CUSTOM ARROW BUTTON SLICK LIGHTBOX
-.slick-lightbox-slick .slick-arrow {
-  visibility: hidden;
+.slick-lightbox-slick {
+  .slick-arrow {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  .slick-prev {
+    left: 20px;
+  }
+
+  .slick-next {
+    right: 70px;
+  }
+
+  .slick-prev:before {
+    content: "←";
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1074a5;
+    color: #fff;
+    border-radius: 50%;
+  }
+
+  .slick-next:before {
+    content: "→";
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1074a5;
+    color: #fff;
+    border-radius: 50%;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    visibility: visible;
+    font-family: "slick";
+    font-size: 30px;
+    line-height: 1;
+
+    opacity: 0.75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-.slick-lightbox-slick .slick-prev {
-  left: 20px
-}
+@media screen and (max-width: 1024px) {
+  .slick-lightbox-slick .slick-prev {
+    left: 6px;
+  }
 
-.slick-lightbox-slick .slick-next {
-  right: 50px
+  .slick-lightbox-slick .slick-next {
+    right: 50px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .slick-lightbox-slick .slick-prev {
-    left: -6px
+    left: -2px;
   }
-  
+
   .slick-lightbox-slick .slick-next {
-    right: 24px
+    right: 46px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .slick-lightbox-slick {
+    .slick-prev:before {
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+    }
+
+    .slick-next:before {
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+    }
+
+    .slick-prev {
+      left: -2px;
+    }
+
+    .slick-next {
+      right: 26px;
+    }
   }
 }
