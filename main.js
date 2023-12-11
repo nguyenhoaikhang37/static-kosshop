@@ -188,14 +188,21 @@ $(window).ready(function () {
       $(".slider-nav .slick-slide.slick-current").addClass("is-active");
     })
     .slick({
-      slidesToShow: 6,
-      slidesToScroll: 6,
+      slidesToShow: 9,
+      slidesToScroll: 9,
       dots: false,
       focusOnSelect: false,
       infinite: false,
       responsive: [
         {
           breakpoint: 1025,
+          settings: {
+            slidesToShow: 6,
+            slidesToScroll: 6,
+          },
+        },
+        {
+          breakpoint: 769,
           settings: {
             slidesToShow: 4,
             slidesToScroll: 4,
