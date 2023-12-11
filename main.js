@@ -1,3 +1,4 @@
+// CUSTOM SLICK SLIDER
 $(window).ready(function () {
   // Slider customer on home page
   $(".slider-customer").slick({
@@ -228,6 +229,21 @@ $(window).ready(function () {
     let goToSingleSlide = $(this).data("slick-index");
 
     $(".slider-single").slick("slickGoTo", goToSingleSlide);
+  });
+});
+
+// CUSTOM LIGHTBOX
+$(window).ready(function () {
+  $(".slider-single").slickLightbox({
+    itemSelector: "a",
+    navigateByKeyboard: true,
+    caption: "caption",
+    layouts: {
+      closeButton:
+        '<span class="text-white text-2xl top-4 right-4 absolute cursor-pointer"><i class="fal fa-times"></i></span>',
+      nextArrowButton:
+        '<span class="text-white text-2xl top-4 right-4 absolute cursor-pointer"><i class="fal fa-times"></i></span>',
+    },
   });
 });
 

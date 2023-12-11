@@ -569,3 +569,26 @@
 .tippy-popper[x-placement^="right"] .tippy-arrow {
   border-right-color: #fff !important;
 }
+
+// CUSTOM ARROW BUTTON SLICK LIGHTBOX
+.slick-lightbox-slick .slick-arrow {
+  visibility: hidden;
+}
+
+.slick-lightbox-slick .slick-prev {
+  left: 20px
+}
+
+.slick-lightbox-slick .slick-next {
+  right: 50px
+}
+
+@media screen and (max-width: 768px) {
+  .slick-lightbox-slick .slick-prev {
+    left: -6px
+  }
+  
+  .slick-lightbox-slick .slick-next {
+    right: 24px
+  }
+}
