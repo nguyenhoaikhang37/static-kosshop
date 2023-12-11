@@ -175,7 +175,7 @@ $(window).ready(function () {
     adaptiveHeight: true,
     infinite: false,
     useTransform: true,
-    speed: 400,
+    speed: 200,
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
     prevArrow:
       "<button type='button' class='slick-prev pull-left !translate-x-0'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
