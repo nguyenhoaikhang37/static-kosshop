@@ -179,9 +179,9 @@ $(window).ready(function () {
     speed: 200,
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
     prevArrow:
-      "<button type='button' class='slick-prev pull-left !translate-x-0'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
+      "<button type='button' class='slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
     nextArrow:
-      "<button type='button' class='slick-next pull-right !translate-x-0'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
+      "<button type='button' class='slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
   });
 
   $(".slider-nav")
