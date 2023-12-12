@@ -171,10 +171,10 @@ $(window).ready(function () {
   $(".slider-single").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
+    infinite: false,
     arrows: true,
     fade: false,
     adaptiveHeight: true,
-    infinite: false,
     useTransform: true,
     speed: 200,
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
@@ -195,9 +195,9 @@ $(window).ready(function () {
       focusOnSelect: false,
       infinite: false,
       prevArrow:
-        "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-0 pull-left'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
+        "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-0 pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
       nextArrow:
-        "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-0 pull-right'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
+        "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-0 pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
     });
 
   $(".slider-single").on("afterChange", function (event, slick, currentSlide) {

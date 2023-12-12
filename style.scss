@@ -292,7 +292,11 @@
 }
 
 /* Custom border of small slide */
-.slick-active.is-active {
+.slick-active img {
+  border: 2px solid transparent !important;
+}
+
+.slick-active.is-active img {
   border: 2px solid #1074a5 !important;
 }
 
@@ -587,27 +591,13 @@
   }
 
   .slick-prev:before {
-    content: "←";
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #1074a5;
+    content: url(/images/arrow-left.svg);
     color: #fff;
-    border-radius: 50%;
   }
 
   .slick-next:before {
-    content: "→";
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #1074a5;
+    content: url(/images/arrow-right.svg);
     color: #fff;
-    border-radius: 50%;
   }
 
   .slick-prev:before,
@@ -660,7 +650,7 @@
     }
 
     .slick-prev {
-      left: -2px;
+      left: -10px;
     }
 
     .slick-next {
