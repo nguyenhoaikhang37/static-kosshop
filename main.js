@@ -378,6 +378,32 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
+ * Handle toggle show/hide technical table
+ */
+window.addEventListener("DOMContentLoaded", () => {
+  // Get the button and content elements
+  const toggleButtons = getEls(".js-technical-toggle-btn");
+
+  if (!toggleButtons) return;
+
+  // Add a click event to the button
+
+  toggleButtons.forEach((toggleButton) => {
+    if (!toggleButton) return;
+
+    toggleButton.addEventListener("click", function () {
+      const isHidden = toggleButton
+        .querySelector("i")
+        .classList.contains("fa-angle-down");
+
+      // Change the button icon based on the state of #detail-content
+      const icon = isHidden ? "fa-angle-up" : "fa-angle-down";
+      toggleButton.querySelector("i").classList = `fa ${icon}`;
+    });
+  });
+});
+
+/**
  * Handle show/hidden dialogs
  *
  * How to use:

@@ -63,6 +63,18 @@
   }
 }
 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 @layer components {
   .myContainer {
     @apply max-w-[650px] lg:max-w-[1146px] mx-auto px-[15px] sm:px-[20px];
@@ -667,4 +679,23 @@
       right: 26px;
     }
   }
+}
+
+// Logic show/hide technical box
+.technical-box {
+  transition: all 0.5s ease-in-out;
+}
+
+.technical-box.hide {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+.technical-box.hide + .js-toggle {
+  background: red;
+}
+
+.technical-box.show {
+  height: auto;
 }
