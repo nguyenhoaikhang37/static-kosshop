@@ -184,6 +184,7 @@ $(window).ready(function () {
       "<button type='button' class='slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
   });
 
+  // Slider children
   $(".slider-nav")
     .on("init", function (event, slick) {
       $(".slider-nav .slick-slide.slick-current").addClass("is-active");
@@ -209,6 +210,42 @@ $(window).ready(function () {
   });
 
   $(".slider-nav").on("click", ".slick-slide", function (event) {
+    event.preventDefault();
+    let goToSingleSlide = $(this).data("slick-index");
+
+    $(".slider-single").slick("slickGoTo", goToSingleSlide);
+  });
+
+  // Slider children products
+  $(".slider-product-items")
+    .on("init", function (event, slick) {
+      $(".slider-product-items .slick-slide.slick-current").addClass(
+        "is-active"
+      );
+    })
+    .slick({
+      slidesToShow: 5,
+      slidesToScroll: 5,
+      dots: false,
+      focusOnSelect: false,
+      infinite: false,
+      prevArrow:
+        "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-0 pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
+      nextArrow:
+        "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-0 pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
+    });
+
+  $(".slider-single").on("afterChange", function (event, slick, currentSlide) {
+    $(".slider-product-items").slick("slickGoTo", currentSlide);
+    let currrentNavSlideElem =
+      '.slider-product-items .slick-slide[data-slick-index="' +
+      currentSlide +
+      '"]';
+    $(".slider-product-items .slick-slide.is-active").removeClass("is-active");
+    $(currrentNavSlideElem).addClass("is-active");
+  });
+
+  $(".slider-product-items").on("mouseenter", ".slick-slide", function (event) {
     event.preventDefault();
     let goToSingleSlide = $(this).data("slick-index");
 

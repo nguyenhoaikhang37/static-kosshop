@@ -304,12 +304,25 @@
 }
 
 /* Custom border of small slide */
-.slick-active img {
+.slider-nav .slick-active img {
   border: 2px solid transparent !important;
 }
 
-.slick-active.is-active img {
+.slider-nav .slick-active.is-active img {
   border: 2px solid #1074a5 !important;
+}
+
+.slider-product-items .slick-active img {
+  border: 1px solid #ddd !important;
+}
+
+.slider-product-items .slick-active.is-active img {
+  border: 1px solid #1074a5 !important;
+}
+
+.slider-product-items .slick-track {
+  margin-left: initial;
+  margin-right: initial;
 }
 
 /* Style for disabled button */
@@ -688,4 +701,9 @@
 
 .technical-box.show {
   height: auto;
+}
+
+// Hidden arrow single slider
+.hidden-arrow .slick-arrow {
+  display: none !important;
 }
