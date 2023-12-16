@@ -55,6 +55,10 @@
     font-family: "Roboto", sans-serif;
   }
 
+  body {
+    min-height: 100%;
+  }
+
   // Disable number input spinners
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
@@ -260,7 +264,10 @@
 /* Custom gap spacing between rows */
 .slick-track {
   display: flex;
-  gap: 10px;
+}
+
+.slick-track > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 10px;
 }
 
 .full-width-slider .slick-track {
@@ -304,25 +311,21 @@
 }
 
 /* Custom border of small slide */
-.slider-nav .slick-active img {
+.slider-nav .slick-slide img {
   border: 2px solid transparent !important;
 }
 
-.slider-nav .slick-active.is-active img {
+.slider-nav .slick-current img {
   border: 2px solid #1074a5 !important;
 }
 
-.slider-product-items .slick-active img {
+// get class start include `slider-product-items`
+[class*="slider-product-items"] .slick-active img {
   border: 1px solid #ddd !important;
 }
 
-.slider-product-items .slick-active.is-active img {
+[class*="slider-product-items"] .slick-active.is-active img {
   border: 1px solid #1074a5 !important;
-}
-
-.slider-product-items .slick-track {
-  margin-left: initial;
-  margin-right: initial;
 }
 
 /* Style for disabled button */
@@ -684,22 +687,22 @@
   }
 }
 
-// Logic show/hide technical box
-.technical-box {
+// Logic show/hide box
+.toggle-box {
   transition: all 0.5s ease-in-out;
 }
 
-.technical-box.hide {
+.toggle-box.hide {
   position: relative;
   height: 0;
   overflow: hidden;
 }
 
-.technical-box.hide + .js-toggle {
+.toggle-box.hide + .js-toggle {
   background: red;
 }
 
-.technical-box.show {
+.toggle-box.show {
   height: auto;
 }
 

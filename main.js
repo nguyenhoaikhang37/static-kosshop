@@ -167,7 +167,7 @@ $(window).ready(function () {
       "<button type='button' class='slick-next pull-right !block'><i class='fal fa-chevron-right'></i></button>",
   });
 
-  // SLIDER GALLERY PRODUCTS
+  // Slider detail product
   $(".slider-single").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -178,79 +178,93 @@ $(window).ready(function () {
     useTransform: true,
     speed: 200,
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
+    asNavFor: ".slider-nav",
     prevArrow:
       "<button type='button' class='slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
     nextArrow:
       "<button type='button' class='slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
   });
 
-  // Slider children
-  $(".slider-nav")
-    .on("init", function (event, slick) {
-      $(".slider-nav .slick-slide.slick-current").addClass("is-active");
-    })
-    .slick({
-      slidesToShow: 8,
-      slidesToScroll: 8,
-      dots: false,
-      focusOnSelect: false,
-      infinite: false,
-      prevArrow:
-        "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-0 pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
-      nextArrow:
-        "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-0 pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
-    });
-
-  $(".slider-single").on("afterChange", function (event, slick, currentSlide) {
-    $(".slider-nav").slick("slickGoTo", currentSlide);
-    let currrentNavSlideElem =
-      '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
-    $(".slider-nav .slick-slide.is-active").removeClass("is-active");
-    $(currrentNavSlideElem).addClass("is-active");
-  });
-
-  $(".slider-nav").on("click", ".slick-slide", function (event) {
-    event.preventDefault();
-    let goToSingleSlide = $(this).data("slick-index");
-
-    $(".slider-single").slick("slickGoTo", goToSingleSlide);
+  // Slider detail product children
+  $(".slider-nav").slick({
+    slidesToShow: 8,
+    slidesToScroll: 8,
+    dots: false,
+    focusOnSelect: true,
+    asNavFor: ".slider-single",
+    infinite: false,
+    prevArrow:
+      "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-0 pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
+    nextArrow:
+      "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-0 pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
   });
 
   // Slider children products
-  $(".slider-product-items")
-    .on("init", function (event, slick) {
-      $(".slider-product-items .slick-slide.slick-current").addClass(
-        "is-active"
-      );
-    })
-    .slick({
+  let productSliders = document.querySelectorAll(".product-slick-general");
+
+  for (let i = 0; i < productSliders.length; i++) {
+    const id = productSliders[i].getAttribute("data-id");
+
+    $(`.product-slick-single-${id}`).slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: true,
+      fade: false,
+      adaptiveHeight: true,
+      useTransform: true,
+      speed: 200,
+      cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
+      prevArrow:
+        "<button type='button' class='slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
+      nextArrow:
+        "<button type='button' class='slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
+    });
+
+    $(`.slider-product-items-${id}`).slick({
       slidesToShow: 5,
       slidesToScroll: 5,
       dots: false,
-      focusOnSelect: false,
+      focusOnSelect: true,
       infinite: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+          },
+        },
+      ],
       prevArrow:
         "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-0 pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
       nextArrow:
         "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-0 pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
     });
 
-  $(".slider-single").on("afterChange", function (event, slick, currentSlide) {
-    $(".slider-product-items").slick("slickGoTo", currentSlide);
-    let currrentNavSlideElem =
-      '.slider-product-items .slick-slide[data-slick-index="' +
-      currentSlide +
-      '"]';
-    $(".slider-product-items .slick-slide.is-active").removeClass("is-active");
-    $(currrentNavSlideElem).addClass("is-active");
-  });
+    $(`.product-slick-single-${id}`).on(
+      "afterChange",
+      function (event, slick, currentSlide) {
+        $(`.slider-product-items-${id}`).slick("slickGoTo", currentSlide);
+        let currentNavSlideElem = `.slider-product-items-${id} .slick-slide[data-slick-index=${currentSlide}]`;
+        $(`.slider-product-items-${id} .slick-slide.is-active`).removeClass(
+          "is-active"
+        );
+        $(currentNavSlideElem).addClass("is-active");
+      }
+    );
 
-  $(".slider-product-items").on("mouseenter", ".slick-slide", function (event) {
-    event.preventDefault();
-    let goToSingleSlide = $(this).data("slick-index");
+    $(`.slider-product-items-${id}`).on(
+      "mouseenter",
+      ".slick-slide",
+      function (event) {
+        event.preventDefault();
+        let goToSingleSlide = $(this).data("slick-index");
 
-    $(".slider-single").slick("slickGoTo", goToSingleSlide);
-  });
+        $(`.product-slick-single-${id}`).slick("slickGoTo", goToSingleSlide);
+      }
+    );
+  }
 });
 
 // CUSTOM LIGHTBOX
@@ -419,7 +433,7 @@ window.addEventListener("DOMContentLoaded", () => {
  */
 window.addEventListener("DOMContentLoaded", () => {
   // Get the button and content elements
-  const toggleButtons = getEls(".js-technical-toggle-btn");
+  const toggleButtons = getEls(".js-toggle-btn");
 
   if (!toggleButtons) return;
 
@@ -431,10 +445,10 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleButton.addEventListener("click", function () {
       const isHidden = toggleButton
         .querySelector("i")
-        .classList.contains("fa-angle-down");
+        .classList.contains("fa-angle-up");
 
       // Change the button icon based on the state of #detail-content
-      const icon = isHidden ? "fa-angle-up" : "fa-angle-down";
+      const icon = isHidden ? "fa-angle-down" : "fa-angle-up";
       toggleButton.querySelector("i").classList = `fa ${icon}`;
     });
   });
@@ -787,4 +801,18 @@ document.addEventListener("DOMContentLoaded", function () {
   closePopoverBtn.addEventListener("click", function () {
     myPopover.hide();
   });
+});
+
+/**
+ * Handle logic show/hide footer element
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const footerServiceEl = getEl("#footer-service");
+  const footerProductEl = getEl("#footer-product");
+  if (!footerServiceEl || !footerProductEl) return;
+
+  if (window.innerWidth <= 1024) {
+    footerServiceEl.classList.add("toggle-box", "hide");
+    footerProductEl.classList.add("toggle-box", "hide");
+  }
 });

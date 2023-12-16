@@ -18,11 +18,15 @@
 
     <!-- Styles -->
     <link href="/lib/slick/slick.min.css" rel="stylesheet" />
+    <link href="/lib/lightbox/lightbox.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style.scss" />
 
     <!-- External Scripts -->
     <script src="/lib/jquery/jquery.min.js"></script>
     <script src="/lib/slick/slick.min.js"></script>
+    <script src="/lib/tippy/popper.min.js"></script>
+    <script src="/lib/tippy/tippy.min.js"></script>
+    <script src="/lib/lightbox/lightbox.min.js"></script>
 
     <!-- Scripts -->
     <script>
@@ -232,27 +236,6 @@
         </div>
       </section>
 
-      <!-- INTERNATIONAL CUSTOMERS -->
-      <section id="international-customer" class="mt-10"></section>
-      <script>
-        load(
-          "#international-customer",
-          "/_components/international-customer.html"
-        );
-      </script>
-
-      <!-- NEWS -->
-      <section id="news" class="mt-10"></section>
-      <script>
-        load("#news", "/_components/news.html");
-      </script>
-
-      <!-- DOMESTIC CUSTOMERS -->
-      <section id="domestic-customer" class="mt-10"></section>
-      <script>
-        load("#domestic-customer", "/_components/domestic-customer.html");
-      </script>
-
       <!-- SERVICES -->
       <section
         id="services"
@@ -263,8 +246,23 @@
       </script>
     </main>
 
+    <!-- NAVIGATION MOBILE -->
+    <div id="navigation-mobile"></div>
+    <script>
+      load("#navigation-mobile", "/_components/navigation-mobile.html");
+    </script>
+
+    <!-- ACTION BUTTONS -->
+    <div id="action-buttons"></div>
+    <script>
+      load("#action-buttons", "/_components/action-buttons.html");
+    </script>
+
     <!-- FOOTER -->
-    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <footer
+      id="footer"
+      class="text-sm text-heading bg-[#F2F7FF] pb-[56px] xl:pb-0"
+    ></footer>
     <script>
       load("#footer", "/_components/footer.html");
     </script>

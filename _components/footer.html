@@ -51,16 +51,20 @@
             rel="nofollow"
             href="https://www.facebook.com/kosshop.vn/"
           >
-            <i class="text-xl text-white fa-brands fa-facebook-f"></i>
+            <i class="text-xl text-white fab fa-facebook-f"></i>
           </a>
           <a
-            title="email kosshop"
+            title="tiktok kosshop"
             class="w-[45px] h-[45px] flex items-center justify-center bg-dark rounded-full"
             target="_blank"
             rel="nofollow"
-            href="mailto:support@kosshop.vn"
+            href="https://www.tiktok.com/@kosshop.vn"
           >
-            <i class="text-xl text-white fa fa-envelope"></i>
+            <img
+              src="/images/tiktok-icon.svg"
+              alt="tiktok kosshop"
+              class="w-[20px]"
+            />
           </a>
           <a
             title="youtube kosshop"
@@ -69,14 +73,44 @@
             rel="nofollow"
             href="https://www.youtube.com/user/kosshopdotvn"
           >
-            <i class="text-xl text-white fa-brands fa-youtube"></i>
+            <i class="text-xl text-white fab fa-youtube"></i>
+          </a>
+          <a
+            title="instagram kosshop"
+            class="w-[45px] h-[45px] flex items-center justify-center bg-pink-500 rounded-full"
+            target="_blank"
+            rel="nofollow"
+            href="https://www.instagram.com/kosshopvn/"
+          >
+            <img
+              src="/images/instagram-icon.svg"
+              alt="instagram kosshop"
+              class="w-[20px]"
+            />
+          </a>
+          <a
+            title="email kosshop"
+            class="w-[45px] h-[45px] flex items-center justify-center bg-green-600 rounded-full"
+            target="_blank"
+            rel="nofollow"
+            href="mailto:support@kosshop.vn"
+          >
+            <i class="text-xl text-white fa fa-envelope"></i>
           </a>
         </div>
       </div>
       <div class="col-span-1 xl:col-span-2">
-        <h3 class="my-4 text-xl font-semibold">SẢN PHẨM</h3>
+        <div
+          data-toggle-target="#footer-product"
+          class="flex items-center justify-between my-4 cursor-pointer xl:hidden js-toggle js-toggle-btn"
+        >
+          <h3 class="text-xl font-semibold">SẢN PHẨM</h3>
+          <i class="fa fa-angle-down"></i>
+        </div>
 
-        <ul class="-mt-2">
+        <h3 class="hidden my-4 text-xl font-semibold xl:block">SẢN PHẨM</h3>
+
+        <ul class="-mt-2" id="footer-product">
           <li>
             <a class="block py-2 underline" href="/product-portfolio/"
               >Vali kéo</a
@@ -123,9 +157,19 @@
         </ul>
       </div>
       <div class="col-span-1 xl:col-span-3">
-        <h3 class="my-4 text-xl font-semibold">DỊCH VỤ KHÁCH HÀNG</h3>
+        <div
+          data-toggle-target="#footer-service"
+          class="flex items-center justify-between my-4 cursor-pointer xl:hidden js-toggle js-toggle-btn"
+        >
+          <h3 class="text-xl font-semibold">DỊCH VỤ KHÁCH HÀNG</h3>
+          <i class="fa fa-angle-down"></i>
+        </div>
 
-        <ul class="-mt-2">
+        <h3 class="hidden my-4 text-xl font-semibold xl:block">
+          DỊCH VỤ KHÁCH HÀNG
+        </h3>
+
+        <ul class="-mt-2" id="footer-service">
           <li class="block py-2 underline">
             <a rel="nofollow" href="/other-contents/"
               >Hướng dẫn mua hàng online</a
@@ -166,7 +210,13 @@
           class="aspect-auto"
         />
 
-        <div class="flex gap-2 mt-4">
+        <h4 class="mt-4 text-sm font-semibold">
+          <a href="" target="_blank" rel="noopener">
+            Dành cho doanh nghiệp / B2B / Bán sỉ
+          </a>
+        </h4>
+
+        <div class="flex gap-2">
           <a
             rel="nofollow"
             href="http://online.gov.vn/Home/WebDetails/5814"
@@ -219,10 +269,6 @@
             </style>
           </span>
         </div>
-
-        <h4 class="my-4 text-sm font-semibold">
-          Dành cho doanh nghiệp / B2B / Bán sỉ
-        </h4>
 
         <p>Email: tin@kosshop.vn</p>
         <p>Điện thoại: 098 641 0704 (Zalo, Telegram, Whatsapp)</p>

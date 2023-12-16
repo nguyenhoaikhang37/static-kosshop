@@ -886,18 +886,16 @@
                 </div>
               </section>
 
-              <section class="mt-4">
+              <section class="mt-2">
                 <div
                   data-toggle-target="#technical-box"
-                  class="flex items-center justify-between cursor-pointer js-toggle js-technical-toggle-btn"
+                  class="flex items-center justify-between py-1 cursor-pointer border-y text-heading border-slate-300 js-toggle js-toggle-btn"
                 >
-                  <h2 class="text-xl font-bold text-heading">
-                    THÔNG SỐ KỸ THUẬT
-                  </h2>
-                  <i class="fa fa-angle-up"></i>
+                  <h2 class="text-lg font-bold">Thông số kỹ thuật</h2>
+                  <i class="fa fa-angle-down"></i>
                 </div>
 
-                <div class="mt-4 technical-box hide" id="technical-box">
+                <div class="mt-4 toggle-box hide" id="technical-box">
                   <table class="basic-table">
                     <tbody>
                       <tr>
@@ -1457,27 +1455,6 @@
         </div>
       </section>
 
-      <!-- INTERNATIONAL CUSTOMERS -->
-      <section id="international-customer" class="mt-10"></section>
-      <script>
-        load(
-          "#international-customer",
-          "/_components/international-customer.html"
-        );
-      </script>
-
-      <!-- NEWS -->
-      <section id="news" class="mt-10"></section>
-      <script>
-        load("#news", "/_components/news.html");
-      </script>
-
-      <!-- DOMESTIC CUSTOMERS -->
-      <section id="domestic-customer" class="mt-10"></section>
-      <script>
-        load("#domestic-customer", "/_components/domestic-customer.html");
-      </script>
-
       <!-- SERVICES -->
       <section
         id="services"
@@ -1488,8 +1465,23 @@
       </script>
     </main>
 
+    <!-- NAVIGATION MOBILE -->
+    <div id="navigation-mobile"></div>
+    <script>
+      load("#navigation-mobile", "/_components/navigation-mobile.html");
+    </script>
+
+    <!-- ACTION BUTTONS -->
+    <div id="action-buttons"></div>
+    <script>
+      load("#action-buttons", "/_components/action-buttons.html");
+    </script>
+
     <!-- FOOTER -->
-    <footer id="footer" class="text-sm text-heading bg-[#F2F7FF]"></footer>
+    <footer
+      id="footer"
+      class="text-sm text-heading bg-[#F2F7FF] pb-[56px] xl:pb-0"
+    ></footer>
     <script>
       load("#footer", "/_components/footer.html");
     </script>
