@@ -237,9 +237,9 @@ $(window).ready(function () {
         },
       ],
       prevArrow:
-        "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-0 pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
+        "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-[-15px] p-[6px] pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
       nextArrow:
-        "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-0 pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
+        "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-[-15px] p-[6px] pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
     });
 
     $(`.product-slick-single-${id}`).on(
