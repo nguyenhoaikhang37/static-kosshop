@@ -602,6 +602,22 @@
   border-right-color: #fff !important;
 }
 
+@media screen and (max-width: 1024px) {
+  .tippy-popper {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: translateX(-10px) !important;
+  }
+
+  .tippy-tooltip {
+    height: 100% !important;
+    width: 102% !important;
+  }
+}
+
 // CUSTOM ARROW BUTTON SLICK LIGHTBOX
 .slick-lightbox-slick {
   .slick-arrow {
@@ -698,9 +714,9 @@
   overflow: hidden;
 }
 
-.toggle-box.hide + .js-toggle {
-  background: red;
-}
+// .toggle-box.hide + .js-toggle {
+//   background: red;
+// }
 
 .toggle-box.show {
   height: auto;
