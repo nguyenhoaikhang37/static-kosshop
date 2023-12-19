@@ -113,9 +113,11 @@
   }
 
   .side-dialog {
-    @apply fixed top-0 right-0 bottom-0 w-[300px] transition-transform ease-in-out transform bg-white shadow-lg;
-    z-index: 1000;
-    transform: translateX(100%);
+    @apply fixed top-[56px] right-0 bottom-0 w-full transition-transform ease-in-out transform bg-white shadow-lg;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top;
   }
 
   .backdrop {
@@ -126,12 +128,9 @@
   }
 
   .side-dialog.show {
-    transform: translateX(0);
-  }
-
-  .side-dialog.show ~ .backdrop {
     opacity: 1;
     visibility: visible;
+    transform-origin: top;
   }
 
   /* Style for section heading */
@@ -320,11 +319,11 @@
 }
 
 // get class start include `slider-product-items`
-[class*="slider-product-items"] .slick-active img {
+[class*="slider-product-items"] .slick-slide img {
   border: 1px solid #ddd !important;
 }
 
-[class*="slider-product-items"] .slick-active.is-active img {
+[class*="slider-product-items"] .slick-slide.is-active img {
   border: 1px solid #1074a5 !important;
 }
 
@@ -725,4 +724,21 @@
 // Hidden arrow single slider
 .hidden-arrow .slick-arrow {
   display: none !important;
+}
+
+// Show/hidden menu/close button
+.menu-btn.show .close-icon {
+  display: block;
+}
+
+.menu-btn.hide .close-icon {
+  display: none;
+}
+
+.menu-btn.show .menu-icon {
+  display: none;
+}
+
+.menu-btn.hide .menu-icon {
+  display: flex;
 }

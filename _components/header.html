@@ -242,50 +242,22 @@
       </button>
 
       <button
-        class="flex flex-col items-center cursor-pointer menu-btn js-toggle xl:hidden relative top-[8px]"
+        class="cursor-pointer menu-btn js-toggle xl:hidden"
         data-toggle-target="#menuBar"
       >
-        <i class="text-2xl text-white fal fa-bars"></i>
-        <span class="text-[10px] text-white relative top-[-6px]">Menu</span>
+        <i
+          class="hidden text-2xl text-white fal fa-times close-icon px-[3px]"
+        ></i>
+        <div class="menu-icon flex flex-col items-center relative top-[2px]">
+          <i class="text-2xl text-white fal fa-bars"></i>
+          <span class="text-[10px] text-white relative top-[-6px]">Menu</span>
+        </div>
       </button>
 
       <!-- Side dialog -->
       <div class="block side-dialog xl:hidden hide" id="menuBar">
-        <!-- Header -->
-        <div class="flex items-center justify-between bg-gradient h-[50px]">
-          <div class="flex items-center">
-            <button
-              class="py-3 pl-5 pr-3"
-              title="Tìm kiếm"
-              id="search-btn-on-dialog"
-            >
-              <i class="text-xl text-white fal fa-search"></i>
-            </button>
-
-            <button rel="nofollow" class="relative p-3">
-              <a href="/cart/">
-                <i
-                  class="text-xl text-white lg:text-2xl fal fa-shopping-cart"
-                ></i>
-                <span
-                  class="absolute top-[5px] right-[6px] w-[18px] h-[18px] rounded-full bg-secondary flex items-center justify-center text-white text-[11px]"
-                >
-                  1
-                </span>
-              </a>
-            </button>
-          </div>
-
-          <button
-            data-toggle-target="#menuBar"
-            class="py-3 pl-3 pr-5 js-toggle"
-          >
-            <i class="text-xl text-white fa fa-times"></i>
-          </button>
-        </div>
-
         <nav class="relative h-full">
-          <ul class="h-[calc(100%-50px-107px)] py-5 pl-5 overflow-y-auto">
+          <ul class="h-[calc(100%-56px-107px)] py-5 pl-5 overflow-y-auto">
             <li>
               <a class="flex items-center h-10" href="/brand/">
                 <span style="display: flex">
@@ -648,12 +620,6 @@
           </div>
         </nav>
       </div>
-
-      <!-- Backdrop -->
-      <div
-        class="block js-toggle backdrop xl:hidden"
-        data-toggle-target="#menuBar"
-      ></div>
     </div>
   </div>
 
