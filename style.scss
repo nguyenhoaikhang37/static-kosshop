@@ -191,18 +191,16 @@
     position: absolute;
     z-index: 100;
     left: 0;
-    padding: 16px;
     font-size: 1.6rem;
-    @apply text-arrow lg:-translate-x-full translate-x-[-36%] top-1/2 -translate-y-1/2;
+    @apply text-arrow translate-x-[-100%] xl:-translate-x-full top-1/2 -translate-y-1/2 p-0 xl:p-4;
   }
 
   .slick-next {
     position: absolute;
     z-index: 100;
     right: 0;
-    padding: 16px;
     font-size: 1.6rem;
-    @apply text-arrow lg:translate-x-full translate-x-[36%] top-1/2 -translate-y-1/2;
+    @apply text-arrow translate-x-[100%] xl:translate-x-full  top-1/2 -translate-y-1/2 p-0 xl:p-4;
   }
 
   .slider-hover-button {
@@ -265,12 +263,21 @@
   display: flex;
 }
 
-.slick-track > :not([hidden]) ~ :not([hidden]) {
-  margin-left: 10px;
+.slick-slide {
+  margin: 0 5px;
 }
 
-.full-width-slider .slick-track {
-  gap: 0 !important;
+/* the parent */
+.slick-list {
+  margin: 0 -5px;
+}
+
+.full-width-slider .slick-slide {
+  margin: 0 !important;
+}
+
+.full-width-slider .slick-list {
+  margin: 0 !important;
 }
 
 /* Custom dots style of slick library */

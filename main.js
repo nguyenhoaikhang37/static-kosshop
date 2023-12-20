@@ -33,6 +33,13 @@ $(window).ready(function () {
     useTransform: false,
     responsive: [
       {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
         breakpoint: 770,
         settings: {
           slidesToShow: 3,
@@ -204,10 +211,12 @@ $(window).ready(function () {
   // Slider children products
   let productSliders = document.querySelectorAll(".product-slick-general");
 
+  if (!productSliders) return;
+
   for (let i = 0; i < productSliders.length; i++) {
     const id = productSliders[i].getAttribute("data-id");
 
-    $(`.product-slick-single-${id}`).slick({
+    $(`.product-slick-single-${id}`).not(".slick-initialized").slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       infinite: false,
@@ -224,26 +233,43 @@ $(window).ready(function () {
         "<button type='button' class='slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
     });
 
-    $(`.slider-product-items-${id}`).slick({
-      slidesToShow: 5,
-      slidesToScroll: 5,
-      dots: false,
-      focusOnSelect: true,
-      infinite: false,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
+    $(`.slider-product-items-${id}`)
+      .not(".slick-initialized")
+      .slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        dots: false,
+        infinite: false,
+        touchThreshold: 10,
+        useTransform: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 4,
+            },
           },
-        },
-      ],
-      prevArrow:
-        "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-[-15px] p-[6px] pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
-      nextArrow:
-        "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-[-15px] p-[6px] pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
-    });
+        ],
+        prevArrow:
+          "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-[-15px] p-[6px] pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
+        nextArrow:
+          "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-[-15px] p-[6px] pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
+      });
+
+    $(`.slider-product-items-${id}`).on(
+      "touchstart touchmove mousemove mouseenter",
+      function (e) {
+        $(".slider-products").slick("slickSetOption", "swipe", false, false);
+      }
+    );
+
+    $(`.slider-product-items-${id}`).on(
+      "touchend mouseover mouseout",
+      function (e) {
+        $(".slider-products").slick("slickSetOption", "swipe", true, false);
+      }
+    );
 
     $(`.product-slick-single-${id}`).on(
       "afterChange",
@@ -258,7 +284,11 @@ $(window).ready(function () {
     );
 
     // Change event on mobile for improve performance
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
       $(`.slider-product-items-${id}`).on(
         "mouseenter",
         ".slick-slide",
