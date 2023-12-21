@@ -196,16 +196,25 @@ $(window).ready(function () {
 
   // Slider detail product children
   $(".slider-nav").slick({
-    slidesToShow: 8,
-    slidesToScroll: 8,
+    slidesToShow: 10,
+    slidesToScroll: 10,
     dots: false,
     focusOnSelect: true,
     asNavFor: ".slider-single",
     infinite: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 7,
+          slidesToScroll: 7,
+        },
+      },
+    ],
     prevArrow:
-      "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-0 pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
+      "<button type='button' class='z-[1000] absolute top-1/2 -translate-y-1/2 -translate-x-[24px] p-2 left-0 pull-left'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
     nextArrow:
-      "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-0 pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
+      "<button type='button' class='z-[1000] absolute top-1/2 -translate-y-1/2 translate-x-[24px] p-2 right-0 pull-right'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
   });
 
   // Slider children products
@@ -282,6 +291,7 @@ $(window).ready(function () {
         $(currentNavSlideElem).addClass("is-active");
       }
     );
+
 
     // Change event on mobile for improve performance
     if (

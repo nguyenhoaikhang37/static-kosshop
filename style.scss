@@ -281,6 +281,10 @@
   margin: 0 0 0 -1px;
 }
 
+.slider-nav .slick-list {
+  margin: 0 0 0 -5px;
+}
+
 .full-width-slider .slick-slide {
   margin: 0 !important;
 }
@@ -321,17 +325,14 @@
 .css-slider-item:first-child {
   display: block;
 }
-.no-import-slider .css-slider-item:first-child {
-  display: none;
-}
 
 /* Custom border of small slide */
 .slider-nav .slick-slide img {
-  border: 2px solid transparent !important;
+  border: 1px solid #ddd !important;
 }
 
 .slider-nav .slick-current img {
-  border: 2px solid #1074a5 !important;
+  border: 1px solid #1074a5 !important;
 }
 
 // get class start include `slider-product-items`
