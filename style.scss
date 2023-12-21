@@ -127,6 +127,11 @@
     visibility: hidden;
   }
 
+  .full-height {
+    height: 100vh;
+    height: var(--window-height);
+  }
+
   .side-dialog.show {
     opacity: 1;
     visibility: visible;

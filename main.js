@@ -865,3 +865,15 @@ document.addEventListener("DOMContentLoaded", function () {
     footerProductEl.classList.add("toggle-box", "hide");
   }
 });
+
+/**
+ * Handle height bar for all mobile
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const windowHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--window-height", `${window.innerHeight}px`);
+  };
+  window.addEventListener("resize", windowHeight);
+  windowHeight();
+});
