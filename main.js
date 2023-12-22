@@ -17,9 +17,30 @@ $(window).ready(function () {
       },
     ],
     prevArrow:
-      "<button type='button' class='slick-prev pull-left !block'><i class='fal fa-chevron-left'></i></button>",
+      "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
     nextArrow:
-      "<button type='button' class='slick-next pull-right !block'><i class='fal fa-chevron-right'></i></button>",
+      "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
+  });
+
+  $(".slider-international-customer").slick({
+    dots: false,
+    infinite: true,
+    speed: 100,
+    slidesToScroll: 1,
+    slidesToShow: 5,
+    responsive: [
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
+    prevArrow:
+      "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
+    nextArrow:
+      "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
   });
 
   // Slider products on home page
@@ -55,9 +76,9 @@ $(window).ready(function () {
       },
     ],
     prevArrow:
-      "<button type='button' class='slick-prev pull-left !block'><i class='fal fa-chevron-left'></i></button>",
+      "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
     nextArrow:
-      "<button type='button' class='slick-next pull-right !block'><i class='fal fa-chevron-right'></i></button>",
+      "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
   });
 
   // Slider products on news page
@@ -171,9 +192,9 @@ $(window).ready(function () {
       },
     ],
     prevArrow:
-      "<button type='button' class='slick-prev pull-left !block'><i class='fal fa-chevron-left'></i></button>",
+      "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
     nextArrow:
-      "<button type='button' class='slick-next pull-right !block'><i class='fal fa-chevron-right'></i></button>",
+      "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
   });
 
   // Slider detail product
@@ -196,12 +217,12 @@ $(window).ready(function () {
 
   // Slider detail product children
   $(".slider-nav").slick({
-    slidesToShow: 10,
-    slidesToScroll: 10,
+    slidesToShow: 8,
+    slidesToScroll: 8,
     dots: false,
     focusOnSelect: true,
     asNavFor: ".slider-single",
-    infinite: false,
+    arrows: false,
     responsive: [
       {
         breakpoint: 768,
@@ -211,10 +232,6 @@ $(window).ready(function () {
         },
       },
     ],
-    prevArrow:
-      "<button type='button' class='z-[1000] absolute top-1/2 -translate-y-1/2 -translate-x-[24px] p-2 left-0 pull-left'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
-    nextArrow:
-      "<button type='button' class='z-[1000] absolute top-1/2 -translate-y-1/2 translate-x-[24px] p-2 right-0 pull-right'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
   });
 
   // Slider children products
@@ -255,15 +272,12 @@ $(window).ready(function () {
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 4,
-              slidesToScroll: 4,
+              slidesToShow: 3,
+              slidesToScroll: 3,
             },
           },
         ],
-        prevArrow:
-          "<button type='button' class='absolute top-1/2 -translate-y-1/2 left-[-15px] p-[6px] pull-left z-[100]'><i class='text-lg text-primary fal fa-chevron-left'></i></button>",
-        nextArrow:
-          "<button type='button' class='absolute top-1/2 -translate-y-1/2 right-[-15px] p-[6px] pull-right z-[100]'><i class='text-lg text-primary fal fa-chevron-right'></i></button>",
+        arrows: false,
       });
 
     $(`.slider-product-items-${id}`).on(
@@ -291,7 +305,6 @@ $(window).ready(function () {
         $(currentNavSlideElem).addClass("is-active");
       }
     );
-
 
     // Change event on mobile for improve performance
     if (

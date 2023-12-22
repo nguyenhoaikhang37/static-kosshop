@@ -359,6 +359,10 @@
   .slider-x-0 .slick-list {
     padding: 0 !important;
   }
+
+  .half-slider .slick-list {
+    padding: 0 20% 0 0 !important;
+  }
 }
 
 /* Custom blur bor detail product */
@@ -729,10 +733,6 @@
   height: 0;
   overflow: hidden;
 }
-
-// .toggle-box.hide + .js-toggle {
-//   background: red;
-// }
 
 .toggle-box.show {
   height: auto;
