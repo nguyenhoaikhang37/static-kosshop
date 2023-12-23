@@ -622,6 +622,14 @@
   border-right-color: #fff !important;
 }
 
+.tippy-popper[x-placement^="top"] .tippy-arrow {
+  border-top-color: #fff !important;
+}
+
+.tippy-popper[x-placement^="bottom"] .tippy-arrow {
+  border-bottom-color: #fff !important;
+}
+
 @media screen and (max-width: 1024px) {
   .tippy-popper {
     position: fixed !important;

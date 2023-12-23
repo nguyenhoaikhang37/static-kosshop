@@ -81,6 +81,40 @@ $(window).ready(function () {
       "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
   });
 
+  $(".slider-gallery").slick({
+    dots: false,
+    infinite: false,
+    speed: 100,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    touchThreshold: 10,
+    useTransform: false,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 770,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
+  });
+
+  $(".slider-gallery").on(
+    "touchstart touchmove mousemove mouseenter",
+    function (e) {
+      $(".slider-products").slick("slickSetOption", "swipe", false, false);
+    }
+  );
+
+  $(".slider-gallery").on(
+    "touchend mouseover mouseout",
+    function (e) {
+      $(".slider-products").slick("slickSetOption", "swipe", true, false);
+    }
+  );
+
   // Slider products on news page
   $(".slider-news-products").slick({
     dots: false,
@@ -233,108 +267,6 @@ $(window).ready(function () {
       },
     ],
   });
-
-  // Slider children products
-  let productSliders = document.querySelectorAll(".product-slick-general");
-
-  if (!productSliders) return;
-
-  for (let i = 0; i < productSliders.length; i++) {
-    const id = productSliders[i].getAttribute("data-id");
-
-    $(`.product-slick-single-${id}`).not(".slick-initialized").slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      infinite: false,
-      arrows: true,
-      fade: false,
-      adaptiveHeight: true,
-      useTransform: true,
-      speed: 100,
-      swipe: false,
-      cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
-      prevArrow:
-        "<button type='button' class='slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
-      nextArrow:
-        "<button type='button' class='slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
-    });
-
-    $(`.slider-product-items-${id}`)
-      .not(".slick-initialized")
-      .slick({
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        dots: false,
-        infinite: false,
-        touchThreshold: 10,
-        useTransform: false,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-            },
-          },
-        ],
-        arrows: false,
-      });
-
-    $(`.slider-product-items-${id}`).on(
-      "touchstart touchmove mousemove mouseenter",
-      function (e) {
-        $(".slider-products").slick("slickSetOption", "swipe", false, false);
-      }
-    );
-
-    $(`.slider-product-items-${id}`).on(
-      "touchend mouseover mouseout",
-      function (e) {
-        $(".slider-products").slick("slickSetOption", "swipe", true, false);
-      }
-    );
-
-    $(`.product-slick-single-${id}`).on(
-      "afterChange",
-      function (event, slick, currentSlide) {
-        $(`.slider-product-items-${id}`).slick("slickGoTo", currentSlide);
-        let currentNavSlideElem = `.slider-product-items-${id} .slick-slide[data-slick-index=${currentSlide}]`;
-        $(`.slider-product-items-${id} .slick-slide.is-active`).removeClass(
-          "is-active"
-        );
-        $(currentNavSlideElem).addClass("is-active");
-      }
-    );
-
-    // Change event on mobile for improve performance
-    if (
-      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      )
-    ) {
-      $(`.slider-product-items-${id}`).on(
-        "mouseenter",
-        ".slick-slide",
-        function (event) {
-          event.preventDefault();
-          let goToSingleSlide = $(this).data("slick-index");
-
-          $(`.product-slick-single-${id}`).slick("slickGoTo", goToSingleSlide);
-        }
-      );
-    } else {
-      $(`.slider-product-items-${id}`).on(
-        "click",
-        ".slick-slide",
-        function (event) {
-          event.preventDefault();
-          let goToSingleSlide = $(this).data("slick-index");
-
-          $(`.product-slick-single-${id}`).slick("slickGoTo", goToSingleSlide);
-        }
-      );
-    }
-  }
 });
 
 // CUSTOM LIGHTBOX
@@ -438,36 +370,6 @@ liItems.forEach((li) => {
 
   li.addEventListener("mouseout", function () {
     megaMenu.style.display = "none";
-  });
-});
-
-/**
- * Handle logic hover image products
- */
-window.addEventListener("DOMContentLoaded", () => {
-  const productItems = getEls(".product-item");
-
-  if (!productItems) return;
-
-  productItems.forEach((productItem) => {
-    const smallImageElements = productItem.querySelectorAll(".small-image");
-
-    const bigImageElement = productItem.querySelector(".big-image");
-
-    smallImageElements.forEach((smallImage) => {
-      smallImage.addEventListener("mouseover", function () {
-        smallImageElements.forEach((smallImage) => {
-          smallImage.classList.remove("border-primary");
-          smallImage.classList.remove("border-greyLight");
-        });
-
-        smallImage.classList.add("border-primary");
-        smallImage.classList.remove("border-greyLight");
-
-        const imageUrl = smallImage.querySelector("img").src;
-        bigImageElement.src = imageUrl;
-      });
-    });
   });
 });
 
@@ -853,7 +755,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let myPopover = tippy(popoverButton, {
     theme: "light",
     content: popover,
-    placement: "left",
+    placement: "bottom",
     interactive: true,
     trigger: "click",
     animation: "scale",
@@ -900,3 +802,33 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", windowHeight);
   windowHeight();
 });
+
+/**
+ * Handle hover product gallery to show large image
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const productEls = document.querySelectorAll(".product-item");
+
+  productEls.forEach((productEl) => {
+    const smallImages = productEl.querySelectorAll('.small-image-list img');
+    const smallImageItems = productEl.querySelectorAll('.small-image-list li');
+    const largeImage = productEl.querySelector('.large-image');
+
+    if (!smallImages || !largeImage || !smallImageItems) return;
+
+    smallImages.forEach(function (smallImg, index) {
+      smallImg.addEventListener('mouseover', function () {
+        const newSrc = this.src;
+        largeImage.src = newSrc;
+
+        smallImageItems.forEach(function (item) {
+          item.classList.remove('border-primary');
+        });
+
+        smallImageItems[index].classList.remove('border-slate-200');
+        smallImageItems[index].classList.add('border-primary');
+      });
+    });
+  })
+});
+
