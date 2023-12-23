@@ -369,6 +369,12 @@
   }
 }
 
+@media screen and (max-width: 500px) {
+  .half-slider .slick-list {
+    padding: 0 10% 0 0 !important;
+  }
+}
+
 /* Custom blur bor detail product */
 .blur-content.hide {
   position: relative;
