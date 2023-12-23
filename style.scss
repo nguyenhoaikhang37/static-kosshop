@@ -192,6 +192,10 @@
   }
 
   /* Custom slick library */
+  .large-detail-slide-btn.slick-disabled {
+    display: none !important;
+  }
+
   .slick-prev {
     position: absolute;
     z-index: 100;
@@ -637,7 +641,7 @@
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    transform: translateX(-10px) !important;
+    transform: translate(0px, 10px) !important;
   }
 
   .tippy-tooltip {

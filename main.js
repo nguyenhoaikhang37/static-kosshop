@@ -4,7 +4,7 @@ $(window).ready(function () {
   $(".slider-customer").slick({
     dots: false,
     infinite: true,
-    speed: 100,
+    speed: 500,
     slidesToScroll: 1,
     slidesToShow: 5,
     responsive: [
@@ -25,7 +25,7 @@ $(window).ready(function () {
   $(".slider-international-customer").slick({
     dots: false,
     infinite: true,
-    speed: 100,
+    speed: 500,
     slidesToScroll: 1,
     slidesToShow: 5,
     responsive: [
@@ -47,11 +47,10 @@ $(window).ready(function () {
   $(".slider-products").slick({
     dots: false,
     infinite: true,
-    speed: 100,
+    speed: 500,
     slidesToScroll: 1,
     slidesToShow: 5,
     touchThreshold: 10,
-    useTransform: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -84,18 +83,17 @@ $(window).ready(function () {
   $(".slider-gallery").slick({
     dots: false,
     infinite: false,
-    speed: 100,
+    speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
     touchThreshold: 10,
+    swipeToSlide: true,
     useTransform: false,
     arrows: false,
     responsive: [
       {
         breakpoint: 770,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
         },
       },
     ],
@@ -119,7 +117,7 @@ $(window).ready(function () {
   $(".slider-news-products").slick({
     dots: false,
     infinite: true,
-    speed: 100,
+    speed: 500,
     slidesToScroll: 1,
     slidesToShow: 4,
     responsive: [
@@ -148,7 +146,7 @@ $(window).ready(function () {
   $(".slider-banner").slick({
     dots: true,
     infinite: true,
-    speed: 100,
+    speed: 500,
     // autoplaySpeed: 4000,
     // autoplay: true,
     arrows: false,
@@ -158,7 +156,7 @@ $(window).ready(function () {
   $(".slider-outstanding-news").slick({
     dots: false,
     infinite: true,
-    speed: 100,
+    speed: 500,
     autoplaySpeed: 3000,
     autoplay: true,
     arrows: false,
@@ -168,7 +166,7 @@ $(window).ready(function () {
   $(".slider-main-news").slick({
     dots: false,
     infinite: true,
-    speed: 100,
+    speed: 500,
     autoplay: false,
     arrows: true,
     slidesToScroll: 1,
@@ -199,7 +197,7 @@ $(window).ready(function () {
   $(".slider-category-news").slick({
     dots: false,
     infinite: true,
-    speed: 100,
+    speed: 500,
     autoplaySpeed: 3000,
     autoplay: true,
     arrows: true,
@@ -213,7 +211,7 @@ $(window).ready(function () {
   $(".slider-brand").slick({
     dots: false,
     infinite: true,
-    speed: 100,
+    speed: 500,
     slidesToScroll: 1,
     slidesToShow: 5,
     responsive: [
@@ -240,21 +238,23 @@ $(window).ready(function () {
     fade: false,
     adaptiveHeight: true,
     useTransform: true,
-    speed: 100,
+    speed: 500,
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
     asNavFor: ".slider-nav",
     prevArrow:
-      "<button type='button' class='slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
+      "<button type='button' class='large-detail-slide-btn slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
     nextArrow:
-      "<button type='button' class='slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
+      "<button type='button' class='large-detail-slide-btn slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
   });
 
   // Slider detail product children
   $(".slider-nav").slick({
     slidesToShow: 8,
     slidesToScroll: 8,
+    infinite: false,
     dots: false,
     focusOnSelect: true,
+    swipeToSlide: true,
     asNavFor: ".slider-single",
     arrows: false,
     responsive: [
