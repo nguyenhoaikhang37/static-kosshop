@@ -80,38 +80,38 @@ $(window).ready(function () {
       "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
   });
 
-  $(".slider-gallery").slick({
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    touchThreshold: 10,
-    swipeToSlide: true,
-    useTransform: false,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 770,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-  });
+  // $(".slider-gallery").slick({
+  //   dots: false,
+  //   infinite: false,
+  //   speed: 500,
+  //   slidesToShow: 4,
+  //   touchThreshold: 10,
+  //   swipeToSlide: true,
+  //   useTransform: false,
+  //   arrows: false,
+  //   responsive: [
+  //     {
+  //       breakpoint: 770,
+  //       settings: {
+  //         slidesToShow: 2,
+  //       },
+  //     },
+  //   ],
+  // });
 
-  $(".slider-gallery").on(
-    "touchstart touchmove mousemove mouseenter",
-    function (e) {
-      $(".slider-products").slick("slickSetOption", "swipe", false, false);
-    }
-  );
+  // $(".slider-gallery").on(
+  //   "touchstart touchmove mousemove mouseenter",
+  //   function (e) {
+  //     $(".slider-products").slick("slickSetOption", "swipe", false, false);
+  //   }
+  // );
 
-  $(".slider-gallery").on(
-    "touchend mouseover mouseout",
-    function (e) {
-      $(".slider-products").slick("slickSetOption", "swipe", true, false);
-    }
-  );
+  // $(".slider-gallery").on(
+  //   "touchend mouseover mouseout",
+  //   function (e) {
+  //     $(".slider-products").slick("slickSetOption", "swipe", true, false);
+  //   }
+  // );
 
   // Slider products on news page
   $(".slider-news-products").slick({
@@ -801,6 +801,39 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   window.addEventListener("resize", windowHeight);
   windowHeight();
+});
+
+/**
+ * Handle slide gallery products
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const smallImageList = document.querySelectorAll('.small-image-list');
+
+  if (!smallImageList) return
+
+  smallImageList.forEach(function (smallImageList) {
+    smallImageList.addEventListener('wheel', function (e) {
+      e.stopPropagation();
+      this.scrollLeft += e.deltaY;
+      e.preventDefault();
+    })
+
+    const enterEventList = ["touchstart", "touchmove", "mousemove", "mouseenter"]
+
+    enterEventList.forEach(function (item) {
+      smallImageList.addEventListener(item, function (e) {
+        $(".slider-products").slick("slickSetOption", "swipe", false, false);
+      })
+    })
+
+    const leaveEventList = ["touchend", "mouseover", "mouseout"]
+
+    leaveEventList.forEach(function (item) {
+      smallImageList.addEventListener(item, function (e) {
+        $(".slider-products").slick("slickSetOption", "swipe", true, false);
+      })
+    })
+  })
 });
 
 /**
