@@ -14,50 +14,77 @@ const BREAK_POINT = {
 
 // CUSTOM SLICK SLIDER
 $(window).ready(function () {
-  // Slider customer on home page
-  $(".slider-customer").slick({
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToScroll: 1,
-    slidesToShow: 5,
-    responsive: [
-      {
-        breakpoint: 769,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-    ],
-    prevArrow:
-      "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
-    nextArrow:
-      "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
-  });
 
-  $(".slider-international-customer").slick({
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToScroll: 1,
-    slidesToShow: 5,
-    responsive: [
-      {
-        breakpoint: 769,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-    ],
-    prevArrow:
-      "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
-    nextArrow:
-      "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
-  });
+  let internationalCustomerFlag = false;
+  let slickInternationalCustomerSlide;
+  function initInternationalCustomerSlick() {
+    if (window.innerWidth > BREAK_POINT.xl) {
+      if (!internationalCustomerFlag) {
+        internationalCustomerFlag = true;
+        slickInternationalCustomerSlide = $(".slider-international-customer").slick({
+          dots: false,
+          infinite: true,
+          speed: 500,
+          slidesToScroll: 1,
+          slidesToShow: 5,
+          responsive: [
+            {
+              breakpoint: 769,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              },
+            },
+          ],
+          prevArrow:
+            "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
+          nextArrow:
+            "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
+        });
+      }
+    } else if (internationalCustomerFlag) {
+      $(".slider-brand").slick('unslick');
+      internationalCustomerFlag = false;
+    }
+  }
+  initInternationalCustomerSlick();
+  window.addEventListener("resize", initInternationalCustomerSlick);
 
-  // Slider on brand page
+  let customerFlag = false;
+  let slickCustomerSlide;
+  function initCustomerSlick() {
+    if (window.innerWidth > BREAK_POINT.xl) {
+      if (!customerFlag) {
+        customerFlag = true;
+        slickCustomerSlide = $(".slider-customer").slick({
+          dots: false,
+          infinite: true,
+          speed: 500,
+          slidesToScroll: 1,
+          slidesToShow: 5,
+          responsive: [
+            {
+              breakpoint: 769,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              },
+            },
+          ],
+          prevArrow:
+            "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
+          nextArrow:
+            "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
+        });
+      }
+    } else if (customerFlag) {
+      $(".slider-brand").slick('unslick');
+      customerFlag = false;
+    }
+  }
+  initCustomerSlick();
+  window.addEventListener("resize", initCustomerSlick);
+
   let brandFlag = false;
   let slickBrandSlide;
   function initBrandSlick() {
