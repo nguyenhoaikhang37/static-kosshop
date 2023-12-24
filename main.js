@@ -80,38 +80,47 @@ $(window).ready(function () {
       "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
   });
 
-  // $(".slider-gallery").slick({
-  //   dots: false,
-  //   infinite: false,
-  //   speed: 500,
-  //   slidesToShow: 4,
-  //   touchThreshold: 10,
-  //   swipeToSlide: true,
-  //   useTransform: false,
-  //   arrows: false,
-  //   responsive: [
-  //     {
-  //       breakpoint: 770,
-  //       settings: {
-  //         slidesToShow: 2,
-  //       },
-  //     },
-  //   ],
-  // });
-
-  // $(".slider-gallery").on(
-  //   "touchstart touchmove mousemove mouseenter",
-  //   function (e) {
-  //     $(".slider-products").slick("slickSetOption", "swipe", false, false);
-  //   }
-  // );
-
-  // $(".slider-gallery").on(
-  //   "touchend mouseover mouseout",
-  //   function (e) {
-  //     $(".slider-products").slick("slickSetOption", "swipe", true, false);
-  //   }
-  // );
+  var init = false;
+  var slick;
+  function initSlickGallery() {
+    if (window.innerWidth > 1200) {
+      if (!init) {
+        init = true;
+        slick = $(".slider-gallery").slick({
+          dots: false,
+          infinite: false,
+          speed: 500,
+          slidesToShow: 4,
+          touchThreshold: 10,
+          useTransform: false,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 770,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+          ],
+        }).on(
+          "touchstart touchmove mousemove mouseenter",
+          function (e) {
+            $(".slider-products").slick("slickSetOption", "swipe", false, false);
+          }
+        ).on(
+          "touchend mouseover mouseout",
+          function (e) {
+            $(".slider-products").slick("slickSetOption", "swipe", true, false);
+          }
+        );
+      }
+    } else if (init) {
+      $(".slider-products").slick('unslick');
+      init = false;
+    }
+  }
+  initSlickGallery();
+  window.addEventListener("resize", initSlickGallery);
 
   // Slider products on news page
   $(".slider-news-products").slick({
