@@ -8,6 +8,12 @@
       TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
       dàng.
     </title>
+    <meta
+      name="description"
+      content=" KOS - Hệ thống vali kéo, balo, ví da nam, cặp da, túi xách cao cấp tại
+      TPHCM & Hà Nội: Freeship | Bảo hành chính hãng | Hỗ trợ mua sắm online dễ
+      dàng."
+    />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
@@ -27,31 +33,6 @@
     <script src="/lib/tippy/popper.min.js"></script>
     <script src="/lib/tippy/tippy.min.js"></script>
     <script src="/lib/lightbox/lightbox.min.js"></script>
-
-    <!-- Scripts -->
-    <script>
-      const getEl = document.querySelector.bind(document);
-      const getEls = document.querySelectorAll.bind(document);
-
-      function load(selector, path) {
-        const cached = localStorage.getItem(path);
-        if (cached) {
-          getEl(selector).innerHTML = cached;
-        }
-
-        fetch(path)
-          .then((res) => res.text())
-          .then((html) => {
-            if (html !== cached) {
-              getEl(selector).innerHTML = html;
-              localStorage.setItem(path, html);
-            }
-          })
-          .finally(() => {
-            window.dispatchEvent(new Event("template-loaded"));
-          });
-      }
-    </script>
   </head>
   <body>
     <!-- HEADER -->
@@ -720,30 +701,495 @@
     <main class="pt-[56px] lg:pt-[76px] xl:pt-[132px]">
       <!-- SIDEBAR -->
       <div
-        id="sidebar"
         class="fixed top-[56px] xl:top-[76px] left-0 right-0 bg-white shadow-header z-[998] hidden xl:block"
-      ></div>
-      <script>
-        load("#sidebar", "/_components/sidebar.html");
-      </script>
+      >
+        <div class="relative myContainer">
+          <ul class="flex">
+            <li
+              class="relative flex items-center py-[14px] pl-[28px] pr-6 font-bold cursor-pointer group text-heading basis-1/4 uppercase"
+            >
+              Danh Mục Sản Phẩm
+              <i class="relative ml-8 text-xl -top-[2px] fas fa-caret-down"></i>
+
+              <ul
+                id="category-navbar"
+                class="absolute left-0 w-full bg-white rounded-b-md top-[calc(100%+1px)] shadow-sidebar hidden group-hover:!block"
+              >
+                <li
+                  class="relative px-4 py-2 transition-all ease-in-out mega-menu-item text-dark hover:bg-primary hover:text-white"
+                >
+                  <a
+                    href="/product-portfolio/"
+                    class="flex items-center justify-between"
+                  >
+                    <strong>VALI KÉO</strong>
+                    <i class="fal fa-chevron-right"></i>
+                  </a>
+                </li>
+                <li
+                  class="relative px-4 py-2 transition-all ease-in-out mega-menu-item text-dark hover:bg-primary hover:text-white"
+                >
+                  <a href="/product-portfolio/">
+                    <strong>VALI MADE IN ITALY</strong>
+                  </a>
+                </li>
+                <li
+                  class="relative px-4 py-2 transition-all ease-in-out mega-menu-item text-dark hover:bg-primary hover:text-white"
+                >
+                  <a
+                    class="flex items-center justify-between"
+                    href="/product-portfolio/"
+                    ><strong>BALO </strong><i class="fal fa-chevron-right"></i
+                  ></a>
+                </li>
+                <li
+                  class="relative px-4 py-2 transition-all ease-in-out mega-menu-item text-dark hover:bg-primary hover:text-white"
+                >
+                  <a
+                    class="flex items-center justify-between"
+                    href="/product-portfolio/"
+                    ><strong>VÍ DA NAM</strong
+                    ><i class="fal fa-chevron-right"></i
+                  ></a>
+                </li>
+                <li
+                  class="relative px-4 py-2 transition-all ease-in-out mega-menu-item text-dark hover:bg-primary hover:text-white"
+                >
+                  <a
+                    class="flex items-center justify-between"
+                    href="/product-portfolio/"
+                    ><strong>CẶP DA NAM</strong
+                    ><i class="fal fa-chevron-right"></i
+                  ></a>
+                </li>
+                <li
+                  class="relative px-4 py-2 transition-all ease-in-out mega-menu-item text-dark hover:bg-primary hover:text-white"
+                >
+                  <a
+                    class="flex items-center justify-between"
+                    href="/product-portfolio/"
+                    ><strong>TÚI XÁCH NAM</strong
+                    ><i class="fal fa-chevron-right"></i
+                  ></a>
+                </li>
+                <li
+                  class="relative px-4 py-2 transition-all ease-in-out mega-menu-item text-dark hover:bg-primary hover:text-white"
+                >
+                  <a
+                    class="flex items-center justify-between"
+                    href="/product-portfolio/"
+                    ><strong>PHỤ KIỆN DU LỊCH</strong
+                    ><i class="fal fa-chevron-right"></i
+                  ></a>
+                </li>
+              </ul>
+              <!-- MEGA MENU -->
+              <div
+                class="mega-menu absolute top-0 left-full w-[830px] px-5 py-4 bg-white shadow-header z-[999] hidden"
+              >
+                <div class="grid grid-cols-4 gap-x-4 gap-y-6">
+                  <div class="flex flex-col">
+                    <strong
+                      class="text-primary pb-[10px] border-b-2 border-primary block font-normal"
+                      >Chất liệu</strong
+                    >
+                    <ul class="flex flex-col gap-1 mt-2">
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-da-nam/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi da nam</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-xach-nam-vai/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi xách nam vải</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-col">
+                    <strong
+                      class="text-primary pb-[10px] border-b-2 border-primary block font-normal"
+                      >Chất liệu</strong
+                    >
+                    <ul class="flex flex-col gap-1 mt-2">
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-da-nam/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi da nam</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-xach-nam-vai/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi xách nam vải</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-col">
+                    <strong
+                      class="text-primary pb-[10px] border-b-2 border-primary block font-normal"
+                      >Chất liệu</strong
+                    >
+                    <ul class="flex flex-col gap-1 mt-2">
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-da-nam/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi da nam</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-xach-nam-vai/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi xách nam vải</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-col">
+                    <strong
+                      class="text-primary pb-[10px] border-b-2 border-primary block font-normal"
+                      >Chất liệu</strong
+                    >
+                    <ul class="flex flex-col gap-1 mt-2">
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-da-nam/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi da nam</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-xach-nam-vai/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi xách nam vải</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-col">
+                    <strong
+                      class="text-primary pb-[10px] border-b-2 border-primary block font-normal"
+                      >Chất liệu</strong
+                    >
+                    <ul class="flex flex-col gap-1 mt-2">
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-da-nam/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi da nam</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-xach-nam-vai/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi xách nam vải</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-xach-nam-vai/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi xách nam vải</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-xach-nam-vai/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi xách nam vải</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="flex items-center gap-2 font-normal transition-all ease-in-out text-dark hover:text-primary hover:translate-x-1"
+                          href="https://www.kosshop.vn/tui-xach-nam-vai/"
+                        >
+                          <i class="text-sm fa fa-caret-right"></i>
+                          <span>Túi xách nam vải</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex items-center px-6 py-[14px] font-bold cursor-pointer text-heading"
+            >
+              Khuyến Mãi
+            </li>
+            <li
+              class="flex items-center px-6 py-[14px] font-bold cursor-pointer text-heading"
+            >
+              Đối Tác Kinh Doanh
+            </li>
+            <li
+              class="flex items-center px-6 py-[14px] font-bold cursor-pointer text-heading"
+            >
+              Kinh Nghiệm
+            </li>
+            <li
+              class="flex items-center px-6 py-[14px] font-bold cursor-pointer text-heading"
+            >
+              Liên Hệ
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <!-- BANNER -->
-      <section id="banner"></section>
-      <script>
-        load("#banner", "/_sections/banner.html");
-      </script>
+      <section>
+        <div class="grid grid-cols-12 xl:myContainer">
+          <div class="xl:col-span-3"></div>
+          <div class="col-span-12 xl:col-span-9">
+            <div class="grid grid-cols-12 slider-x-0 full-width-slider">
+              <div class="relative col-span-12 xl:col-span-9 slider-banner">
+                <div class="inline-block w-full css-slider-item">
+                  <a href="/brand/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/theme/images/2023/11/27/1701049889img83.jpg"
+                      alt="kosshop"
+                      class="block w-full aspect-video"
+                    />
+                  </a>
+                </div>
+
+                <div class="inline-block w-full css-slider-item">
+                  <a href="/brand/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/theme/images/2023/06/20/1687198988img42.jpg"
+                      alt="kosshop"
+                      class="block w-full aspect-video"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex-col hidden col-span-3 xl:flex">
+                <a
+                  href="https://www.kosshop.vn/tui-dung-do-packing-cube-heys-earth-tones.html"
+                >
+                  <img
+                    src="https://cdn.kosshop.vn/upload/theme/images/2022/10/10/1665380981img12.jpg"
+                    alt="kosshop"
+                    class="aspect-auto w-full h-[calc(100%-8px)]"
+                  />
+                </a>
+                <a
+                  href="https://www.kosshop.vn/vali-roncato-joy-size-s-20-inch-blue.html"
+                >
+                  <img
+                    src="https://cdn.kosshop.vn/upload/theme/images/2023/03/25/1679727650img55.jpg"
+                    alt="kosshop"
+                    class="aspect-auto w-full h-[calc(100%-12px)]"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Brands -->
-      <section id="brands" class="mt-5 xl:mt-[30px]"></section>
-      <script>
-        load("#brands", "/_sections/brands.html");
-      </script>
+      <section class="mt-5 xl:mt-[30px]">
+        <div class="myContainer">
+          <h2 class="text-lg font-bold text-center text-heading">
+            THƯƠNG HIỆU QUỐC TẾ CHÍNH HÃNG
+          </h2>
+
+          <div
+            class="relative mt-[10px] xl:mt-6 space-x-2 overflow-x-auto xl:space-x-0 xl:overflow-x-visible no-scrollbar whitespace-nowrap slider-brand"
+          >
+            <div
+              class="w-[30%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex"
+            >
+              <a href="/product-portfolio/" class="flex justify-center">
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2022/10/11/1665464101img64.jpg"
+                  alt="Ricardo"
+                  width="101"
+                  height="101"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+
+            <div
+              class="w-[30%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex"
+            >
+              <a
+                href="https://www.kosshop.vn/balo-tucano/"
+                class="flex justify-center"
+              >
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2022/06/02/1654144345img95.jpg"
+                  alt="Tucano"
+                  width="101"
+                  height="101"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+
+            <div
+              class="w-[30%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex"
+            >
+              <a
+                class="flex justify-center"
+                href="https://www.kosshop.vn/vali-keo-roncato/"
+              >
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/31/img19.png"
+                  alt="Roncato"
+                  width="101"
+                  height="101"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+
+            <div
+              class="w-[30%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex"
+            >
+              <a
+                href="https://www.kosshop.vn/balo-solo/"
+                class="flex justify-center"
+              >
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/31/img32.png"
+                  alt="Solo"
+                  width="101"
+                  height="101"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+
+            <div
+              class="w-[30%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex"
+            >
+              <a
+                href="https://www.kosshop.vn/heys/"
+                class="flex justify-center"
+              >
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2022/10/11/1665464322img51.jpeg"
+                  alt="Heys"
+                  width="101"
+                  height="101"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+
+            <div
+              class="w-[30%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex"
+            >
+              <a
+                href="https://www.kosshop.vn/modo/"
+                class="flex justify-center"
+              >
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2021/06/23/1624443346img5.png"
+                  alt="modo"
+                  width="101"
+                  height="101"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+
+            <div
+              class="w-[30%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex"
+            >
+              <a
+                href="https://www.kosshop.vn/vali-keo-skyway/"
+                class="flex justify-center"
+              >
+                <img
+                  src="https://cdn.kosshop.vn/upload/theme/images/2020/08/31/img59.png"
+                  alt="skyway"
+                  width="101"
+                  height="101"
+                  class="aspect-square"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- About KOS -->
-      <section id="about-us" class="mt-[30px] xl:mt-[50px]"></section>
-      <script>
-        load("#about-us", "/_sections/about-us.html");
-      </script>
+      <section class="mt-[30px] xl:mt-[50px]">
+        <div class="grid grid-cols-1 xl:grid-cols-2 myContainer gap-[30px]">
+          <div>
+            <h2 class="text-lg font-bold text-center text-heading xl:text-left">
+              VỀ KOS
+            </h2>
+            <p class="text-justify mt-[18px]">
+              KOS SHOP - Hệ thống Vali Kéo, Balo, Túi xách nam, Cặp Xách Nam
+              CHÍNH HÃNG CAO CẤP. Tất cả sản phẩm tại KOS đều là hàng chính hãng
+              từ các thương hiệu hàng đầu thế giới như Roncato (Ý), Ricardo
+              Beverly Hills (Mỹ), Skyway (Mỹ), Heys (Canada), SOLO (Mỹ), Lewis N
+              Clark (Mỹ). Hiện KOS đang có hệ thống cửa hàng tại TPHCM, Hà Nội.
+            </p>
+            <button class="w-full mt-4 text-center xl:text-left">
+              <a
+                class="hover:underline text-primary"
+                href="https://www.kosshop.vn/ve-chung-toi/"
+              >
+                Xem thêm
+                <i class="fa fa-chevron-down"></i>
+              </a>
+            </button>
+          </div>
+          <div>
+            <iframe
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen=""
+              frameborder="0"
+              src="https://www.youtube.com/embed/PWyLBrvWZ24"
+              title="YouTube video player"
+              class="w-full aspect-video"
+            ></iframe>
+          </div>
+        </div>
+      </section>
 
       <!-- QUICK ACCESS -->
       <section class="block mt-10 lg:hidden">
@@ -871,27 +1317,33 @@
               </div>
             </section>
 
-            <div class="lg:mt-5 half-slider slider-products">
+            <div
+              class="space-x-2 overflow-x-auto xl:space-x-0 xl:overflow-x-visible lg:mt-5 no-scrollbar whitespace-nowrap slider-products"
+            >
               <article
-                class="product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
               >
-                <a href="/product-detail/">
-                  <img
-                    src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
-                    alt=""
-                    class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
-                  />
-                </a>
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                </div>
 
-                <h3 class="mt-6 font-semibold text-heading line-clamp-3">
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
                   <a href="/product-detail/">
                     Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
-                    Green 1
+                    Green
                   </a>
                 </h3>
 
                 <ul
-                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap slider-gallery"
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
                 >
                   <li
                     class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
@@ -962,17 +1414,24 @@
               </article>
 
               <article
-                class="product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
               >
-                <a href="/product-detail/">
-                  <img
-                    src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
-                    alt=""
-                    class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
-                  />
-                </a>
+                <!-- DISCOUNT LABEL -->
+                <strong class="discount-label">-45%</strong>
 
-                <h3 class="mt-6 font-semibold text-heading line-clamp-3">
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                </div>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
                   <a href="/product-detail/">
                     Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
                     Green
@@ -980,7 +1439,115 @@
                 </h3>
 
                 <ul
-                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap slider-gallery"
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1 xl:mt-4">
+                  <strong class="text-primary">4,200,000₫</strong>
+                  <del class="block text-sm text-heading">2,990,000₫</del>
+                  <strong class="hidden">-25%</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
+
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                  <a
+                    href="/main-news/"
+                    class="absolute left-0 z-10 flex gap-1 text-xs -bottom-[18px] text-greyC4"
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.kosshop.vn/upload/theme/images/italia-icon.png"
+                      alt="kosshop.vn"
+                      width="15"
+                      height="15"
+                    />
+                    MADE IN ITALIA
+                  </a>
+                </div>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
                 >
                   <li
                     class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
@@ -1051,17 +1618,26 @@
               </article>
 
               <article
-                class="product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
               >
-                <a href="/product-detail/">
-                  <img
-                    src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
-                    alt=""
-                    class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
-                  />
-                </a>
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                  <span
+                    class="absolute left-0 z-10 flex gap-1 text-[10px] px-1 -bottom-4 text-white bg-primary rounded-full"
+                  >
+                    MADE IN ITALIA
+                  </span>
+                </div>
 
-                <h3 class="mt-6 font-semibold text-heading line-clamp-3">
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
                   <a href="/product-detail/">
                     Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
                     Green
@@ -1069,7 +1645,7 @@
                 </h3>
 
                 <ul
-                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap slider-gallery"
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
                 >
                   <li
                     class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
@@ -1140,7 +1716,7 @@
               </article>
 
               <article
-                class="product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
               >
                 <a href="/product-detail/">
                   <img
@@ -1150,7 +1726,9 @@
                   />
                 </a>
 
-                <h3 class="mt-6 font-semibold text-heading line-clamp-3">
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
                   <a href="/product-detail/">
                     Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
                     Green
@@ -1158,7 +1736,7 @@
                 </h3>
 
                 <ul
-                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap slider-gallery"
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
                 >
                   <li
                     class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
@@ -1229,7 +1807,7 @@
               </article>
 
               <article
-                class="product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
               >
                 <a href="/product-detail/">
                   <img
@@ -1239,96 +1817,9 @@
                   />
                 </a>
 
-                <h3 class="mt-6 font-semibold text-heading line-clamp-3">
-                  <a href="/product-detail/">
-                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
-                    Green
-                  </a>
-                </h3>
-
-                <ul
-                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap slider-gallery"
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
                 >
-                  <li
-                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
-                  >
-                    <img
-                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
-                      alt=""
-                      class="block w-full h-full aspect-square"
-                    />
-                  </li>
-                  <li
-                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
-                  >
-                    <img
-                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
-                      alt=""
-                      class="block w-full h-full aspect-square"
-                    />
-                  </li>
-                  <li
-                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
-                  >
-                    <img
-                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
-                      alt=""
-                      class="block w-full h-full aspect-square"
-                    />
-                  </li>
-                  <li
-                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
-                  >
-                    <img
-                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
-                      alt=""
-                      class="block w-full h-full aspect-square"
-                    />
-                  </li>
-                  <li
-                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
-                  >
-                    <img
-                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
-                      alt=""
-                      class="block w-full h-full aspect-square"
-                    />
-                  </li>
-                  <li
-                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
-                  >
-                    <img
-                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
-                      alt=""
-                      class="block w-full h-full aspect-square"
-                    />
-                  </li>
-                </ul>
-
-                <p class="mt-1">
-                  <strong class="text-primary">4,200,000₫</strong>
-                </p>
-                <div class="flex flex-wrap items-center gap-1 mt-1">
-                  <i class="text-xs text-yellow-400 fas fa-star"></i>
-                  <i class="text-xs text-yellow-400 fas fa-star"></i>
-                  <i class="text-xs text-yellow-400 fas fa-star"></i>
-                  <i class="text-xs text-yellow-400 fas fa-star"></i>
-                  <span class="text-xs text-dark">12 đánh giá</span>
-                </div>
-              </article>
-
-              <article
-                class="product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
-              >
-                <a href="/product-detail/">
-                  <img
-                    src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
-                    alt=""
-                    class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
-                  />
-                </a>
-
-                <h3 class="mt-6 font-semibold text-heading line-clamp-3">
                   <a href="/product-detail/">
                     Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
                     Green
@@ -1336,7 +1827,7 @@
                 </h3>
 
                 <ul
-                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap slider-gallery"
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
                 >
                   <li
                     class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
@@ -1429,51 +1920,585 @@
               </div>
             </section>
 
-            <div class="mt-4 lg:mt-5 half-slider slider-products">
-              <div id="card-item-10">
-                <script>
-                  load("#card-item-10", "/_components/card-item.html");
-                </script>
-              </div>
+            <div
+              class="mt-4 space-x-2 overflow-x-auto xl:space-x-0 xl:overflow-x-visible lg:mt-5 no-scrollbar whitespace-nowrap slider-products"
+            >
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                </div>
 
-              <div id="card-item-11">
-                <script>
-                  load("#card-item-11", "/_components/card-item.html");
-                </script>
-              </div>
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
 
-              <div id="card-item-12">
-                <script>
-                  load(
-                    "#card-item-12",
-                    "/_components/card-item-with-flag.html"
-                  );
-                </script>
-              </div>
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
 
-              <div id="card-item-13">
-                <script>
-                  load(
-                    "#card-item-13",
-                    "/_components/card-item-with-discount.html"
-                  );
-                </script>
-              </div>
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
 
-              <div id="card-item-14">
-                <script>
-                  load(
-                    "#card-item-14",
-                    "/_components/card-item-with-label.html"
-                  );
-                </script>
-              </div>
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <!-- DISCOUNT LABEL -->
+                <strong class="discount-label">-45%</strong>
 
-              <div id="card-item-15">
-                <script>
-                  load("#card-item-15", "/_components/card-item.html");
-                </script>
-              </div>
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                </div>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1 xl:mt-4">
+                  <strong class="text-primary">4,200,000₫</strong>
+                  <del class="block text-sm text-heading">2,990,000₫</del>
+                  <strong class="hidden">-25%</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
+
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                  <a
+                    href="/main-news/"
+                    class="absolute left-0 z-10 flex gap-1 text-xs -bottom-[18px] text-greyC4"
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.kosshop.vn/upload/theme/images/italia-icon.png"
+                      alt="kosshop.vn"
+                      width="15"
+                      height="15"
+                    />
+                    MADE IN ITALIA
+                  </a>
+                </div>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
+
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                  <span
+                    class="absolute left-0 z-10 flex gap-1 text-[10px] px-1 -bottom-4 text-white bg-primary rounded-full"
+                  >
+                    MADE IN ITALIA
+                  </span>
+                </div>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
+
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <a href="/product-detail/">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                    alt=""
+                    class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                  />
+                </a>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
+
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <a href="/product-detail/">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                    alt=""
+                    class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                  />
+                </a>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
             </div>
           </div>
 
@@ -1524,48 +2549,585 @@
               </div>
             </section>
 
-            <div class="lg:mt-5 half-slider slider-products">
-              <div id="card-item-20">
-                <script>
-                  load("#card-item-20", "/_components/card-item.html");
-                </script>
-              </div>
+            <div
+              class="space-x-2 overflow-x-auto xl:space-x-0 xl:overflow-x-visible lg:mt-5 no-scrollbar whitespace-nowrap slider-products"
+            >
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                </div>
 
-              <div id="card-item-21">
-                <script>
-                  load("#card-item-21", "/_components/card-item.html");
-                </script>
-              </div>
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
 
-              <div id="card-item-22">
-                <script>
-                  load(
-                    "#card-item-22",
-                    "/_components/card-item-with-flag.html"
-                  );
-                </script>
-              </div>
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
 
-              <div id="card-item-23">
-                <script>
-                  load(
-                    "#card-item-23",
-                    "/_components/card-item-with-discount.html"
-                  );
-                </script>
-              </div>
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
 
-              <div id="card-item-24">
-                <script>
-                  load("#card-item-24", "/_components/card-item.html");
-                </script>
-              </div>
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <!-- DISCOUNT LABEL -->
+                <strong class="discount-label">-45%</strong>
 
-              <div id="card-item-25">
-                <script>
-                  load("#card-item-25", "/_components/card-item.html");
-                </script>
-              </div>
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                </div>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1 xl:mt-4">
+                  <strong class="text-primary">4,200,000₫</strong>
+                  <del class="block text-sm text-heading">2,990,000₫</del>
+                  <strong class="hidden">-25%</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
+
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                  <a
+                    href="/main-news/"
+                    class="absolute left-0 z-10 flex gap-1 text-xs -bottom-[18px] text-greyC4"
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.kosshop.vn/upload/theme/images/italia-icon.png"
+                      alt="kosshop.vn"
+                      width="15"
+                      height="15"
+                    />
+                    MADE IN ITALIA
+                  </a>
+                </div>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
+
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <div class="relative">
+                  <a href="/product-detail/">
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                    />
+                  </a>
+                  <span
+                    class="absolute left-0 z-10 flex gap-1 text-[10px] px-1 -bottom-4 text-white bg-primary rounded-full"
+                  >
+                    MADE IN ITALIA
+                  </span>
+                </div>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
+
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <a href="/product-detail/">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                    alt=""
+                    class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                  />
+                </a>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
+
+              <article
+                class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col product-item relative overflow-hidden group p-[10px] border border-greyLight rounded cursor-pointer hover:shadow-box hover:border-greyC4 transition-all ease-in-out bg-white"
+              >
+                <a href="/product-detail/">
+                  <img
+                    src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                    alt=""
+                    class="object-cover w-full transition-all ease-in-out large-image big-image group-hover:scale-105 aspect-square"
+                  />
+                </a>
+
+                <h3
+                  class="mt-6 font-semibold whitespace-normal text-heading line-clamp-3"
+                >
+                  <a href="/product-detail/">
+                    Vali Ricardo Montecito 2.0 HS size S (21 inch) - Hunter
+                    Green
+                  </a>
+                </h3>
+
+                <ul
+                  class="w-full mt-2 space-x-1 overflow-x-auto no-scrollbar small-image-list whitespace-nowrap"
+                >
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-primary"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-navy-1665054054.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/13/vali-roncato-box-sport-2-0-size-s-20-inch-papaya-1702470944.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/24/vali-skyway-nimbus-4-0-size-s-20-inch-silver-1700809827.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                  <li
+                    class="inline-block w-8 h-8 overflow-hidden border rounded md:w-9 md:h-9 border-slate-200"
+                  >
+                    <img
+                      src="https://cdn.kosshop.vn/upload/images/2022/10/06/vali-roncato-light-size-s-20-inch-nero-1665055452.jpg"
+                      alt=""
+                      class="block w-full h-full aspect-square"
+                    />
+                  </li>
+                </ul>
+
+                <p class="mt-1">
+                  <strong class="text-primary">4,200,000₫</strong>
+                </p>
+                <div class="flex flex-wrap items-center gap-1 mt-1">
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <i class="text-xs text-yellow-400 fas fa-star"></i>
+                  <span class="text-xs text-dark">12 đánh giá</span>
+                </div>
+              </article>
             </div>
 
             <div class="flex justify-center mt-2 lg:mt-0 lg:hidden">
@@ -1582,53 +3144,753 @@
       </section>
 
       <!-- BLOGS -->
-      <section id="blogs" class="mt-[50px]"></section>
-      <script>
-        load("#blogs", "/_sections/blogs.html");
-      </script>
+      <section id="blogs" class="mt-[50px]">
+        <div class="myContainer">
+          <h2 class="text-lg font-bold text-center text-heading">
+            BÀI VIẾT THAM KHẢO
+          </h2>
+
+          <div
+            class="grid gap-[10px] grid-cols-1 lg:grid-cols-2 mt-5 lg:mt-[35px] xl:mt-5"
+          >
+            <article class="flex flex-col gap-[15px] mb-[15px] lg:mb-0">
+              <div class="h-full">
+                <a
+                  href="/main-news/vali-size-24-co-xach-tay-duoc-khong-xem-ngay.html"
+                >
+                  <img
+                    alt="Vali size 24 có xách tay được không? Xem ngay!"
+                    src="https://cdn.kosshop.vn/upload/images/2023/12/14/trai-nghiem-dich-vu-cho-thue-vali-du-lich-tai-tphcm-tien-ich-1702528195.jpg"
+                    class="w-full aspect-video"
+                  />
+                </a>
+              </div>
+              <div>
+                <h3 class="font-bold text-heading">
+                  <a
+                    href="/main-news/vali-size-24-co-xach-tay-duoc-khong-xem-ngay.html"
+                  >
+                    Vali size 24 có xách tay được không? Xem ngay!
+                  </a>
+                </h3>
+                <p class="mt-1 text-dark line-clamp-2">
+                  Khi chuẩn bị cho một cuộc hành trình hoặc chuyến du lịch, một
+                  trong những quyết định quan trọng mà mọi người phải đối mặt...
+                </p>
+              </div>
+            </article>
+
+            <div class="flex flex-col gap-4">
+              <article class="grid grid-cols-[120px_1fr] gap-[15px]">
+                <div class="flex-shrink-0">
+                  <a
+                    href="/main-news/huong-dan-cach-mo-khoa-vali-khung-nhom-khoa-sap.html"
+                  >
+                    <img
+                      alt="Hướng dẫn cách mở khóa vali khung nhôm khóa sập"
+                      src="https://cdn.kosshop.vn/upload/images/2023/12/14/tim-noi-mua-balo-da-nu-o-ha-noi-phoi-hop-phong-cach-va-chat-luong-1702527848.jpg"
+                      class="aspect-video"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <h3 class="font-bold text-heading">
+                    <a
+                      href="/main-news/huong-dan-cach-mo-khoa-vali-khung-nhom-khoa-sap.html"
+                      >Hướng dẫn cách mở khóa vali khung nhôm khóa sập</a
+                    >
+                  </h3>
+                  <p class="mt-1 text-dark line-clamp-2">
+                    Cách mở khóa vali khung nhôm khóa sập là một trong những vấn
+                    đề được nhiều người quan tâm. Vali khung nhôm khóa sập là...
+                  </p>
+                </div>
+              </article>
+              <article class="grid grid-cols-[120px_1fr] gap-[15px]">
+                <div class="flex-shrink-0">
+                  <a
+                    href="/main-news/di-du-lich-4-ngay-can-chuan-bi-nhung-gi.html"
+                    ><img
+                      alt="Đi du lịch 4 ngày cần chuẩn bị những gì?"
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/02/di-du-lich-4-ngay-can-chuan-bi-nhung-gi-1698937926.jpg"
+                      class="aspect-video"
+                  /></a>
+                </div>
+                <div>
+                  <h3 class="font-bold text-heading">
+                    <a
+                      href="/main-news/di-du-lich-4-ngay-can-chuan-bi-nhung-gi.html"
+                      >Đi du lịch 4 ngày cần chuẩn bị những gì?</a
+                    >
+                  </h3>
+                  <p class="mt-1 text-dark line-clamp-2">
+                    Đi du lịch 4 ngày cần chuẩn bị những gì?&amp;nbsp; Đó là câu
+                    hỏi mà bạn luôn quan tâm để có thể có được chuyến...
+                  </p>
+                </div>
+              </article>
+              <article class="grid grid-cols-[120px_1fr] gap-[15px]">
+                <div class="flex-shrink-0">
+                  <a
+                    href="/main-news/vali-keo-qua-tang-tu-kos-lua-chon-tot-cho-ca-nhan-va-doanh-nghiep.html"
+                    ><img
+                      alt="Vali kéo quà tặng từ KOS: Lựa chọn tốt cho cá nhân và doanh nghiệp"
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/01/vali-keo-qua-tang-tu-kos-lua-chon-tot-cho-ca-nhan-va-doanh-nghiep-1698855256.jpg"
+                      class="aspect-video"
+                  /></a>
+                </div>
+                <div>
+                  <h3 class="font-bold text-heading">
+                    <a
+                      href="/main-news/vali-keo-qua-tang-tu-kos-lua-chon-tot-cho-ca-nhan-va-doanh-nghiep.html"
+                      >Vali kéo quà tặng từ KOS: Lựa chọn tốt cho cá nhân và
+                      doanh nghiệp</a
+                    >
+                  </h3>
+                  <p class="mt-1 text-dark line-clamp-2">
+                    Cho dù bạn có đang tìm kiếm thông tin về vali kéo quà tặng
+                    cho cá hay cho doanh nghiệp, bạn cũng nên có sẵn...
+                  </p>
+                </div>
+              </article>
+              <article class="grid grid-cols-[120px_1fr] gap-[15px]">
+                <div class="flex-shrink-0">
+                  <a
+                    href="/main-news/chia-se-chon-kich-thuoc-balo-xach-tay-len-may-bay-phu-hop.html"
+                    ><img
+                      alt="Chia sẻ chọn kích thước balo xách tay lên máy bay phù hợp"
+                      src="https://cdn.kosshop.vn/upload/images/2023/11/01/chia-se-chon-kich-thuoc-balo-xach-tay-len-may-bay-phu-hop-1698830770.jpg"
+                      class="aspect-video"
+                  /></a>
+                </div>
+                <div>
+                  <h3 class="font-bold text-heading">
+                    <a
+                      href="/main-news/chia-se-chon-kich-thuoc-balo-xach-tay-len-may-bay-phu-hop.html"
+                      >Chia sẻ chọn kích thước balo xách tay lên máy bay phù
+                      hợp</a
+                    >
+                  </h3>
+                  <p class="mt-1 text-dark line-clamp-2">
+                    Khi chuẩn bị hành lý cho chuyến đi bằng máy bay, ngoài việc
+                    lựa chọn đồ đạc và vật dụng cần thiết, việc đảm bảo...
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- INTERNATIONAL CUSTOMERS -->
-      <section id="international-customer" class="mt-10"></section>
-      <script>
-        load(
-          "#international-customer",
-          "/_components/international-customer.html"
-        );
-      </script>
+      <section class="mt-10">
+        <div class="myContainer">
+          <h2 class="text-xl font-bold text-center text-heading">
+            KHÁCH HÀNG QUỐC TẾ CÙNG VALI THƯƠNG HIỆU QUỐC TẾ TẠI KOS
+          </h2>
+
+          <div
+            class="gap-4 mt-5 space-x-2 overflow-x-auto no-scrollbar whitespace-nowrap slider-international-customer xl:space-x-0 xl:overflow-x-visible"
+          >
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/theme/images/2023/05/23/1684836329img97.jpg"
+                alt="Tổng lãnh sự quán Ý Antonio Alessandro tại Roncato Store Hanoi"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Tổng lãnh sự quán Ý Antonio Alessandro tại Roncato Store Hanoi
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/theme/images/2023/05/23/1684836266img48.jpg"
+                alt="Ca sĩ Quang Vinh cùng Roncato tại Italia "
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Ca sĩ Quang Vinh cùng Roncato tại Italia
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/theme/images/2022/01/28/1643341112img44.jpg"
+                alt="Vali Roncato WE-Glam tại Roma Italy"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Roncato WE-Glam tại Roma Italy
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/theme/images/2022/09/23/1663925816img5.jpg"
+                alt="Vali Modo Charm cùng ca sĩ Quang Vinh"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Modo Charm cùng ca sĩ Quang Vinh
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/theme/images/2022/01/29/1643434749img33.jpg"
+                alt="Cô Chiều Xuân cùng vali Roncato tại nhà thờ Lớn Hà Nội"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Cô Chiều Xuân cùng vali Roncato tại nhà thờ Lớn Hà Nội
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/theme/images/2022/01/28/1643341122img63.jpg"
+                alt="Vali Roncato Elite tại Venice Italy"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Roncato Elite tại Venice Italy
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/theme/images/2022/01/29/1643451058img15.jpg"
+                alt="Vali Skyway Glacier Bay tại Alaska Mỹ"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Skyway Glacier Bay tại Alaska Mỹ
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- NEWS -->
-      <section id="news" class="mt-10"></section>
-      <script>
-        load("#news", "/_components/news.html");
-      </script>
+      <section class="mt-10">
+        <div class="myContainer">
+          <h2 class="text-xl font-bold text-center text-heading">
+            BÁO CHÍ NÓI GÌ VỀ KOS SHOP
+          </h2>
+
+          <div
+            class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-[10px] mt-[10px]"
+          >
+            <div
+              class="overflow-hidden border rounded-lg border-greyBg py-[5px] flex justify-center"
+            >
+              <a
+                href="https://vnexpress.net/meo-chon-vali-du-lich-dai-ngay-4607178.html"
+                target="_blank"
+                rel="nofollow"
+              >
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2022/05/18/1652860266img52.jpg"
+                  alt="https://vnexpress.net/meo-chon-vali-du-lich-dai-ngay-4607178.html"
+                  width="106"
+                  height="35"
+                  class="aspect-auto"
+                />
+              </a>
+            </div>
+            <div
+              class="overflow-hidden border rounded-lg border-greyBg py-[5px] flex justify-center"
+            >
+              <a
+                href="https://thanhnien.vn/heys-xero-g-vali-keo-cao-cap-nhe-hang-dau-the-gioi-post1439336.html"
+                target="_blank"
+                rel="nofollow"
+              >
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2023/03/29/1680061129img57.jpg"
+                  alt="https://thanhnien.vn/heys-xero-g-vali-keo-cao-cap-nhe-hang-dau-the-gioi-post1439336.html"
+                  width="106"
+                  height="35"
+                  class="aspect-auto"
+                />
+              </a>
+            </div>
+            <div
+              class="overflow-hidden border rounded-lg border-greyBg py-[5px] flex justify-center"
+            >
+              <a
+                href="https://tuoitre.vn/kos-he-thong-phan-phoi-vali-made-in-italy-chinh-hang-tai-viet-nam-20200518122859624.htm"
+                target="_blank"
+                rel="nofollow"
+              >
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2022/05/18/1652860530img30.jpg"
+                  alt="https://tuoitre.vn/kos-he-thong-phan-phoi-vali-made-in-italy-chinh-hang-tai-viet-nam-20200518122859624.htm"
+                  width="106"
+                  height="35"
+                  class="aspect-auto"
+                />
+              </a>
+            </div>
+            <div
+              class="overflow-hidden border rounded-lg border-greyBg py-[5px] flex justify-center"
+            >
+              <a
+                href="https://zingnews.vn/khong-can-di-xa-ban-van-co-the-mua-vali-chinh-hang-italy-my-tai-kos-post1085971.html"
+                target="_blank"
+                rel="nofollow"
+              >
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2023/03/29/1680062005img45.png"
+                  alt="https://zingnews.vn/khong-can-di-xa-ban-van-co-the-mua-vali-chinh-hang-italy-my-tai-kos-post1085971.html"
+                  width="106"
+                  height="35"
+                  class="aspect-auto"
+                />
+              </a>
+            </div>
+            <div
+              class="overflow-hidden border rounded-lg border-greyBg py-[5px] flex justify-center"
+            >
+              <a
+                href="https://vietnamnet.vn/kos-khai-truong-cua-hang-flagship-roncato-dau-tien-o-viet-nam-2137230.html"
+                target="_blank"
+                rel="nofollow"
+              >
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2023/03/29/1680062000img35.png"
+                  alt="https://vietnamnet.vn/kos-khai-truong-cua-hang-flagship-roncato-dau-tien-o-viet-nam-2137230.html"
+                  width="106"
+                  height="35"
+                  class="aspect-auto"
+                />
+              </a>
+            </div>
+            <div
+              class="overflow-hidden border rounded-lg border-greyBg py-[5px] flex justify-center"
+            >
+              <a
+                href="https://dantri.com.vn/kinh-doanh/kos-hanh-trinh-chinh-phuc-nguoi-dung-viet-bang-vali-chinh-hang-20200518115613945.htm"
+                target="_blank"
+                rel="nofollow"
+              >
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/2022/05/18/1652860848img29.jpeg"
+                  alt="https://dantri.com.vn/kinh-doanh/kos-hanh-trinh-chinh-phuc-nguoi-dung-viet-bang-vali-chinh-hang-20200518115613945.htm"
+                  width="106"
+                  height="35"
+                  class="aspect-auto"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- DOMESTIC CUSTOMERS -->
-      <section id="domestic-customer" class="mt-10"></section>
-      <script>
-        load("#domestic-customer", "/_components/domestic-customer.html");
-      </script>
+      <section class="mt-10">
+        <div class="myContainer">
+          <h2 class="text-xl font-bold text-center text-heading">
+            TRẢI NGHIỆM MUA SẮM TẠI KOS SHOP
+          </h2>
+
+          <div
+            class="gap-4 mt-5 space-x-2 overflow-x-auto no-scrollbar whitespace-nowrap xl:space-x-0 xl:overflow-x-visible slider-customer"
+          >
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/07/vali-roncato-joy-size-s-20-inch-blue3343.jpg"
+                alt="Vali Roncato Joy size S (20 inch) - Blue"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Roncato Joy size S (20 inch) - Blue
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/07/vali-heys-blue-tie-dye-size-s-21-inch8814.jpg"
+                alt="Vali Heys Blue Tie-Dye size S (21 inch)"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Heys Blue Tie-Dye size S (21 inch)
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/08/vali-skyway-glacier-bay-size-m-24-inch-silver911.jpg"
+                alt="Vali Skyway Glacier Bay Size M (24 inch) - Silver"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Skyway Glacier Bay Size M (24 inch) - Silver
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/09/vali-skyway-glacier-bay-size-m-24-inch-green3040.jpg"
+                alt="Vali Skyway Glacier Bay Size M (24 inch) - Green"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Skyway Glacier Bay Size M (24 inch) - Green
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/09/vali-roncato-skyline-size-s-20-inch-silver7788.jpg"
+                alt="Vali Roncato Skyline size S (20 inch) - Silver"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Roncato Skyline size S (20 inch) - Silver
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/09/vali-roncato-joy-size-m-26-inch-black4726.jpg"
+                alt="Vali Roncato Joy size M (26 inch) - Black"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Roncato Joy size M (26 inch) - Black
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/08/vali-roncato-joy-size-l-28-inch-red2045.jpg"
+                alt="Vali Roncato Joy size L (30 inch) - Red"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Roncato Joy size L (30 inch) - Red
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/07/vali-roncato-stellar-size-s-20-inch-antracite-non-exp8378.jpg"
+                alt="Vali Roncato Stellar size S (20 inch) - Antracite - Non Exp"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Roncato Stellar size S (20 inch) - Antracite - Non Exp
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/07/vali-heys-revolver-size-s-21-inch-cobalt8885.jpg"
+                alt="Vali Heys Revolver size S (21 inch) - Cobalt"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Heys Revolver size S (21 inch) - Cobalt
+              </div>
+            </div>
+            <div
+              class="w-[43%] md:w-[calc(25%-10px)] lg:w-[calc(20%-10px)] inline-flex flex-col"
+            >
+              <img
+                loading="lazy"
+                src="https://cdn.kosshop.vn/upload/plupload/2022/08/vali-heys-blue-tie-dye-size-s-21-inch2431.jpg"
+                alt="Vali Heys Blue Tie-Dye size S (21 inch)"
+                width="100%"
+                class="aspect-auto"
+              />
+              <div
+                class="py-[5px] px-[10px] text-dark xl:bg-greyBg text-center text-sm italic xl:not-italic whitespace-normal"
+              >
+                Vali Heys Blue Tie-Dye size S (21 inch)
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- SERVICES -->
       <section
-        id="services"
         class="relative bg-gradient mt-[25px] lg:mt-[50px] py-[30px] lg:pt-10 lg:pb-[60px]"
-      ></section>
-      <script>
-        load("#services", "/_components/services.html");
-      </script>
+      >
+        <!-- BACKGROUND DECOR -->
+        <img
+          src="https://www.kosshop.vn/images/home-advantage-bg.svg"
+          alt=""
+          class="absolute top-0 right-0 opacity-20"
+        />
+
+        <div class="myContainer">
+          <h2 class="text-[22px] text-white text-center font-bold">
+            CHỈ CÓ TẠI KOS Shop
+          </h2>
+
+          <div
+            class="mt-5 lg:mt-[50px] grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-7"
+          >
+            <div class="flex items-center gap-1 p-3 bg-white rounded-md">
+              <div class="flex-shrink-0 w-[50px]">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/home-advantage-1.png"
+                  alt="kosshop.vn"
+                  width="33"
+                  height="43"
+                  class="aspect-auto"
+                />
+              </div>
+              <p class="text-[17px] text-dark">Bảo hành toàn cầu 05 năm</p>
+            </div>
+            <div class="flex items-center gap-1 p-3 bg-white rounded-md">
+              <div class="flex-shrink-0 w-[50px]">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/home-advantage-2.png"
+                  alt="kosshop.vn"
+                  width="39"
+                  height="43"
+                  class="aspect-auto"
+                />
+              </div>
+              <p class="text-[17px] text-dark">Hàng hiệu chính hãng</p>
+            </div>
+            <div class="flex items-center gap-1 p-3 bg-white rounded-md">
+              <div class="flex-shrink-0 w-[50px]">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/home-advantage-3.png"
+                  alt="kosshop.vn"
+                  width="50"
+                  height="38"
+                  class="aspect-auto"
+                />
+              </div>
+              <p class="text-[17px] text-dark">Freeship từ 1500k</p>
+            </div>
+            <div class="flex items-center gap-1 p-3 bg-white rounded-md">
+              <div class="flex-shrink-0 w-[50px]">
+                <img
+                  loading="lazy"
+                  src="https://cdn.kosshop.vn/upload/theme/images/home-advantage-4.png"
+                  alt="kosshop.vn"
+                  width="44"
+                  height="44"
+                  class="aspect-auto"
+                />
+              </div>
+              <p class="text-[17px] text-dark">Bảo hành phụ kiện vĩnh viễn</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- NAVIGATION MOBILE -->
-    <div id="navigation-mobile"></div>
-    <script>
-      load("#navigation-mobile", "/_components/navigation-mobile.html");
-    </script>
+    <nav
+      class="text-[10px] sm:text-xs top-auto fixed bottom-0 left-0 right-0 w-full h-[56px] bg-white xl:hidden shadow-payment grid grid-cols-5 overflow-auto z-[999]"
+      style="will-change: transform; transform: translate3d(0, 0, 0)"
+    >
+      <div class="flex items-center justify-center flex-1">
+        <a
+          class="flex flex-col items-center justify-center px-2 text-primary"
+          href="/"
+          ><i class="text-3xl fa fa-home"></i><span>Trang chủ</span></a
+        >
+      </div>
+      <div class="flex items-center justify-center flex-1">
+        <a
+          class="flex flex-col items-center justify-center gap-1 px-2 text-primary"
+          href="https://m.me/kosshop.vn"
+          target="_blank"
+          rel="nofollow"
+        >
+          <img
+            src="https://cdn.kosshop.vn/upload/theme/images/chat-icon-mobile.png"
+            alt="kosshop.vn"
+            width="32"
+            height="32"
+            class="aspect-square"
+          />
+          Chat với KOS
+        </a>
+      </div>
+      <div class="flex items-center justify-center flex-1">
+        <a
+          class="flex flex-col items-center justify-center gap-1 px-2 text-primary"
+          href="https://zalo.me/3018511026714230798"
+          target="_blank"
+          rel="nofollow"
+        >
+          <img
+            src="https://www.kosshop.vn/images/zalo-icon.svg"
+            alt="kosshop.vn"
+            width="32"
+            height="32"
+            class="aspect-square"
+          />
+          Zalo
+        </a>
+      </div>
+      <div class="flex items-center justify-center flex-1">
+        <a
+          class="flex flex-col items-center justify-center px-2 text-primary"
+          rel="nofollow"
+          href="tel:18008050"
+          ><i class="text-3xl fa fa-phone"></i>Hotline</a
+        >
+      </div>
+      <div class="flex items-center justify-center flex-1">
+        <a
+          class="flex flex-col items-center justify-center px-2 text-primary"
+          href="/showrooms/"
+          ><i class="text-3xl fa fa-map-marker-alt"></i> Địa Chỉ</a
+        >
+      </div>
+    </nav>
 
     <!-- ACTION BUTTONS -->
-    <div id="action-buttons"></div>
-    <script>
-      load("#action-buttons", "/_components/action-buttons.html");
-    </script>
+    <div class="fixed bottom-20 xl:bottom-10 right-6">
+      <div class="flex flex-col gap-y-4">
+        <button
+          id="scroll-top-btn"
+          class="w-[50px] h-[50px] z-[100] hidden items-center justify-center rounded-full transition-all ease-in-out bg-[rgba(0,0,0,.6)] shadow-[0_0_6px_hsla(0,0%,57%,.4)]"
+        >
+          <i class="text-2xl text-white fa fa-chevron-up"></i>
+        </button>
+        <a
+          class="w-[50px] h-[50px] z-[100] hidden xl:flex items-center justify-center rounded-full transition-all ease-in-out secondary-gradient"
+          rel="nofollow"
+          href="tel:18008050"
+        >
+          <i class="text-2xl text-white fa fa-phone"></i>
+        </a>
+        <a
+          rel="nofollow"
+          href="https://zalo.me/3018511026714230798"
+          target="_blank"
+          aria-label="Zalo"
+          class="hidden xl:block"
+        >
+          <img
+            src="https://www.kosshop.vn/images/zalo-icon.svg"
+            alt="Zalo button"
+            width="50"
+            height="50"
+            class="aspect-square"
+          />
+        </a>
+        <a
+          rel="nofollow"
+          href="https://m.me/kosshop.vn"
+          target="_blank"
+          aria-label="Messenger"
+          class="hidden xl:block"
+        >
+          <img
+            src="https://cdn.kosshop.vn/upload/theme/images/chat-icon.png"
+            alt="Chat button"
+            width="50"
+            height="50"
+            class="aspect-square"
+          />
+        </a>
+      </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="text-sm text-heading bg-[#F2F7FF] pb-[56px] xl:pb-0">
@@ -1855,7 +4117,7 @@
               />
 
               <h4 class="mt-4 text-sm font-semibold">
-                <a href="" target="_blank" rel="noopener">
+                <a href="/" target="_blank" rel="noopener">
                   Dành cho doanh nghiệp / B2B / Bán sỉ
                 </a>
               </h4>
@@ -1897,20 +4159,6 @@
                       src="https://images.dmca.com/Badges/DMCA_logo-grn-btn100w.png?ID=fccea19c-c8eb-4092-b9f4-a7ef52639cf6"
                       class="aspect-auto"
                   /></a>
-                  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
-                  <style>
-                    .footer_b2b {
-                      position: absolute;
-                      margin-left: -130px;
-                      margin-top: 30px;
-                    }
-                    @media only screen and (max-width: 600px) {
-                      .footer_b2b {
-                        position: relative !important;
-                        margin-left: 0px !important;
-                      }
-                    }
-                  </style>
                 </span>
               </div>
 

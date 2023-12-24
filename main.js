@@ -1,3 +1,17 @@
+const BREAK_POINT = {
+  sm: 640,
+  // => @media (min-width: 640px) { ... }
+
+  md: 768,
+  // => @media (min-width: 768px) { ... }
+
+  lg: 992,
+  // => @media (min-width: 992px) { ... }
+
+  xl: 1200,
+  // => @media (min-width: 1200px) { ... }
+}
+
 // CUSTOM SLICK SLIDER
 $(window).ready(function () {
   // Slider customer on home page
@@ -43,84 +57,92 @@ $(window).ready(function () {
       "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
   });
 
-  // Slider products on home page
-  $(".slider-products").slick({
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToScroll: 1,
-    slidesToShow: 5,
-    touchThreshold: 10,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-        },
-      },
-      {
-        breakpoint: 770,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-    ],
-    prevArrow:
-      "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
-    nextArrow:
-      "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
-  });
-
-  var init = false;
-  var slick;
-  function initSlickGallery() {
-    if (window.innerWidth > 1200) {
-      if (!init) {
-        init = true;
-        slick = $(".slider-gallery").slick({
+  // Slider on brand page
+  let brandFlag = false;
+  let slickBrandSlide;
+  function initBrandSlick() {
+    if (window.innerWidth > BREAK_POINT.xl) {
+      if (!brandFlag) {
+        brandFlag = true;
+        slickBrandSlide = $(".slider-brand").slick({
           dots: false,
-          infinite: false,
+          infinite: true,
           speed: 500,
-          slidesToShow: 4,
-          touchThreshold: 10,
-          useTransform: false,
-          arrows: false,
+          slidesToScroll: 1,
+          slidesToShow: 5,
           responsive: [
             {
-              breakpoint: 770,
+              breakpoint: 992,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 4,
+                slidesToScroll: 4,
               },
             },
           ],
-        }).on(
-          "touchstart touchmove mousemove mouseenter",
-          function (e) {
-            $(".slider-products").slick("slickSetOption", "swipe", false, false);
-          }
-        ).on(
-          "touchend mouseover mouseout",
-          function (e) {
-            $(".slider-products").slick("slickSetOption", "swipe", true, false);
-          }
-        );
+          prevArrow:
+            "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
+          nextArrow:
+            "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
+        });
       }
-    } else if (init) {
-      $(".slider-products").slick('unslick');
-      init = false;
+    } else if (brandFlag) {
+      $(".slider-brand").slick('unslick');
+      brandFlag = false;
     }
   }
-  initSlickGallery();
-  window.addEventListener("resize", initSlickGallery);
+  initBrandSlick();
+  window.addEventListener("resize", initBrandSlick);
+
+  // Slider products on home page
+  let productFlag = false;
+  let slickProductSlide;
+  function initProductSlick() {
+    if (window.innerWidth > BREAK_POINT.xl) {
+      if (!productFlag) {
+        productFlag = true;
+        slickProductSlide = $(".slider-products").slick({
+          dots: false,
+          infinite: true,
+          speed: 500,
+          slidesToScroll: 1,
+          slidesToShow: 5,
+          touchThreshold: 10,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+              },
+            },
+            {
+              breakpoint: 770,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+              },
+            },
+            {
+              breakpoint: 640,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              },
+            },
+          ],
+          prevArrow:
+            "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
+          nextArrow:
+            "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
+        });
+      }
+    } else if (productFlag) {
+      $(".slider-products").slick('unslick');
+      productFlag = false;
+    }
+  }
+  initProductSlick();
+  window.addEventListener("resize", initProductSlick);
 
   // Slider products on news page
   $(".slider-news-products").slick({
@@ -216,27 +238,8 @@ $(window).ready(function () {
       "<button type='button' class='right-0 top-1/2 -translate-y-full pull-right absolute lg:left-auto lg:translate-y-0 lg:!right-[23%] lg:top-0 z-10 xl:flex xl:items-center xl:justify-center xl:border-2 xl:border-slate-700 xl:rounded-full xl:w-[38px] xl:h-[38px] xl:hover:bg-slate-700 group'><i class='text-slate-700 hover:text-slate-500 xl:group-hover:text-white text-4xl xl:text-xl fal fa-chevron-right'></i></button>",
   });
 
-  // Slider on brand page
-  $(".slider-brand").slick({
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToScroll: 1,
-    slidesToShow: 5,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-        },
-      },
-    ],
-    prevArrow:
-      "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
-    nextArrow:
-      "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
-  });
+
+
 
   // Slider detail product
   $(".slider-single").slick({
@@ -303,20 +306,20 @@ $(window).ready(function () {
 window.addEventListener("DOMContentLoaded", initJsToggle);
 
 function initJsToggle() {
-  getEls(".js-toggle").forEach((button) => {
+  document.querySelectorAll(".js-toggle").forEach((button) => {
     const target = button.getAttribute("data-toggle-target");
     if (!target) {
       document.body.innerText = `Cần thêm data-toggle-target cho: ${button.outerHTML}`;
     }
     button.onclick = () => {
-      if (!getEl(target)) {
+      if (!document.querySelector(target)) {
         return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
       }
-      const isHidden = getEl(target).classList.contains("hide");
+      const isHidden = document.querySelector(target).classList.contains("hide");
 
       requestAnimationFrame(() => {
-        getEl(target).classList.toggle("hide", !isHidden);
-        getEl(target).classList.toggle("show", isHidden);
+        document.querySelector(target).classList.toggle("hide", !isHidden);
+        document.querySelector(target).classList.toggle("show", isHidden);
         button.classList.toggle("hide", !isHidden);
         button.classList.toggle("show", isHidden);
       });
@@ -329,7 +332,7 @@ initJsToggle();
 /**
  * Handle logic show/hide category menu
  */
-const categoryNavbar = getEl("#category-navbar");
+const categoryNavbar = document.querySelector("#category-navbar");
 
 function handleScrollCategoryNavbar() {
   if (
@@ -339,7 +342,7 @@ function handleScrollCategoryNavbar() {
     return;
   }
 
-  if (window.innerWidth < 1200) {
+  if (window.innerWidth < BREAK_POINT.xl) {
     return;
   }
 
@@ -387,7 +390,7 @@ liItems.forEach((li) => {
  */
 window.addEventListener("DOMContentLoaded", () => {
   // Get the button and content elements
-  const toggleButtons = getEls(".toggleButton");
+  const toggleButtons = document.querySelectorAll(".toggleButton");
 
   if (!toggleButtons) return;
 
@@ -416,7 +419,7 @@ window.addEventListener("DOMContentLoaded", () => {
  */
 window.addEventListener("DOMContentLoaded", () => {
   // Get the button and content elements
-  const toggleButtons = getEls(".js-toggle-btn");
+  const toggleButtons = document.querySelectorAll(".js-toggle-btn");
 
   if (!toggleButtons) return;
 
@@ -449,8 +452,8 @@ window.addEventListener("DOMContentLoaded", () => {
  * </div>
  */
 document.addEventListener("DOMContentLoaded", function () {
-  const dialogButtons = getEls(".js-dialog-button");
-  const dialogCloseButtons = getEls(".js-dialog-close");
+  const dialogButtons = document.querySelectorAll(".js-dialog-button");
+  const dialogCloseButtons = document.querySelectorAll(".js-dialog-close");
 
   if (!dialogButtons || !dialogCloseButtons) return;
 
@@ -470,7 +473,7 @@ document.addEventListener("DOMContentLoaded", function () {
   dialogButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const dialogId = this.getAttribute("data-dialog-id");
-      const dialog = getEl(`#${dialogId}`);
+      const dialog = document.querySelector(`#${dialogId}`);
       if (dialog) {
         openDialog(dialog);
       }
@@ -481,7 +484,7 @@ document.addEventListener("DOMContentLoaded", function () {
   dialogCloseButtons.forEach((closeButton) => {
     closeButton.addEventListener("click", function () {
       const dialogId = this.getAttribute("data-dialog-id");
-      const dialog = getEl(`#${dialogId}`);
+      const dialog = document.querySelector(`#${dialogId}`);
       if (dialog) {
         closeDialog(dialog);
       }
@@ -492,7 +495,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("click", function (event) {
     dialogButtons.forEach((button) => {
       const dialogId = button.getAttribute("data-dialog-id");
-      const dialog = getEl(`#${dialogId}`);
+      const dialog = document.querySelector(`#${dialogId}`);
       if (dialog && event.target == dialog) {
         closeDialog(dialog);
       }
@@ -636,10 +639,10 @@ document.addEventListener("DOMContentLoaded", function () {
  * Handle logic show/hide search box on mobile
  */
 document.addEventListener("DOMContentLoaded", function () {
-  const headerPC = getEl("#header-pc");
-  const searchBtnMobile = getEl("#search-btn-mobile");
-  const searchInputMobile = getEl("#search-input-mobile");
-  const clearSearchBtn = getEl("#clear-search-btn");
+  const headerPC = document.querySelector("#header-pc");
+  const searchBtnMobile = document.querySelector("#search-btn-mobile");
+  const searchInputMobile = document.querySelector("#search-input-mobile");
+  const clearSearchBtn = document.querySelector("#clear-search-btn");
 
   if (!headerPC || !searchBtnMobile || !searchInputMobile || !clearSearchBtn)
     return;
@@ -665,10 +668,10 @@ document.addEventListener("DOMContentLoaded", function () {
  * Handle logic show/hide click search button on sidebar mobile
  */
 document.addEventListener("DOMContentLoaded", function () {
-  const searchButton = getEl("#search-btn-on-dialog");
-  const sidebar = getEl("#menuBar");
-  const headerPC = getEl("#header-pc");
-  const searchInputMobile = getEl("#search-input-mobile");
+  const searchButton = document.querySelector("#search-btn-on-dialog");
+  const sidebar = document.querySelector("#menuBar");
+  const headerPC = document.querySelector("#header-pc");
+  const searchInputMobile = document.querySelector("#search-input-mobile");
 
   if (!searchButton || !sidebar || !headerPC || !searchInputMobile) return;
 
@@ -790,8 +793,8 @@ document.addEventListener("DOMContentLoaded", function () {
  * Handle logic show/hide footer element
  */
 document.addEventListener("DOMContentLoaded", function () {
-  const footerServiceEl = getEl("#footer-service");
-  const footerProductEl = getEl("#footer-product");
+  const footerServiceEl = document.querySelector("#footer-service");
+  const footerProductEl = document.querySelector("#footer-product");
   if (!footerServiceEl || !footerProductEl) return;
 
   if (window.innerWidth <= 1024) {
