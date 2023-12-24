@@ -640,14 +640,14 @@
   border-bottom-color: #fff !important;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023.98px) {
   .tippy-popper {
     position: fixed !important;
     top: 0 !important;
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    transform: translate(0px, 10px) !important;
+    transform: translate(0px, -10px) !important;
   }
 
   .tippy-tooltip {

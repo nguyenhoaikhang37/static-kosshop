@@ -12,6 +12,17 @@ const BREAK_POINT = {
   // => @media (min-width: 1200px) { ... }
 }
 
+// Calculate HEADER_HEIGHT based on window width
+let HEADER_HEIGHT;
+
+if (window.innerWidth >= BREAK_POINT.xl) {
+  HEADER_HEIGHT = 132;
+} else if (window.innerWidth < BREAK_POINT.xl) {
+  HEADER_HEIGHT = 76;
+} else {
+  HEADER_HEIGHT = 56;
+}
+
 // CUSTOM SLICK SLIDER
 window.addEventListener("DOMContentLoaded", function () {
   let internationalCustomerFlag = false;
@@ -790,10 +801,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!popoverButton || !popover || !backdrop) return;
 
+  function scrollToButton() {
+    // Get the button's position relative to the viewport
+    const rect = popoverButton.getBoundingClientRect();
+
+    // Calculate the scroll position
+    const spacing = 10
+    const scrollPosition = rect.top + window.scrollY - HEADER_HEIGHT - spacing;
+
+    // Scroll to the button position
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: "smooth" // You can change this to "auto" for instant scrolling
+    });
+  }
+
+  popoverButton.addEventListener("click", function () {
+    if (window.innerWidth < BREAK_POINT.lg) return;
+    scrollToButton();
+  })
+
   let myPopover = tippy(popoverButton, {
     theme: "light",
     content: popover,
-    placement: "bottom",
+    placement: "top-start",
     interactive: true,
     trigger: "click",
     animation: "scale",
