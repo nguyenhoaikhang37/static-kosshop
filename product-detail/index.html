@@ -16,13 +16,6 @@
     <link href="/lib/slick/slick.min.css" rel="stylesheet" />
     <link href="/lib/lightbox/lightbox.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style.scss" />
-
-    <!-- External Scripts -->
-    <script src="/lib/jquery/jquery.min.js"></script>
-    <script src="/lib/slick/slick.min.js"></script>
-    <script src="/lib/tippy/popper.min.js"></script>
-    <script src="/lib/tippy/tippy.min.js"></script>
-    <script src="/lib/lightbox/lightbox.min.js"></script>
   </head>
   <body>
     <!-- HEADER -->
@@ -3726,7 +3719,9 @@
                   <img
                     src="/images/tiktok-icon.svg"
                     alt="tiktok kosshop"
-                    class="w-[20px]"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
                   />
                 </a>
                 <a
@@ -3748,7 +3743,9 @@
                   <img
                     src="/images/instagram-icon.svg"
                     alt="instagram kosshop"
-                    class="w-[20px]"
+                    width="20px"
+                    height="20px"
+                    loading="lazy"
                   />
                 </a>
                 <a
@@ -3935,7 +3932,70 @@
         </p>
       </div>
     </footer>
-
-    <script type="module" src="../main.js"></script>
+    <!-- External Scripts -->
+    <script defer src="/lib/jquery/jquery.min.js"></script>
+    <script defer src="/lib/slick/slick.min.js"></script>
+    <script defer src="/lib/tippy/popper.min.js"></script>
+    <script defer src="/lib/tippy/tippy.min.js"></script>
+    <script defer src="/lib/lightbox/lightbox.min.js"></script>
+    <!-- Internal Scripts -->
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        jQuery.event.special.touchstart = {
+          setup: function (_, ns, handle) {
+            this.addEventListener("touchstart", handle, {
+              passive: !ns.includes("noPreventDefault"),
+            });
+          },
+        };
+        jQuery.event.special.touchmove = {
+          setup: function (_, ns, handle) {
+            this.addEventListener("touchmove", handle, {
+              passive: !ns.includes("noPreventDefault"),
+            });
+          },
+        };
+        jQuery.event.special.wheel = {
+          setup: function (_, ns, handle) {
+            this.addEventListener("wheel", handle, {
+              passive: true,
+            });
+          },
+        };
+        jQuery.event.special.mousewheel = {
+          setup: function (_, ns, handle) {
+            this.addEventListener("mousewheel", handle, {
+              passive: true,
+            });
+          },
+        };
+      });
+    </script>
+    <script defer>
+      {
+        const load = () => {
+          document
+            .querySelectorAll("script[data-type='lazy']")
+            .forEach((el) =>
+              el.setAttribute("src", el.getAttribute("data-src"))
+            );
+          document
+            .querySelectorAll("iframe[data-type='lazy']")
+            .forEach((el) =>
+              el.setAttribute("src", el.getAttribute("data-src"))
+            );
+        };
+        const timer = setTimeout(load, 5000);
+        const trigger = () => {
+          load();
+          clearTimeout(timer);
+        };
+        const events = ["mouseover", "keydown", "touchmove", "touchstart"];
+        events.forEach((e) =>
+          window.addEventListener(e, trigger, { passive: true, once: true })
+        );
+      }
+    </script>
+    <script defer type="module" src="../main.js"></script>
   </body>
 </html>

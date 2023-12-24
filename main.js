@@ -13,8 +13,7 @@ const BREAK_POINT = {
 }
 
 // CUSTOM SLICK SLIDER
-$(window).ready(function () {
-
+window.addEventListener("DOMContentLoaded", function () {
   let internationalCustomerFlag = false;
   let slickInternationalCustomerSlide;
   function initInternationalCustomerSlick() {
@@ -309,7 +308,7 @@ $(window).ready(function () {
 });
 
 // CUSTOM LIGHTBOX
-$(window).ready(function () {
+window.addEventListener("DOMContentLoaded", function () {
   $(".slider-single").slickLightbox({
     itemSelector: "a",
     navigateByKeyboard: true,
@@ -535,7 +534,7 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 document.addEventListener("DOMContentLoaded", function () {
   // Get all store buttons
-  const storeButtons = document.querySelectorAll("#storeList button");
+  const storeButtons = document.querySelectorAll("#storeList .js-showroom-btn");
 
   // Get the select box
   const districtSelect = document.getElementById("district");
