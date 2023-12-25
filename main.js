@@ -288,8 +288,7 @@ window.addEventListener("DOMContentLoaded", function () {
     useTransform: true,
     speed: 500,
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
-    pauseOnHover: true,
-    pauseOnFocus: true,
+    asNavFor: ".slider-nav",
     prevArrow:
       "<button type='button' class='large-detail-slide-btn slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
     nextArrow:
@@ -297,14 +296,14 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   // Slider detail product children
-  $(".slider-nav").on("init", function (event, slick) {
-    $(".slider-nav .slick-slide.slick-current").addClass("is-active");
-  }).slick({
+  $(".slider-nav").slick({
     slidesToShow: 8,
     slidesToScroll: 8,
     infinite: false,
     dots: false,
-    focusOnSelect: false,
+    focusOnSelect: true,
+    swipeToSlide: true,
+    asNavFor: ".slider-single",
     arrows: false,
     responsive: [
       {
@@ -317,20 +316,28 @@ window.addEventListener("DOMContentLoaded", function () {
     ],
   });
 
-  $(".slider-single").on("afterChange", function (event, slick, currentSlide) {
-    $(".slider-nav").slick("slickGoTo", currentSlide);
-    let currrentNavSlideElem =
-      '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
-    $(".slider-nav .slick-slide.is-active").removeClass("is-active");
-    $(currrentNavSlideElem).addClass("is-active");
-  });
+  // const enterEventList = [
+  //   "touchstart",
+  //   "touchmove",
+  //   "mousemove",
+  //   "mouseenter",
+  // ];
 
-  $(".slider-nav").on("click", ".slick-slide", function (event) {
-    event.preventDefault();
-    let goToSingleSlide = $(this).data("slick-index");
+  // enterEventList.forEach(function (item) {
+  //   $(".slider-nav").on(item, function (e) {
+  //     console.log("✅ ~ e:::", e)
+  //     $(".slider-single").slick("slickSetOption", "asNavFor", null, true);
+  //   });
+  // });
 
-    $(".slider-single").slick("slickGoTo", goToSingleSlide);
-  });
+  // const leaveEventList = ["touchend", "mouseover", "mouseout"];
+
+  // leaveEventList.forEach(function (item) {
+  //   $(".slider-nav").on(item, function (e) {
+  //     console.log("✅ ~ e:::", e)
+  //     // $(".slider-single").slick("slickSetOption", "swipe", true, false);
+  //   });
+  // });
 });
 
 // CUSTOM LIGHTBOX
