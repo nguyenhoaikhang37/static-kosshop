@@ -10,7 +10,7 @@ const BREAK_POINT = {
 
   xl: 1200,
   // => @media (min-width: 1200px) { ... }
-}
+};
 
 // Calculate HEADER_HEIGHT based on window width
 let HEADER_HEIGHT;
@@ -31,7 +31,9 @@ window.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth > BREAK_POINT.xl) {
       if (!internationalCustomerFlag) {
         internationalCustomerFlag = true;
-        slickInternationalCustomerSlide = $(".slider-international-customer").slick({
+        slickInternationalCustomerSlide = $(
+          ".slider-international-customer"
+        ).slick({
           dots: false,
           infinite: true,
           speed: 500,
@@ -53,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
       }
     } else if (internationalCustomerFlag) {
-      $(".slider-brand").slick('unslick');
+      $(".slider-brand").slick("unslick");
       internationalCustomerFlag = false;
     }
   }
@@ -88,7 +90,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
       }
     } else if (customerFlag) {
-      $(".slider-brand").slick('unslick');
+      $(".slider-brand").slick("unslick");
       customerFlag = false;
     }
   }
@@ -123,7 +125,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
       }
     } else if (brandFlag) {
-      $(".slider-brand").slick('unslick');
+      $(".slider-brand").slick("unslick");
       brandFlag = false;
     }
   }
@@ -174,7 +176,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
       }
     } else if (productFlag) {
-      $(".slider-products").slick('unslick');
+      $(".slider-products").slick("unslick");
       productFlag = false;
     }
   }
@@ -275,9 +277,6 @@ window.addEventListener("DOMContentLoaded", function () {
       "<button type='button' class='right-0 top-1/2 -translate-y-full pull-right absolute lg:left-auto lg:translate-y-0 lg:!right-[23%] lg:top-0 z-10 xl:flex xl:items-center xl:justify-center xl:border-2 xl:border-slate-700 xl:rounded-full xl:w-[38px] xl:h-[38px] xl:hover:bg-slate-700 group'><i class='text-slate-700 hover:text-slate-500 xl:group-hover:text-white text-4xl xl:text-xl fal fa-chevron-right'></i></button>",
   });
 
-
-
-
   // Slider detail product
   $(".slider-single").slick({
     slidesToShow: 1,
@@ -290,6 +289,8 @@ window.addEventListener("DOMContentLoaded", function () {
     speed: 500,
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
     asNavFor: ".slider-nav",
+    pauseOnHover: true,
+    pauseOnFocus: true,
     prevArrow:
       "<button type='button' class='large-detail-slide-btn slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
     nextArrow:
@@ -316,6 +317,26 @@ window.addEventListener("DOMContentLoaded", function () {
       },
     ],
   });
+  var isDragging = false;
+
+  // Bắt đầu lắng nghe sự kiện kéo thả trên slider-nav
+  $(".slider-nav").on("mousedown touchstart", function (event) {
+    isDragging = true;
+  });
+
+  // Kết thúc lắng nghe sự kiện kéo thả trên slider-nav
+  $(".slider-nav").on("mouseup touchend", function (event) {
+    isDragging = false;
+  });
+
+  $(".slider-single").on(
+    "beforeChange",
+    function (event, slick, currentSlide, nextSlide) {
+      if (isDragging) {
+          $(".slider-single").slick("slickPrev");
+      }
+    }
+  );
 });
 
 // CUSTOM LIGHTBOX
@@ -352,7 +373,9 @@ function initJsToggle() {
       if (!document.querySelector(target)) {
         return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
       }
-      const isHidden = document.querySelector(target).classList.contains("hide");
+      const isHidden = document
+        .querySelector(target)
+        .classList.contains("hide");
 
       requestAnimationFrame(() => {
         document.querySelector(target).classList.toggle("hide", !isHidden);
@@ -569,11 +592,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Remove the 'active' class from all buttons
     storeButtons.forEach((button) =>
-      button.classList.remove("text-white", "bg-gradient")
+      button.classList.remove("text-white", "bg-gradient", "active")
     );
 
     // Add the 'active' class to the clicked button
-    selectedButton.classList.add("text-white", "bg-gradient");
+    selectedButton.classList.add("text-white", "bg-gradient", "active");
 
     // Get the iframe link from the data-iframe-link attribute
     const iframeLink = selectedButton.getAttribute("data-iframe-link");
@@ -806,20 +829,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const rect = popoverButton.getBoundingClientRect();
 
     // Calculate the scroll position
-    const spacing = 10
+    const spacing = 10;
     const scrollPosition = rect.top + window.scrollY - HEADER_HEIGHT - spacing;
 
     // Scroll to the button position
     window.scrollTo({
       top: scrollPosition,
-      behavior: "smooth" // You can change this to "auto" for instant scrolling
+      behavior: "smooth", // You can change this to "auto" for instant scrolling
     });
   }
 
   popoverButton.addEventListener("click", function () {
     if (window.innerWidth < BREAK_POINT.lg) return;
     scrollToButton();
-  })
+  });
 
   let myPopover = tippy(popoverButton, {
     theme: "light",
@@ -876,33 +899,38 @@ document.addEventListener("DOMContentLoaded", function () {
  * Handle slide gallery products
  */
 document.addEventListener("DOMContentLoaded", function () {
-  const smallImageList = document.querySelectorAll('.small-image-list');
+  const smallImageList = document.querySelectorAll(".small-image-list");
 
-  if (!smallImageList) return
+  if (!smallImageList) return;
 
   smallImageList.forEach(function (smallImageList) {
-    smallImageList.addEventListener('wheel', function (e) {
+    smallImageList.addEventListener("wheel", function (e) {
       e.stopPropagation();
       this.scrollLeft += e.deltaY;
       e.preventDefault();
-    })
+    });
 
-    const enterEventList = ["touchstart", "touchmove", "mousemove", "mouseenter"]
+    const enterEventList = [
+      "touchstart",
+      "touchmove",
+      "mousemove",
+      "mouseenter",
+    ];
 
     enterEventList.forEach(function (item) {
       smallImageList.addEventListener(item, function (e) {
         $(".slider-products").slick("slickSetOption", "swipe", false, false);
-      })
-    })
+      });
+    });
 
-    const leaveEventList = ["touchend", "mouseover", "mouseout"]
+    const leaveEventList = ["touchend", "mouseover", "mouseout"];
 
     leaveEventList.forEach(function (item) {
       smallImageList.addEventListener(item, function (e) {
         $(".slider-products").slick("slickSetOption", "swipe", true, false);
-      })
-    })
-  })
+      });
+    });
+  });
 });
 
 /**
@@ -912,25 +940,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const productEls = document.querySelectorAll(".product-item");
 
   productEls.forEach((productEl) => {
-    const smallImages = productEl.querySelectorAll('.small-image-list img');
-    const smallImageItems = productEl.querySelectorAll('.small-image-list li');
-    const largeImage = productEl.querySelector('.large-image');
+    const smallImages = productEl.querySelectorAll(".small-image-list img");
+    const smallImageItems = productEl.querySelectorAll(".small-image-list li");
+    const largeImage = productEl.querySelector(".large-image");
 
     if (!smallImages || !largeImage || !smallImageItems) return;
 
     smallImages.forEach(function (smallImg, index) {
-      smallImg.addEventListener('mouseover', function () {
+      smallImg.addEventListener("mouseover", function () {
         const newSrc = this.src;
         largeImage.src = newSrc;
 
         smallImageItems.forEach(function (item) {
-          item.classList.remove('border-primary');
+          item.classList.remove("border-primary");
         });
 
-        smallImageItems[index].classList.remove('border-slate-200');
-        smallImageItems[index].classList.add('border-primary');
+        smallImageItems[index].classList.remove("border-slate-200");
+        smallImageItems[index].classList.add("border-primary");
       });
     });
-  })
+  });
 });
-
