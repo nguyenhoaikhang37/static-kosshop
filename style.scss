@@ -332,7 +332,7 @@
   border: 1px solid #ddd !important;
 }
 
-.slider-nav .slick-current img {
+.slider-nav .slick-slide.is-active img {
   border: 1px solid #1074a5 !important;
 }
 
@@ -776,5 +776,5 @@
 }
 
 .js-showroom-btn.active i {
-  color: #fff
+  color: #fff;
 }

@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
       }
     } else if (internationalCustomerFlag) {
-      $(".slider-brand").slick("unslick");
+      $(".slider-international-customer").slick("unslick");
       internationalCustomerFlag = false;
     }
   }
@@ -90,7 +90,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
       }
     } else if (customerFlag) {
-      $(".slider-brand").slick("unslick");
+      $(".slider-customer").slick("unslick");
       customerFlag = false;
     }
   }
@@ -297,13 +297,14 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   // Slider detail product children
-  $(".slider-nav").slick({
+  $(".slider-nav").on("init", function (event, slick) {
+    $(".slider-nav .slick-slide.slick-current").addClass("is-active");
+  }).slick({
     slidesToShow: 8,
     slidesToScroll: 8,
     infinite: false,
     dots: false,
-    focusOnSelect: true,
-    swipeToSlide: true,
+    focusOnSelect: false,
     arrows: false,
     responsive: [
       {
@@ -316,13 +317,19 @@ window.addEventListener("DOMContentLoaded", function () {
     ],
   });
 
-  // Event triggered when an item in slider-nav is clicked
-  $(".slider-nav").on("click", ".slick-slide", function () {
-    // Get the index of the clicked item
-    var index = $(this).data("slick-index");
+  $(".slider-single").on("afterChange", function (event, slick, currentSlide) {
+    $(".slider-nav").slick("slickGoTo", currentSlide);
+    let currrentNavSlideElem =
+      '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+    $(".slider-nav .slick-slide.is-active").removeClass("is-active");
+    $(currrentNavSlideElem).addClass("is-active");
+  });
 
-    // Go to the corresponding slide in slider-single
-    $(".slider-single").slick("slickGoTo", index);
+  $(".slider-nav").on("click", ".slick-slide", function (event) {
+    event.preventDefault();
+    let goToSingleSlide = $(this).data("slick-index");
+
+    $(".slider-single").slick("slickGoTo", goToSingleSlide);
   });
 });
 
