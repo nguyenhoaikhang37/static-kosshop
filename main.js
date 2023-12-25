@@ -288,7 +288,6 @@ window.addEventListener("DOMContentLoaded", function () {
     useTransform: true,
     speed: 500,
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
-    asNavFor: ".slider-nav",
     pauseOnHover: true,
     pauseOnFocus: true,
     prevArrow:
@@ -305,7 +304,6 @@ window.addEventListener("DOMContentLoaded", function () {
     dots: false,
     focusOnSelect: true,
     swipeToSlide: true,
-    asNavFor: ".slider-single",
     arrows: false,
     responsive: [
       {
@@ -317,26 +315,15 @@ window.addEventListener("DOMContentLoaded", function () {
       },
     ],
   });
-  var isDragging = false;
 
-  // Bắt đầu lắng nghe sự kiện kéo thả trên slider-nav
-  $(".slider-nav").on("mousedown touchstart", function (event) {
-    isDragging = true;
+  // Event triggered when an item in slider-nav is clicked
+  $(".slider-nav").on("click", ".slick-slide", function () {
+    // Get the index of the clicked item
+    var index = $(this).data("slick-index");
+
+    // Go to the corresponding slide in slider-single
+    $(".slider-single").slick("slickGoTo", index);
   });
-
-  // Kết thúc lắng nghe sự kiện kéo thả trên slider-nav
-  $(".slider-nav").on("mouseup touchend", function (event) {
-    isDragging = false;
-  });
-
-  $(".slider-single").on(
-    "beforeChange",
-    function (event, slick, currentSlide, nextSlide) {
-      if (isDragging) {
-          $(".slider-single").slick("slickPrev");
-      }
-    }
-  );
 });
 
 // CUSTOM LIGHTBOX
