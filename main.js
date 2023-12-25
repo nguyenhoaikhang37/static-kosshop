@@ -277,6 +277,7 @@ window.addEventListener("DOMContentLoaded", function () {
       "<button type='button' class='right-0 top-1/2 -translate-y-full pull-right absolute lg:left-auto lg:translate-y-0 lg:!right-[23%] lg:top-0 z-10 xl:flex xl:items-center xl:justify-center xl:border-2 xl:border-slate-700 xl:rounded-full xl:w-[38px] xl:h-[38px] xl:hover:bg-slate-700 group'><i class='text-slate-700 hover:text-slate-500 xl:group-hover:text-white text-4xl xl:text-xl fal fa-chevron-right'></i></button>",
   });
 
+
   // Slider detail product
   $(".slider-single").slick({
     slidesToShow: 1,
@@ -293,7 +294,7 @@ window.addEventListener("DOMContentLoaded", function () {
       "<button type='button' class='large-detail-slide-btn slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
     nextArrow:
       "<button type='button' class='large-detail-slide-btn slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
-  });
+  })
 
   // Slider detail product children
   $(".slider-nav").slick({
@@ -316,28 +317,34 @@ window.addEventListener("DOMContentLoaded", function () {
     ],
   });
 
-  // const enterEventList = [
-  //   "touchstart",
-  //   "touchmove",
-  //   "mousemove",
-  //   "mouseenter",
-  // ];
+  const galleryImageList = document.querySelectorAll(".gallery-images");
 
-  // enterEventList.forEach(function (item) {
-  //   $(".slider-nav").on(item, function (e) {
-  //     console.log("✅ ~ e:::", e)
-  //     $(".slider-single").slick("slickSetOption", "asNavFor", null, true);
-  //   });
-  // });
+  if (!galleryImageList) return;
 
-  // const leaveEventList = ["touchend", "mouseover", "mouseout"];
+  galleryImageList.forEach(function (galleryImage) {
+    const enterEventList = [
+      "touchstart",
+      "touchmove",
+      "mousemove",
+      "mouseenter",
+    ];
 
-  // leaveEventList.forEach(function (item) {
-  //   $(".slider-nav").on(item, function (e) {
-  //     console.log("✅ ~ e:::", e)
-  //     // $(".slider-single").slick("slickSetOption", "swipe", true, false);
-  //   });
-  // });
+    enterEventList.forEach(function (item) {
+      galleryImage.addEventListener(item, function (e) {
+        $(".slider-single").slick("slickSetOption", "swipe", false, false);
+      });
+    });
+
+    const leaveEventList = ["touchend", "mouseover", "mouseout"];
+
+    leaveEventList.forEach(function (item) {
+      galleryImage.addEventListener(item, function (e) {
+        $(".slider-single").slick("slickSetOption", "swipe", true, false);
+      });
+    });
+  })
+
+
 });
 
 // CUSTOM LIGHTBOX
@@ -904,8 +911,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!smallImageList) return;
 
-  smallImageList.forEach(function (smallImageList) {
-    smallImageList.addEventListener("wheel", function (e) {
+  smallImageList.forEach(function (smallImage) {
+    smallImage.addEventListener("wheel", function (e) {
       e.stopPropagation();
       this.scrollLeft += e.deltaY;
       e.preventDefault();
@@ -919,7 +926,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     enterEventList.forEach(function (item) {
-      smallImageList.addEventListener(item, function (e) {
+      smallImage.addEventListener(item, function (e) {
         $(".slider-products").slick("slickSetOption", "swipe", false, false);
       });
     });
@@ -927,7 +934,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const leaveEventList = ["touchend", "mouseover", "mouseout"];
 
     leaveEventList.forEach(function (item) {
-      smallImageList.addEventListener(item, function (e) {
+      smallImage.addEventListener(item, function (e) {
         $(".slider-products").slick("slickSetOption", "swipe", true, false);
       });
     });
