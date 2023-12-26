@@ -974,12 +974,11 @@
         <div class="myContainer">
           <div class="w-full">
             <a href="https://www.kosshop.vn/sale/">
-              <img
-                src="https://cdn.kosshop.vn/upload/images/2023/11/27/2023-1701049867.jpg"
-                alt="2023"
-                fetchpriority="high"
-                class="aspect-video"
-              />
+              <picture>
+                <source srcset="https://cdn.kosshop.vn/upload/images/2023/11/27/2023-1701049867.jpg" media="(min-width: 768px)">
+                <source srcset="https://cdn.kosshop.vn/upload/images/2023/11/27/thumb/768x0/2023-1701049867.jpg" media="(max-width: 767px)">
+                <img src="https://cdn.kosshop.vn/upload/images/2023/11/27/2023-1701049867.jpg" alt="KOS Shop" fetchpriority="high" width="1106" height="349">
+              </picture>
             </a>
           </div>
 
@@ -1382,12 +1381,12 @@
                   name="arrange"
                   id="arrange"
                   class="flex items-center px-[10px] py-2 text-primary bg-greyLight2 border border-primary max-w-[150px] h-auto lg:h-10"
-                >
-                  <option value="1">Mới nhất</option>
+                  aria-label="Sắp xếp theo">
+                  <option value="1" selected>Mới nhất</option>
                   <option value="2">Xem nhiều nhất</option>
                   <option value="3">Giá từ thấp đến cao</option>
                   <option value="4">Giá từ cao đến thấp</option>
-                  <option value="5" selected>Bán chạy nhất</option>
+                  <option value="5">Bán chạy nhất</option>
                 </select>
               </div>
             </div>
@@ -2844,7 +2843,7 @@
         <a
           class="flex flex-col items-center justify-center px-2 text-primary"
           href="/showrooms/"
-          ><i class="text-3xl fa fa-map-marker-alt"></i> Địa Chỉ</a
+          aria-label="Địa chỉ"><i class="text-3xl fa fa-map-marker-alt"></i> Địa Chỉ</a
         >
       </div>
     </nav>
