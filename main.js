@@ -323,11 +323,10 @@ window.addEventListener("DOMContentLoaded", function () {
     // Has to be -1 otherwise there is nothing to scroll for - all the slides would already be visible
     slidesToShowNav = childElements - 1;
   }
-  console.log("✅ ~ slidesToShowNav:::", slidesToShowNav)
 
   // Slider detail product children
   $(".slider-nav").slick({
-    slidesToShow: slidesToShowNav,
+    slidesToShow: 10,
     slidesToScroll: 1,
     infinite: false,
     dots: false,
@@ -339,7 +338,7 @@ window.addEventListener("DOMContentLoaded", function () {
       {
         breakpoint: BREAK_POINT.md,
         settings: {
-          slidesToShow: slidesToShowNav,
+          slidesToShow: 7,
         },
       },
     ],
