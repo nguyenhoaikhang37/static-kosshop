@@ -23,6 +23,9 @@ if (window.innerWidth >= BREAK_POINT.xl) {
   HEADER_HEIGHT = 56;
 }
 
+let currentSlideIndex = 0;
+let cachedUpdate = null;
+
 // CUSTOM SLICK SLIDER
 window.addEventListener("DOMContentLoaded", function () {
   let internationalCustomerFlag = false;
@@ -173,6 +176,20 @@ window.addEventListener("DOMContentLoaded", function () {
             "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
           nextArrow:
             "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
+        }).on("afterChange", function (event, slick, currentSlide, nextSlide) {
+          // Check if the slide has changed
+          if (currentSlide !== currentSlideIndex) {
+            currentSlideIndex = currentSlide;
+            // If there is no cached result, or there is a change, call the function
+            if (!cachedUpdate) {
+              updateSliderLogic();
+              // Cache results
+              cachedUpdate = true;
+            }
+          }
+        }).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+          // Reset cache before slide changes
+          cachedUpdate = null;
         });
       }
     } else if (productFlag) {
@@ -296,9 +313,21 @@ window.addEventListener("DOMContentLoaded", function () {
       "<button type='button' class='large-detail-slide-btn slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right' aria-label='Next'></i></button>",
   })
 
+  // Set preferred slidesToShow
+  let slidesToShowNav = window.innerWidth > BREAK_POINT.md ? 10 : 7;
+  const childElements = $('.slider-nav').children().length;
+
+  // Check if we can fulfill the preferred slidesToShow
+  if (slidesToShowNav > childElements) {
+    // Otherwise, make slidesToShow the number of slides - 1
+    // Has to be -1 otherwise there is nothing to scroll for - all the slides would already be visible
+    slidesToShowNav = childElements - 1;
+  }
+  console.log("✅ ~ slidesToShowNav:::", slidesToShowNav)
+
   // Slider detail product children
   $(".slider-nav").slick({
-    slidesToShow: 10,
+    slidesToShow: slidesToShowNav,
     slidesToScroll: 1,
     infinite: false,
     dots: false,
@@ -308,42 +337,40 @@ window.addEventListener("DOMContentLoaded", function () {
     arrows: false,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: BREAK_POINT.md,
         settings: {
-          slidesToShow: 7,
+          slidesToShow: slidesToShowNav,
         },
       },
     ],
   });
 
-//   const galleryImageList = document.querySelectorAll(".gallery-images");
+  //   const galleryImageList = document.querySelectorAll(".gallery-images");
 
-//   if (!galleryImageList) return;
+  //   if (!galleryImageList) return;
 
-//   galleryImageList.forEach(function (galleryImage) {
-//     const enterEventList = [
-//       "touchstart",
-//       "touchmove",
-//       "mousemove",
-//       "mouseenter",
-//     ];
+  //   galleryImageList.forEach(function (galleryImage) {
+  //     const enterEventList = [
+  //       "touchstart",
+  //       "touchmove",
+  //       "mousemove",
+  //       "mouseenter",
+  //     ];
 
-//     enterEventList.forEach(function (item) {
-//       galleryImage.addEventListener(item, function (e) {
-//         $(".slider-single").slick("slickSetOption", "swipe", false, false);
-//       });
-//     });
+  //     enterEventList.forEach(function (item) {
+  //       galleryImage.addEventListener(item, function (e) {
+  //         $(".slider-single").slick("slickSetOption", "swipe", false, false);
+  //       });
+  //     });
 
-//     const leaveEventList = ["touchend", "mouseover", "mouseout"];
+  //     const leaveEventList = ["touchend", "mouseover", "mouseout"];
 
-//     leaveEventList.forEach(function (item) {
-//       galleryImage.addEventListener(item, function (e) {
-//         $(".slider-single").slick("slickSetOption", "swipe", true, false);
-//       });
-//     });
-//   })
-
-
+  //     leaveEventList.forEach(function (item) {
+  //       galleryImage.addEventListener(item, function (e) {
+  //         $(".slider-single").slick("slickSetOption", "swipe", true, false);
+  //       });
+  //     });
+  //   })
 });
 
 // CUSTOM LIGHTBOX
@@ -921,7 +948,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "touchstart",
       "touchmove",
       "mousemove",
-      "mouseenter",
     ];
 
     enterEventList.forEach(function (item) {
@@ -930,7 +956,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    const leaveEventList = ["touchend", "mouseover", "mouseout"];
+    const leaveEventList = ["touchend", "mouseover"];
 
     leaveEventList.forEach(function (item) {
       smallImage.addEventListener(item, function (e) {
@@ -943,17 +969,17 @@ document.addEventListener("DOMContentLoaded", function () {
 /**
  * Handle hover product gallery to show large image
  */
-document.addEventListener("DOMContentLoaded", function () {
+function updateSliderLogic() {
   const productEls = document.querySelectorAll(".product-item");
 
-  productEls.forEach((productEl) => {
+  productEls.forEach((productEl, index) => {
     const smallImages = productEl.querySelectorAll(".small-image-list img");
     const smallImageItems = productEl.querySelectorAll(".small-image-list li");
     const largeImage = productEl.querySelector(".large-image");
 
     if (!smallImages || !largeImage || !smallImageItems) return;
 
-    smallImages.forEach(function (smallImg, index) {
+    smallImages.forEach(function (smallImg, i) {
       smallImg.addEventListener("mouseover", function () {
         const newSrc = this.src;
         largeImage.src = newSrc;
@@ -962,9 +988,10 @@ document.addEventListener("DOMContentLoaded", function () {
           item.classList.remove("border-primary");
         });
 
-        smallImageItems[index].classList.remove("border-slate-200");
-        smallImageItems[index].classList.add("border-primary");
+        smallImageItems[i].classList.remove("border-slate-200");
+        smallImageItems[i].classList.add("border-primary");
       });
     });
   });
-});
+}
+updateSliderLogic()
