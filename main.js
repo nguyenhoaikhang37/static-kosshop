@@ -291,15 +291,15 @@ window.addEventListener("DOMContentLoaded", function () {
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
     asNavFor: ".slider-nav",
     prevArrow:
-      "<button type='button' class='large-detail-slide-btn slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left'></i></button>",
+      "<button type='button' class='large-detail-slide-btn slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left' aria-label='Previous'></i></button>",
     nextArrow:
-      "<button type='button' class='large-detail-slide-btn slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right'></i></button>",
+      "<button type='button' class='large-detail-slide-btn slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right' aria-label='Next'></i></button>",
   })
 
   // Slider detail product children
   $(".slider-nav").slick({
     slidesToShow: 10,
-    slidesToScroll: 10,
+    slidesToScroll: 1,
     infinite: false,
     dots: false,
     focusOnSelect: true,
@@ -311,7 +311,6 @@ window.addEventListener("DOMContentLoaded", function () {
         breakpoint: 768,
         settings: {
           slidesToShow: 7,
-          slidesToScroll: 7,
         },
       },
     ],
