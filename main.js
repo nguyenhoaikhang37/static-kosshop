@@ -142,55 +142,58 @@ window.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth > BREAK_POINT.xl) {
       if (!productFlag) {
         productFlag = true;
-        slickProductSlide = $(".slider-products").slick({
-          dots: false,
-          infinite: true,
-          speed: 500,
-          slidesToScroll: 1,
-          slidesToShow: 5,
-          touchThreshold: 10,
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
+        slickProductSlide = $(".slider-products")
+          .slick({
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToScroll: 1,
+            slidesToShow: 5,
+            touchThreshold: 10,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 4,
+                },
               },
-            },
-            {
-              breakpoint: 770,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
+              {
+                breakpoint: 770,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                },
               },
-            },
-            {
-              breakpoint: 640,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
+              {
+                breakpoint: 640,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                },
               },
-            },
-          ],
-          prevArrow:
-            "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
-          nextArrow:
-            "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
-        }).on("afterChange", function (event, slick, currentSlide, nextSlide) {
-          // Check if the slide has changed
-          if (currentSlide !== currentSlideIndex) {
-            currentSlideIndex = currentSlide;
-            // If there is no cached result, or there is a change, call the function
-            if (!cachedUpdate) {
-              updateSliderLogic();
-              // Cache results
-              cachedUpdate = true;
+            ],
+            prevArrow:
+              "<button type='button' class='slick-prev pull-left !hidden lg:!block'><i class='fal fa-chevron-left'></i></button>",
+            nextArrow:
+              "<button type='button' class='slick-next pull-right !hidden lg:!block'><i class='fal fa-chevron-right'></i></button>",
+          })
+          .on("afterChange", function (event, slick, currentSlide, nextSlide) {
+            // Check if the slide has changed
+            if (currentSlide !== currentSlideIndex) {
+              currentSlideIndex = currentSlide;
+              // If there is no cached result, or there is a change, call the function
+              if (!cachedUpdate) {
+                updateSliderLogic();
+                // Cache results
+                cachedUpdate = true;
+              }
             }
-          }
-        }).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-          // Reset cache before slide changes
-          cachedUpdate = null;
-        });
+          })
+          .on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            // Reset cache before slide changes
+            cachedUpdate = null;
+          });
       }
     } else if (productFlag) {
       $(".slider-products").slick("unslick");
@@ -294,7 +297,6 @@ window.addEventListener("DOMContentLoaded", function () {
       "<button type='button' class='right-0 top-1/2 -translate-y-full pull-right absolute lg:left-auto lg:translate-y-0 lg:!right-[23%] lg:top-0 z-10 xl:flex xl:items-center xl:justify-center xl:border-2 xl:border-slate-700 xl:rounded-full xl:w-[38px] xl:h-[38px] xl:hover:bg-slate-700 group'><i class='text-slate-700 hover:text-slate-500 xl:group-hover:text-white text-4xl xl:text-xl fal fa-chevron-right'></i></button>",
   });
 
-
   // Slider detail product
   $(".slider-single").slick({
     slidesToShow: 1,
@@ -311,11 +313,11 @@ window.addEventListener("DOMContentLoaded", function () {
       "<button type='button' class='large-detail-slide-btn slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left' aria-label='Previous'></i></button>",
     nextArrow:
       "<button type='button' class='large-detail-slide-btn slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right' aria-label='Next'></i></button>",
-  })
+  });
 
   // Set preferred slidesToShow
   let slidesToShowNav = window.innerWidth > BREAK_POINT.md ? 10 : 7;
-  const childElements = $('.slider-nav').children().length;
+  const childElements = $(".slider-nav").children().length;
 
   // Check if we can fulfill the preferred slidesToShow
   if (slidesToShowNav > childElements) {
@@ -452,31 +454,6 @@ function handleScrollCategoryNavbar() {
 window.addEventListener("DOMContentLoaded", handleScrollCategoryNavbar);
 
 window.onscroll = handleScrollCategoryNavbar;
-
-/**
- * Handle logic show/hide mega menu
- */
-
-// Get all elements with the class 'the-li'
-const liItems = document.querySelectorAll(".mega-menu-item");
-
-// Get the element with the class 'mega-menu'
-const megaMenu = document.querySelector(".mega-menu");
-
-// Add hover event listeners to each 'the-li' element
-liItems.forEach((li) => {
-  li.addEventListener("mouseover", function () {
-    // Check if the 'the-li' element has a 'fa-chevron-right' icon
-    // If it does, display the 'mega-menu' element
-    if (li.querySelector(".fa-chevron-right")) {
-      megaMenu.style.display = "block";
-    }
-  });
-
-  li.addEventListener("mouseout", function () {
-    megaMenu.style.display = "none";
-  });
-});
 
 /**
  * Handle toggle blur content
@@ -943,11 +920,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
     });
 
-    const enterEventList = [
-      "touchstart",
-      "touchmove",
-      "mousemove",
-    ];
+    const enterEventList = ["touchstart", "touchmove", "mousemove"];
 
     enterEventList.forEach(function (item) {
       smallImage.addEventListener(item, function (e) {
@@ -993,4 +966,4 @@ function updateSliderLogic() {
     });
   });
 }
-updateSliderLogic()
+updateSliderLogic();

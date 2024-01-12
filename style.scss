@@ -264,6 +264,10 @@
   display: block !important;
 }
 
+.mega-menu-item:hover .mega-menu {
+  display: block !important;
+}
+
 /* Custom gap spacing between rows */
 .slick-track {
   display: flex;
