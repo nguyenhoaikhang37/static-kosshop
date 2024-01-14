@@ -432,7 +432,7 @@ const categoryNavbar = document.querySelector("#category-navbar");
 function handleScrollCategoryNavbar() {
   if (
     window.location.pathname !== "/" &&
-    window.location.pathname !== "/main-news/"
+    window.location.pathname !== "/main-news/" && window.location.pathname !== "/t/"
   ) {
     return;
   }
