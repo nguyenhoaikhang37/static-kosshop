@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", function () {
       if (!internationalCustomerFlag) {
         internationalCustomerFlag = true;
         slickInternationalCustomerSlide = $(
-          ".slider-international-customer"
+          ".slider-international-customer",
         ).slick({
           dots: false,
           infinite: true,
@@ -432,7 +432,8 @@ const categoryNavbar = document.querySelector("#category-navbar");
 function handleScrollCategoryNavbar() {
   if (
     window.location.pathname !== "/" &&
-    window.location.pathname !== "/main-news/" && window.location.pathname !== "/t/"
+    window.location.pathname !== "/main-news/" &&
+    window.location.pathname !== "/t/"
   ) {
     return;
   }
@@ -531,12 +532,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function openDialog(dialog) {
     dialog.style.opacity = 1;
     dialog.style.visibility = "visible";
+    document.documentElement.style.overflowY = "hidden";
   }
 
   // Function to close a dialog
   function closeDialog(dialog) {
     dialog.style.opacity = 0;
     dialog.style.visibility = "hidden";
+    document.documentElement.style.overflowY = "";
   }
 
   // Add click event listeners to open dialogs
@@ -602,7 +605,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Remove the 'active' class from all buttons
     storeButtons.forEach((button) =>
-      button.classList.remove("text-white", "bg-gradient", "active")
+      button.classList.remove("text-white", "bg-gradient", "active"),
     );
 
     // Add the 'active' class to the clicked button
@@ -639,7 +642,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Activate the first button in the displayed list
     const visibleButtons = Array.from(storeButtons).filter(
-      (button) => button.style.display !== "none"
+      (button) => button.style.display !== "none",
     );
 
     if (visibleButtons.length > 0) {
@@ -663,7 +666,7 @@ document.addEventListener("DOMContentLoaded", function () {
       input.addEventListener("change", (e) => {
         // Submit form
         const valueStars = document.querySelector(
-          'input[name="rating"]:checked'
+          'input[name="rating"]:checked',
         ).value;
 
         scoreRating.innerHTML = valueStars;
