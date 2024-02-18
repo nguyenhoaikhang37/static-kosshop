@@ -2041,7 +2041,7 @@
                 </ul>
 
                 <!-- Gallery Dialog -->
-                <div class="modal full" id="gallery-dialog">
+                <div class="modal full overscroll-contain" id="gallery-dialog">
                   <!-- Modal content -->
                   <div class="modal-content full">
                     <div
@@ -2064,84 +2064,87 @@
                         <i class="text-xl text-primary fal fa-times"></i>
                       </span>
                     </div>
-                    <div class="mt-8 modal-body">
+                    <div
+                      class="modal-body py-8 lg:flex lg:flex-col lg:justify-between lg:h-[calc(100vh-52px)]"
+                    >
                       <!-- Gallery on desktop -->
                       <ul
-                        class="slider slider-single relative max-w-[60%] mt-4 mx-auto hidden lg:block"
+                        class="relative hidden max-w-[50%] mx-auto slider slider-single lg:block flex-1"
                       >
-                        <li class="block">
+                        <li class="!flex justify-center">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
                             alt=""
-                            class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
-                        <li class="block">
+                        <li class="!flex justify-center">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
                             alt=""
-                            class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
-                        <li class="block">
+                        <li class="!flex justify-center">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
                             alt=""
-                            class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
-                        <li class="block">
+                        <li class="!flex justify-center">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
                             alt=""
-                            class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
-                        <li class="block">
+                        <li class="!flex justify-center">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
                             alt=""
-                            class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
-                        <li class="block">
+                        <li class="!flex justify-center">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
                             alt=""
-                            class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
-                        <li class="block">
+                        <li class="!flex justify-center">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
                             alt=""
-                            class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
-                        <li class="block">
+                        <li class="!flex justify-center">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
                             alt=""
-                            class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
-                        <li class="block">
+                        <li class="!flex justify-center">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
                             alt=""
-                            class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                       </ul>
                       <!-- Gallery on mobile -->
                       <ul
-                        class="flex lg:hidden flex-col gap-2 relative max-w-[60%] mt-4 mx-auto"
+                        class="relative flex flex-col max-w-full gap-2 px-2 mx-auto mt-4 lg:hidden"
                       >
                         <li class="block">
                           <img
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
                             alt=""
                             class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                         <li class="block">
@@ -2149,6 +2152,7 @@
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
                             alt=""
                             class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                         <li class="block">
@@ -2156,6 +2160,7 @@
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
                             alt=""
                             class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                         <li class="block">
@@ -2163,6 +2168,7 @@
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
                             alt=""
                             class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                         <li class="block">
@@ -2170,6 +2176,7 @@
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
                             alt=""
                             class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                         <li class="block">
@@ -2177,6 +2184,7 @@
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
                             alt=""
                             class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                         <li class="block">
@@ -2184,6 +2192,7 @@
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
                             alt=""
                             class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                         <li class="block">
@@ -2191,6 +2200,7 @@
                             src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
                             alt=""
                             class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                         <li class="block">
@@ -2198,85 +2208,90 @@
                             src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
                             alt=""
                             class="block w-full h-full aspect-auto"
+                            loading="lazy"
                           />
                         </li>
                       </ul>
-                      <ul
-                        class="slider slider-nav mt-4 max-w-[940px] mx-auto hidden lg:block"
-                      >
-                        <li class="block">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                        <li class="block">
-                          <img
-                            src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
-                            alt=""
-                            class="block w-full h-full aspect-square"
-                          />
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="flex justify-center p-4">
-                      <button
-                        class="flex items-center js-dialog-close text-primary hover:underline"
-                        data-dialog-id="gallery-dialog"
-                      >
-                        <i class="mr-2 fal fa-long-arrow-left"></i>
-                        Xem tiếp sản phẩm
-                      </button>
+                      <div>
+                        <!-- List small gallery -->
+                        <ul
+                          class="slider slider-nav pt-4 max-w-[940px] mx-auto hidden lg:block"
+                        >
+                          <li class="block">
+                            <img
+                              src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-elite-size-s-20-inch-titanium923.jpg"
+                              alt=""
+                              class="block w-full h-full aspect-square"
+                            />
+                          </li>
+                          <li class="block">
+                            <img
+                              src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1697.jpg"
+                              alt=""
+                              class="block w-full h-full aspect-square"
+                            />
+                          </li>
+                          <li class="block">
+                            <img
+                              src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium8887.jpg"
+                              alt=""
+                              class="block w-full h-full aspect-square"
+                            />
+                          </li>
+                          <li class="block">
+                            <img
+                              src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1802.jpg"
+                              alt=""
+                              class="block w-full h-full aspect-square"
+                            />
+                          </li>
+                          <li class="block">
+                            <img
+                              src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium7124.jpg"
+                              alt=""
+                              class="block w-full h-full aspect-square"
+                            />
+                          </li>
+                          <li class="block">
+                            <img
+                              src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium1329.jpg"
+                              alt=""
+                              class="block w-full h-full aspect-square"
+                            />
+                          </li>
+                          <li class="block">
+                            <img
+                              src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium3384.jpg"
+                              alt=""
+                              class="block w-full h-full aspect-square"
+                            />
+                          </li>
+                          <li class="block">
+                            <img
+                              src="https://cdn.kosshop.vn/upload/plupload/2022/05/vali-roncato-e-lite-size-s-20-inch-titanium9509.jpg"
+                              alt=""
+                              class="block w-full h-full aspect-square"
+                            />
+                          </li>
+                          <li class="block">
+                            <img
+                              src="https://cdn.kosshop.vn/upload/plupload/2023/11/vali-roncato-elite-size-s-20-inch-titanium9570.jpg"
+                              alt=""
+                              class="block w-full h-full aspect-square"
+                            />
+                          </li>
+                        </ul>
+
+                        <div class="flex justify-center p-4">
+                          <button
+                            class="flex items-center js-dialog-close text-primary hover:underline"
+                            data-dialog-id="gallery-dialog"
+                          >
+                            <i class="mr-2 fal fa-long-arrow-left"></i>
+                            Xem tiếp sản phẩm
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
