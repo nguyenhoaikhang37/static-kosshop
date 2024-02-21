@@ -337,7 +337,7 @@
   border: 1px solid #ddd !important;
 }
 
-.slider-nav .slick-current img {
+.slider-nav .slick-slide.is-active img {
   border: 1px solid #1074a5 !important;
 }
 
@@ -785,4 +785,8 @@
 }
 .rounded {
   border-radius: 8px;
+}
+
+.gallery-single-image {
+  max-height: var(--max-height-gallery-single-image);
 }

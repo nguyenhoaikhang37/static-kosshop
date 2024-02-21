@@ -315,19 +315,10 @@ window.addEventListener("DOMContentLoaded", function () {
       "<button type='button' class='large-detail-slide-btn slick-next pull-right !translate-x-[-9px]'><i class='text-3xl text-primary fal fa-chevron-right' aria-label='Next'></i></button>",
   });
 
-  // Set preferred slidesToShow
-  let slidesToShowNav = window.innerWidth > BREAK_POINT.md ? 10 : 7;
-  const childElements = $(".slider-nav").children().length;
-
-  // Check if we can fulfill the preferred slidesToShow
-  if (slidesToShowNav > childElements) {
-    // Otherwise, make slidesToShow the number of slides - 1
-    // Has to be -1 otherwise there is nothing to scroll for - all the slides would already be visible
-    slidesToShowNav = childElements - 1;
-  }
-
   // Slider detail product children
-  $(".slider-nav").slick({
+  $(".slider-nav").on('init', function (event, slick) {
+    $('.slider-nav .slick-slide.slick-current').addClass('is-active');
+  }).slick({
     slidesToShow: 10,
     slidesToScroll: 1,
     infinite: false,
@@ -344,6 +335,21 @@ window.addEventListener("DOMContentLoaded", function () {
         },
       },
     ],
+  });
+
+  // Sync the slider nav with the slider single
+  $('.slider-single').on('afterChange', function (event, slick, currentSlide) {
+    $('.slider-nav').slick('slickGoTo', currentSlide);
+    var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+    $('.slider-nav .slick-slide.is-active').removeClass('is-active');
+    $(currrentNavSlideElem).addClass('is-active');
+  });
+
+  $('.slider-nav').on('click', '.slick-slide', function (event) {
+    event.preventDefault();
+    var goToSingleSlide = $(this).data('slick-index');
+
+    $('.slider-single').slick('slickGoTo', goToSingleSlide);
   });
 
   //   const galleryImageList = document.querySelectorAll(".gallery-images");
@@ -970,3 +976,24 @@ function updateSliderLogic() {
   });
 }
 updateSliderLogic();
+
+/**
+ * Handle get max height of gallery image single
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  const gallerySingleElement = document.getElementById("js-gallery-single-height");
+
+  if (!gallerySingleElement) return;
+
+  setTimeout(function () {
+    const gallerySingleImageHeight = gallerySingleElement.offsetHeight;
+
+    const gallerySingleImageList = document.querySelectorAll(".gallery-single-image");
+    gallerySingleImageList.forEach(function (gallerySingleImage) {
+      gallerySingleImage.style.setProperty(
+        "--max-height-gallery-single-image",
+        `${gallerySingleImageHeight}px`,
+      );
+    });
+  }, 0);
+})
