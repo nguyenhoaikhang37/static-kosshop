@@ -337,16 +337,7 @@
   border: 1px solid #ddd !important;
 }
 
-.slider-nav .slick-slide.is-active img {
-  border: 1px solid #1074a5 !important;
-}
-
-// get class start include `slider-product-items`
-[class*="slider-product-items"] .slick-slide img {
-  border: 1px solid #ddd !important;
-}
-
-[class*="slider-product-items"] .slick-slide.is-active img {
+.slider-nav .slick-current img {
   border: 1px solid #1074a5 !important;
 }
 

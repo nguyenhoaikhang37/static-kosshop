@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", function () {
       if (!internationalCustomerFlag) {
         internationalCustomerFlag = true;
         slickInternationalCustomerSlide = $(
-          ".slider-international-customer",
+          ".slider-international-customer"
         ).slick({
           dots: false,
           infinite: true,
@@ -316,9 +316,7 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   // Slider detail product children
-  $(".slider-nav").on('init', function (event, slick) {
-    $('.slider-nav .slick-slide.slick-current').addClass('is-active');
-  }).slick({
+  $(".slider-nav").slick({
     slidesToShow: 10,
     slidesToScroll: 1,
     infinite: false,
@@ -338,18 +336,16 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   // Sync the slider nav with the slider single
-  $('.slider-single').on('afterChange', function (event, slick, currentSlide) {
-    $('.slider-nav').slick('slickGoTo', currentSlide);
-    var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
-    $('.slider-nav .slick-slide.is-active').removeClass('is-active');
-    $(currrentNavSlideElem).addClass('is-active');
+  $(".slider-single").on("afterChange", function (event, slick, currentSlide) {
+    const $sliderNav = $(".slider-nav");
+    $sliderNav.slick("slickGoTo", currentSlide);
   });
 
-  $('.slider-nav').on('click', '.slick-slide', function (event) {
+  $(".slider-nav").on("click", ".slick-slide", function (event) {
     event.preventDefault();
-    var goToSingleSlide = $(this).data('slick-index');
+    const goToSingleSlide = $(this).data("slick-index");
 
-    $('.slider-single').slick('slickGoTo', goToSingleSlide);
+    $(".slider-single").slick("slickGoTo", goToSingleSlide);
   });
 
   //   const galleryImageList = document.querySelectorAll(".gallery-images");
@@ -611,7 +607,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Remove the 'active' class from all buttons
     storeButtons.forEach((button) =>
-      button.classList.remove("text-white", "bg-gradient", "active"),
+      button.classList.remove("text-white", "bg-gradient", "active")
     );
 
     // Add the 'active' class to the clicked button
@@ -648,7 +644,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Activate the first button in the displayed list
     const visibleButtons = Array.from(storeButtons).filter(
-      (button) => button.style.display !== "none",
+      (button) => button.style.display !== "none"
     );
 
     if (visibleButtons.length > 0) {
@@ -672,7 +668,7 @@ document.addEventListener("DOMContentLoaded", function () {
       input.addEventListener("change", (e) => {
         // Submit form
         const valueStars = document.querySelector(
-          'input[name="rating"]:checked',
+          'input[name="rating"]:checked'
         ).value;
 
         scoreRating.innerHTML = valueStars;
@@ -981,19 +977,23 @@ updateSliderLogic();
  * Handle get max height of gallery image single
  */
 document.addEventListener("DOMContentLoaded", function () {
-  const gallerySingleElement = document.getElementById("js-gallery-single-height");
+  const gallerySingleElement = document.getElementById(
+    "js-gallery-single-height"
+  );
 
   if (!gallerySingleElement) return;
 
   setTimeout(function () {
     const gallerySingleImageHeight = gallerySingleElement.offsetHeight;
 
-    const gallerySingleImageList = document.querySelectorAll(".gallery-single-image");
+    const gallerySingleImageList = document.querySelectorAll(
+      ".gallery-single-image"
+    );
     gallerySingleImageList.forEach(function (gallerySingleImage) {
       gallerySingleImage.style.setProperty(
         "--max-height-gallery-single-image",
-        `${gallerySingleImageHeight}px`,
+        `${gallerySingleImageHeight}px`
       );
     });
   }, 0);
-})
+});
