@@ -308,7 +308,6 @@ window.addEventListener("DOMContentLoaded", function () {
     useTransform: true,
     speed: 500,
     cssEase: "cubic-bezier(0.77, 0, 0.18, 1)",
-    asNavFor: ".slider-nav",
     prevArrow:
       "<button type='button' class='large-detail-slide-btn slick-prev pull-left !translate-x-[5px]'><i class='text-3xl text-primary fal fa-chevron-left' aria-label='Previous'></i></button>",
     nextArrow:
@@ -316,36 +315,50 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   // Slider detail product children
-  $(".slider-nav").slick({
-    slidesToShow: 10,
-    slidesToScroll: 1,
-    infinite: false,
-    dots: false,
-    focusOnSelect: true,
-    swipeToSlide: true,
-    asNavFor: ".slider-single",
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: BREAK_POINT.md,
-        settings: {
-          slidesToShow: 7,
+  $(".slider-nav")
+    .on("init", function (event, slick) {
+      $(".slider-nav .slick-slide.slick-current").addClass("is-active");
+    })
+    .slick({
+      slidesToShow: 10,
+      slidesToScroll: 1,
+      infinite: false,
+      dots: false,
+      focusOnSelect: true,
+      swipeToSlide: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: BREAK_POINT.md,
+          settings: {
+            slidesToShow: 7,
+          },
         },
-      },
-    ],
-  });
+      ],
+    });
 
   // Sync the slider nav with the slider single
   $(".slider-single").on("afterChange", function (event, slick, currentSlide) {
-    const $sliderNav = $(".slider-nav");
-    $sliderNav.slick("slickGoTo", currentSlide);
+    $(".slider-nav").slick("slickGoTo", currentSlide);
+    var currrentNavSlideElem =
+      '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+    $(".slider-nav .slick-slide.is-active").removeClass("is-active");
+    $(currrentNavSlideElem).addClass("is-active");
   });
 
   $(".slider-nav").on("click", ".slick-slide", function (event) {
     event.preventDefault();
-    const goToSingleSlide = $(this).data("slick-index");
+    var goToSingleSlide = $(this).data("slick-index");
 
     $(".slider-single").slick("slickGoTo", goToSingleSlide);
+  });
+
+  $(".slick-next").click(function () {
+    $(".slider-single").slick("slickNext");
+  });
+
+  $(".slick-prev").click(function () {
+    $(".slider-single").slick("slickPrev");
   });
 
   //   const galleryImageList = document.querySelectorAll(".gallery-images");
